@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Warm Up 12.3 - Roosevelt, Taft, and Wilson</title><style>
+:root{--navy:#284B63;--mist:#F4F1EA;--steel:#3C6E71;--red:#C06C3B;--pale:#E5B08E;--ok:#9be0b5}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--mist);background:radial-gradient(1200px 700px at 15% -10%,#34607c 0%,var(--navy) 55%,#1d3749 100%) fixed;line-height:1.5}
+.wrap{max-width:980px;margin:0 auto;padding:28px 18px 80px}
+.eyebrow{font:700 12px/1 Arial,sans-serif;letter-spacing:.22em;color:var(--pale);text-transform:uppercase}
+h1{margin:.35em 0 .1em;font-size:34px;letter-spacing:.02em}
+.sub{font:600 15px Arial,sans-serif;color:#cfe0ee;margin:0 0 6px}
+.rule{height:4px;width:90px;background:var(--red);border-radius:3px;margin:14px 0 22px}
+.glass{background:rgba(237,242,247,.09);border:1px solid rgba(237,242,247,.22);border-radius:16px;padding:20px 22px;margin:0 0 18px;backdrop-filter:blur(6px);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.glass h2{margin:0 0 6px;font:700 13px Arial,sans-serif;letter-spacing:.16em;color:var(--pale);text-transform:uppercase}
+.q{font-size:18px;margin:4px 0 12px}
+.num{display:inline-block;min-width:30px;height:30px;line-height:30px;text-align:center;border-radius:50%;background:var(--red);font:700 14px Arial,sans-serif;margin-right:8px}
+label.opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;margin:6px 0;border:1px solid rgba(237,242,247,.25);border-radius:10px;cursor:pointer;background:rgba(0,0,0,.12)}
+label.opt:hover{border-color:var(--pale)}
+label.opt.sel{border-color:var(--pale);background:rgba(229,176,142,.18)}
+label.opt.good{border-color:var(--ok);background:rgba(155,224,181,.18)}
+label.opt.bad{border-color:#ff9d9d;background:rgba(255,120,120,.14)}
+input[type=text],textarea,select{width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(237,242,247,.35);background:rgba(0,0,0,.25);color:var(--mist);font:16px Georgia,serif}
+textarea{min-height:110px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px}
+@media(max-width:700px){.row{grid-template-columns:1fr 1fr}}
+.row label{font:700 11px Arial,sans-serif;letter-spacing:.12em;color:var(--pale);display:block;margin-bottom:4px}
+.maps{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:760px){.maps{grid-template-columns:1fr}}
+.mapbox{position:relative;background:#fff;border-radius:10px;overflow:hidden;border:2px solid var(--steel)}
+.mapbox img{display:block;width:100%;height:auto}
+.mapbox .cap{position:absolute;left:0;top:0;background:var(--navy);color:#fff;font:700 12px Arial,sans-serif;padding:4px 10px;border-bottom-right-radius:8px}
+.hit{position:absolute;inset:0;cursor:crosshair}
+.pin{position:absolute;width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:50%;background:var(--red);border:3px solid #fff;box-shadow:0 0 0 2px var(--navy)}
+.pin.good{background:#2e9e5b}
+.credit{font:12px Arial,sans-serif;color:#b8cde0;margin-top:8px}
+.credit a{color:var(--pale)}
+.fb{font:14px Arial,sans-serif;margin-top:8px;min-height:18px}
+.fb.good{color:var(--ok)}.fb.bad{color:#ffb4b4}
+.wc{font:12px Arial,sans-serif;color:#b8cde0;text-align:right;margin-top:4px}
+.bar{position:sticky;bottom:0;display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;background:rgba(29,55,73,.92);border-top:1px solid rgba(237,242,247,.25);padding:12px 18px;margin:0 -18px;backdrop-filter:blur(8px)}
+button{font:700 14px Arial,sans-serif;border:0;border-radius:10px;padding:11px 18px;cursor:pointer;color:#fff;background:var(--steel)}
+button.fin{background:var(--red)}
+button:disabled{opacity:.4;cursor:not-allowed}
+.prog{font:13px Arial,sans-serif;color:#cfe0ee}
+.key{border:2px dashed var(--pale);background:rgba(229,176,142,.12);border-radius:12px;padding:12px 16px;margin-top:12px;font-size:15px}
+.key b{color:var(--pale);font-family:Arial,sans-serif;letter-spacing:.08em;font-size:12px;text-transform:uppercase}
+.tbanner{background:var(--red);color:#fff;font:700 13px Arial,sans-serif;letter-spacing:.14em;text-align:center;padding:8px}
+.foot{margin-top:30px;font:700 11px Arial,sans-serif;letter-spacing:.16em;color:#9fb6cb;text-align:center}
+
+.excerpt{border-left:5px solid var(--red);background:rgba(0,0,0,.22);border-radius:0 12px 12px 0;padding:12px 16px;margin:10px 0;font-size:17px}
+.excerpt small{display:block;font:12px Arial,sans-serif;color:#b8cde0;margin-top:6px}
+.one{display:grid;grid-template-columns:1fr;gap:12px;max-width:640px;margin:0 auto}
+.narrow{max-width:330px;margin:0 auto}
+.ord{display:flex;align-items:center;gap:10px;padding:9px 12px;margin:6px 0;border:1px solid rgba(237,242,247,.25);border-radius:10px;background:rgba(0,0,0,.12)}
+.ord.good{border-color:var(--ok);background:rgba(155,224,181,.18)}
+.ord .n{font:700 13px Arial,sans-serif;background:var(--red);border-radius:50%;width:26px;height:26px;line-height:26px;text-align:center;flex:none}
+.ord .t{flex:1}
+.ord button{padding:6px 10px;background:#335a5c}
+.mrow{display:grid;grid-template-columns:1fr 220px;gap:12px;align-items:center;margin:8px 0;padding:10px 12px;border:1px solid rgba(237,242,247,.25);border-radius:10px;background:rgba(0,0,0,.12)}
+@media(max-width:700px){.mrow{grid-template-columns:1fr}}
+.mrow.good{border-color:var(--ok)}.mrow.bad{border-color:#ff9d9d}
+.scale{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.scale label{display:block;text-align:center;padding:10px 4px;border:1px solid rgba(237,242,247,.25);border-radius:10px;cursor:pointer;background:rgba(0,0,0,.12);font:13px Arial,sans-serif}
+.scale label.sel{border-color:var(--pale);background:rgba(229,176,142,.18)}
+.scale input{display:block;margin:0 auto 6px}
+.legend{display:flex;justify-content:space-between;font:12px Arial,sans-serif;color:#b8cde0;margin-top:6px}
+</style></head><body>
+
+<div class="wrap">
+<div class="eyebrow">1889-1916 &nbsp;·&nbsp; Warm Up 12.3</div>
+<h1>Roosevelt, Taft, and Wilson</h1>
+<p class="sub">Progressivism and the Search for a Modern State &nbsp;|&nbsp; The Presidents and Progressive Reform</p>
+<div class="rule"></div>
+<div class="glass" id="idbox"><h2>Student Information</h2>
+<div class="row">
+<div><label>FIRST NAME *</label><input type="text" id="first" autocomplete="off"></div>
+<div><label>LAST NAME *</label><input type="text" id="last" autocomplete="off"></div>
+<div><label>PERIOD *</label><select id="period"><option value="">Select</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select></div>
+<div><label>DATE</label><input type="text" id="date" readonly placeholder="Fills when finished"></div>
+</div></div>
+<div class="glass"><h2>Directions</h2><p style="margin:4px 0">Three presidents shaped progressive reform in different ways. Sort the events, then match the laws. Answer every item. Your work is saved only when you press <b>Save Progress</b> or <b>Finished</b>.</p>
+<div id="stim"></div><div class="credit" id="credit"></div></div>
+<div id="items"></div>
+<div class="foot">UNIT 5 · MODERN AMERICA &nbsp;|&nbsp; HIST C1002 &nbsp;|&nbsp; DANIEL GARZA, M.A.</div>
+</div>
+<div class="wrap" style="padding-top:0;padding-bottom:0"><div class="bar">
+<div class="prog" id="prog"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap">
+<button id="save" type="button">Save Progress</button>
+<label for="load" style="margin:0"><span style="display:inline-block;font:700 14px Arial,sans-serif;border-radius:10px;padding:11px 18px;cursor:pointer;color:#fff;background:#335a5c">Load Progress</span></label><input id="load" type="file" accept=".json,application/json" style="display:none">
+<button id="fin" class="fin" type="button" disabled>Finished</button>
+</div></div></div>
+<script>
+const TEACHER=false, CFG={"layout": "single", "credit": "", "images": [], "items": [{"id": "c1", "type": "order", "tag": "Timeline Sort", "q": "Put these six events in order from <b>earliest (1)</b> to <b>latest (6)</b>. Use the arrows.", "items": ["Roosevelt helps settle the anthracite coal strike (1902)", "Meat Inspection Act and Pure Food and Drug Act (1906)", "NAACP founded (1909)", "Woodrow Wilson wins the four-way election of 1912", "Federal Reserve Act (1913)", "Clayton Anti-Trust Act and Federal Trade Commission (1914)"], "start": [3, 0, 5, 2, 4, 1], "why": "Roosevelt\u2019s reforms came first, then the NAACP, the split election of 1912, and Wilson\u2019s major laws.", "key": "<b>Correct order:</b> Coal strike (1902) \u2192 Meat Inspection and Pure Food and Drug Acts (1906) \u2192 NAACP (1909) \u2192 Wilson wins 1912 \u2192 Federal Reserve Act (1913) \u2192 Clayton Act and FTC (1914). Finished is locked until the order is correct."}, {"id": "c2", "type": "one", "tag": "The Election of 1912", "q": "Why did Woodrow Wilson, a Democrat, win the election of 1912?", "opts": ["Former president Theodore Roosevelt ran as a Progressive and split the Republican vote with President Taft", "Taft and Wilson ran unopposed", "Roosevelt dropped out and endorsed Wilson", "The Supreme Court decided the election"], "ans": [0], "why": "After a feud with Taft over issues such as the tariff and conservation (the Ballinger-Pinchot controversy), Roosevelt formed the Progressive (\u201cBull Moose\u201d) Party. The Republican vote split.", "key": "<b>Correct:</b> Roosevelt\u2019s Progressive Party run split the Republican vote with Taft, helping Wilson win."}, {"id": "c3", "type": "match", "tag": "Match the Law", "q": "Match each Wilson-era progressive law to what it did.", "ph": "Choose what it did", "speakers": ["Created a central banking system with regional Federal Reserve Banks", "Created an agency to investigate and stop unfair business practices", "Strengthened antitrust law and limited its use against labor unions", "Allowed a federal income tax"], "rows": [{"q": "<b>Federal Reserve Act (1913)</b>", "ans": "Created a central banking system with regional Federal Reserve Banks"}, {"q": "<b>Federal Trade Commission (1914)</b>", "ans": "Created an agency to investigate and stop unfair business practices"}, {"q": "<b>Clayton Anti-Trust Act (1914)</b>", "ans": "Strengthened antitrust law and limited its use against labor unions"}, {"q": "<b>Sixteenth Amendment (1913)</b>", "ans": "Allowed a federal income tax"}], "key": "<b>Answers:</b> Federal Reserve Act: central banking system with regional banks. FTC: agency to investigate and stop unfair business practices. Clayton Act: strengthened antitrust law and protected unions from some antitrust suits. Sixteenth Amendment: federal income tax."}, {"id": "c4", "type": "one", "tag": "Roosevelt\u2019s Approach", "q": "Which best describes Theodore Roosevelt\u2019s <b>Square Deal</b>?", "opts": ["Using presidential power to treat labor, consumers, and business fairly, such as mediating the 1902 coal strike", "Letting business owners settle every dispute without government", "Ending all regulation of railroads", "Breaking up every large company"], "ans": [0], "why": "Roosevelt did not simply side with the mine owners in 1902. He pressed both sides to compromise, and he supported regulating business to protect the public.", "key": "<b>Correct:</b> Fair treatment for labor, consumers, and business through active presidential leadership (1902 coal strike, regulation, conservation)."}, {"id": "c5", "type": "text", "tag": "Explain", "q": "Explain one difference between Roosevelt\u2019s and Taft\u2019s approaches to progressive reform (2\u20133 sentences).", "key": "<b>Accept:</b> Roosevelt used the presidency in an active, personal way and pushed his own agenda (including conservation and regulation); Taft was more cautious and legalistic, and clashed with conservationists such as Gifford Pinchot (Ballinger-Pinchot controversy) and with reformers over the tariff. Needs a specific difference plus an explanation."}, {"id": "c6", "type": "text", "tag": "Counter-Argument", "q": "<b>Claim:</b> President Wilson opposed expanding the role of the federal government. Write a <b>Counter-Argument</b> using at least one law (2\u20133 sentences).", "key": "<b>Accept:</b> Wilson signed the Federal Reserve Act, the creation of the FTC, the Clayton Anti-Trust Act, and the income tax (Sixteenth Amendment ratified in 1913), all of which gave the federal government more power over the economy. He also led Congress actively as a legislative leader. Must argue against the claim."}], "id": "12.3", "title": "Roosevelt, Taft, and Wilson", "slug": "Warm_Up_12.3_Roosevelt_Taft_and_Wilson"};
+const MINW=8, $=id=>document.getElementById(id);
+let S={first:'',last:'',period:'',date:'',a:{}};
+const words=s=>((s||'').trim().match(/\S+/g)||[]).length;
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+// ---------- stimulus ----------
+(function(){
+ const st=$('stim');let h='';
+ const imgs=CFG.images||[];
+ if(CFG.layout==='single'){h+='<div class="one">'}else if(CFG.layout==='narrow'){h+='<div class="narrow">'}else{h+='<div class="maps" style="margin-top:12px">'}
+ imgs.forEach((im,i)=>{h+='<div class="mapbox"><span class="cap">'+esc(im.cap)+'</span><img id="img'+i+'" src="'+im.src+'" alt="'+esc(im.alt)+'">'+(im.click?'<div class="hit" id="hit'+i+'"></div>':'')+'</div>'});
+ h+='</div>';
+ if(CFG.excerpt)h+='<div class="excerpt">'+CFG.excerpt+'</div>';
+ st.innerHTML=h;
+ $('credit').innerHTML=CFG.credit||'';
+})();
+// ---------- items ----------
+const ITEMS=CFG.items;
+function head(it,n){return '<div class="glass" id="it'+it.id+'"><h2>Item '+n+' · '+esc(it.tag)+'</h2><div class="q"><span class="num">'+n+'</span>'+it.q+'</div>'}
+function keyHtml(it){return TEACHER&&it.key?'<div class="key"><b>Teacher Key</b><br>'+it.key+'</div>':''}
+function render(){
+ let h='';
+ ITEMS.forEach((it,i)=>{
+  const n=i+1;h+=head(it,n);
+  if(it.type==='click')h+='<div class="fb" id="fb'+it.id+'"></div>';
+  else if(it.type==='one'||it.type==='multi')h+='<div id="o'+it.id+'"></div><div class="fb" id="fb'+it.id+'"></div>';
+  else if(it.type==='scale')h+='<div class="scale" id="o'+it.id+'"></div><div class="legend"><span>'+esc(it.lo)+'</span><span>'+esc(it.hi)+'</span></div>';
+  else if(it.type==='order')h+='<div id="o'+it.id+'"></div><div class="fb" id="fb'+it.id+'"></div>';
+  else if(it.type==='match')h+='<div id="o'+it.id+'"></div>';
+  else if(it.type==='text')h+='<textarea id="t'+it.id+'" placeholder="Type your answer here..."></textarea><div class="wc" id="w'+it.id+'"></div>';
+  h+=keyHtml(it)+'</div>';
+ });
+ $('items').innerHTML=h;
+ ITEMS.forEach(buildItem);
+}
+function A(it){return S.a[it.id]}
+function buildItem(it){
+ const box=$('o'+it.id);
+ if(it.type==='one'||it.type==='multi'){
+  it.opts.forEach((t,i)=>{
+   const l=document.createElement('label');l.className='opt';
+   const inp=document.createElement('input');inp.type=it.type==='one'?'radio':'checkbox';inp.name='q'+it.id;inp.value=i;
+   inp.addEventListener('change',()=>{S.a[it.id]=it.type==='one'?[i]:[...box.querySelectorAll('input:checked')].map(x=>+x.value);paint(it);update()});
+   const sp=document.createElement('span');sp.textContent=t;l.append(inp,sp);box.append(l);
+  });
+ }
+ if(it.type==='scale'){
+  it.labels.forEach((t,i)=>{
+   const l=document.createElement('label');const inp=document.createElement('input');inp.type='radio';inp.name='q'+it.id;inp.value=i+1;
+   inp.addEventListener('change',()=>{S.a[it.id]=i+1;paint(it);update()});
+   l.append(inp,document.createTextNode(t));box.append(l);
+  });
+ }
+ if(it.type==='order'){
+  if(!S.a[it.id])S.a[it.id]=it.start.slice();
+  drawOrder(it);
+ }
+ if(it.type==='match'){
+  it.rows.forEach((r,i)=>{
+   const d=document.createElement('div');d.className='mrow';d.id='mr'+it.id+'_'+i;
+   const q=document.createElement('div');q.className='excerpt';q.style.margin='0';q.innerHTML=r.q;
+   const s=document.createElement('select');s.innerHTML='<option value="">'+(it.ph||'Who said it?')+'</option>'+it.speakers.map(x=>'<option>'+esc(x)+'</option>').join('');
+   s.addEventListener('change',()=>{const a=(S.a[it.id]||new Array(it.rows.length).fill(''));a[i]=s.value;S.a[it.id]=a;paint(it);update()});
+   d.append(q,s);box.append(d);
+  });
+ }
+ if(it.type==='text'){
+  $('t'+it.id).addEventListener('input',e=>{S.a[it.id]=e.target.value;update()});
+ }
+ if(it.type==='click'){
+  const hit=$('hit'+it.img);
+  hit.addEventListener('click',e=>{const r=$('img'+it.img).getBoundingClientRect();S.a[it.id]={x:+((e.clientX-r.left)/r.width).toFixed(4),y:+((e.clientY-r.top)/r.height).toFixed(4)};paint(it);update()});
+ }
+}
+function drawOrder(it){
+ const box=$('o'+it.id);box.innerHTML='';const cur=S.a[it.id];
+ const ok=JSON.stringify(cur)===JSON.stringify(it.items.map((_,i)=>i));
+ cur.forEach((idx,pos)=>{
+  const d=document.createElement('div');d.className='ord'+(ok?' good':'');
+  d.innerHTML='<span class="n">'+(pos+1)+'</span><span class="t">'+esc(it.items[idx])+'</span>';
+  const up=document.createElement('button');up.type='button';up.textContent='▲';up.disabled=pos===0||TEACHER;
+  const dn=document.createElement('button');dn.type='button';dn.textContent='▼';dn.disabled=pos===cur.length-1||TEACHER;
+  up.onclick=()=>{[cur[pos-1],cur[pos]]=[cur[pos],cur[pos-1]];drawOrder(it);update()};
+  dn.onclick=()=>{[cur[pos+1],cur[pos]]=[cur[pos],cur[pos+1]];drawOrder(it);update()};
+  d.append(up,dn);box.append(d);
+ });
+ const fb=$('fb'+it.id);
+ if(ok){fb.className='fb good';fb.textContent='That is the correct order. '+(it.why||'')}
+ else{const c=cur.filter((v,p)=>v===p).length;fb.className='fb';fb.textContent=c+' of '+cur.length+' cards are in the right spot. Use the arrows to keep sorting.'}
+}
+function paint(it){
+ const a=A(it);
+ if(it.type==='one'||it.type==='multi'){
+  const box=$('o'+it.id),sel=a||[];
+  [...box.children].forEach((l,i)=>{l.querySelector('input').checked=sel.includes(i);l.className='opt'+(sel.includes(i)?' sel':'')});
+  const fb=$('fb'+it.id);if(!sel.length){fb.textContent='';fb.className='fb';return}
+  const ok=JSON.stringify([...sel].sort())===JSON.stringify(it.ans);
+  if(it.type==='one'){[...box.children].forEach((l,i)=>{if(sel.includes(i))l.className='opt '+(ok?'good':'bad')});fb.className='fb '+(ok?'good':'bad');fb.textContent=ok?'Correct. '+it.why:'Not quite. Look back at the source and try again.'}
+  else{fb.className='fb '+(ok?'good':'');fb.textContent=ok?'Correct. '+it.why:'Keep going: check each choice against the source and what you know.'}
+ }
+ if(it.type==='scale'){[...$('o'+it.id).children].forEach((l,i)=>{l.querySelector('input').checked=a===i+1;l.className=a===i+1?'sel':''})}
+ if(it.type==='match'){
+  it.rows.forEach((r,i)=>{
+   const d=$('mr'+it.id+'_'+i),v=(a||[])[i]||'';d.querySelector('select').value=v;
+   d.className='mrow'+(v?(v===r.ans?' good':' bad'):'');
+  });
+ }
+ if(it.type==='click'){
+  const hit=$('hit'+it.img);hit.querySelectorAll('.pin').forEach(p=>p.remove());const fb=$('fb'+it.id);
+  if(!a){fb.textContent='';fb.className='fb';return}
+  const R=it.region,ok=a.x>=R[0]&&a.x<=R[1]&&a.y>=R[2]&&a.y<=R[3];
+  const p=document.createElement('div');p.className='pin'+(ok?' good':'');p.style.left=(a.x*100)+'%';p.style.top=(a.y*100)+'%';hit.append(p);
+  fb.className='fb '+(ok?'good':'bad');fb.textContent=ok?it.yes:it.no;
+ }
+ if(it.type==='text'){const t=$('t'+it.id);t.value=a||'';$('w'+it.id).textContent=words(a)<MINW?'Keep writing...':''}
+}
+function done(it){
+ const a=A(it);
+ if(it.type==='click')return !!a;
+ if(it.type==='one'||it.type==='multi')return !!(a&&a.length);
+ if(it.type==='scale')return !!a;
+ if(it.type==='order')return JSON.stringify(a)===JSON.stringify(it.items.map((_,i)=>i));
+ if(it.type==='match')return !!a&&a.length===it.rows.length&&a.every(x=>x);
+ if(it.type==='text')return words(a)>=MINW;
+}
+function missing(){
+ const m=[];if(!S.first.trim())m.push('first name');if(!S.last.trim())m.push('last name');if(!S.period)m.push('period');
+ ITEMS.forEach((it,i)=>{if(!done(it))m.push('item '+(i+1))});return m;
+}
+function update(){
+ ITEMS.filter(it=>it.type==='text').forEach(it=>{$('w'+it.id).textContent=words(A(it))<MINW?'Keep writing...':''});
+ if(TEACHER)return;
+ const m=missing();$('prog').textContent=m.length?('Still needed: '+m.join(', ')):'Everything is complete. Press Finished to download your file.';$('fin').disabled=m.length>0;
+}
+function fname(){const c=s=>s.trim().replace(/[^A-Za-z0-9]+/g,'_').replace(/^_|_$/g,'');return (c(S.last)||'Last')+'_'+(c(S.first)||'First')+'-'+CFG.slug}
+function download(obj,name){const b=new Blob([JSON.stringify(obj,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name+'.json';document.body.append(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
+function payload(f){return {assignment:'Warm Up '+CFG.id+' - '+CFG.title,lesson:12,finished:f,savedAt:new Date().toISOString(),student:{first:S.first,last:S.last,period:S.period,date:S.date},answers:S.a}}
+function applyAll(){
+ $('first').value=S.first;$('last').value=S.last;$('period').value=S.period;$('date').value=S.date;
+ ITEMS.forEach(it=>{if(it.type==='order')drawOrder(it);else paint(it)});update();
+}
+$('first').addEventListener('input',e=>{S.first=e.target.value;update()});
+$('last').addEventListener('input',e=>{S.last=e.target.value;update()});
+$('period').addEventListener('change',e=>{S.period=e.target.value;update()});
+render();
+if(TEACHER){
+ document.querySelectorAll('#idbox input,#idbox select,textarea').forEach(x=>x.disabled=true);
+ document.querySelectorAll('.hit').forEach(x=>x.style.pointerEvents='none');
+ ITEMS.forEach(it=>{
+  if(it.type==='one'||it.type==='multi')S.a[it.id]=it.ans.slice();
+  if(it.type==='match')S.a[it.id]=it.rows.map(r=>r.ans);
+  if(it.type==='order')S.a[it.id]=it.items.map((_,i)=>i);
+  if(it.type==='click')S.a[it.id]={x:(it.region[0]+it.region[1])/2,y:(it.region[2]+it.region[3])/2};
+  if(it.type==='text')S.a[it.id]='(see key below)';
+ });
+ applyAll();
+}else{
+ $('save').onclick=()=>download(payload(false),fname()+'-PROGRESS');
+ $('fin').onclick=()=>{if(missing().length)return;S.date=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});$('date').value=S.date;download(payload(true),fname())};
+ $('load').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const j=JSON.parse(r.result);S={first:j.student.first||'',last:j.student.last||'',period:j.student.period||'',date:j.student.date||'',a:j.answers||{}};ITEMS.forEach(it=>{if(it.type==='order'&&!S.a[it.id])S.a[it.id]=it.start.slice()});applyAll()}catch(err){alert('That file could not be read. Choose a progress file saved from this warm-up.')}};r.readAsText(f);e.target.value=''});
+ update();
+}
+</script></body></html>
