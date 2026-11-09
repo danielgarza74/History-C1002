@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Progress for Whom? · Thinking Like a Historian 12</title><style>
+:root{--p:#284B63;--bg:#F4F1EA;--a:#3C6E71;--g:#C06C3B;--hi:#E5B08E;--s:#A35C33;--v:#2E6B3E;--t:#0F1C26;--card:#fff;--line:#D7DAD7;--mut:#5F676B}
+@media (prefers-color-scheme: dark){:root{--bg:#0B151C;--card:#12222D;--t:#F4F1EA;--line:#426176;--mut:#B7BFC1}.lab{color:var(--hi)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--t);font:17px/1.6 Georgia,'Times New Roman',serif}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px 40px}
+.hero{background:#284B63;color:#F4F1EA;padding:30px 16px 24px;border-bottom:6px solid #C06C3B}
+.hero .in{max-width:860px;margin:0 auto}
+.eyebrow{font:700 13px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.18em;color:#E5B08E}
+.hero h1{margin:.35em 0 .2em;font-size:clamp(28px,5vw,40px);line-height:1.15}
+.hero .sub{font-style:italic;color:#E5B08E}
+.flag{display:inline-block;margin-top:12px;background:#3C6E71;color:#fff;font:700 13px Arial,sans-serif;letter-spacing:.08em;padding:6px 10px;border-radius:4px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:18px 0}
+.cq{border-left:6px solid var(--a)}
+.lab{font:700 13px Arial,Helvetica,sans-serif;letter-spacing:.12em;color:var(--a);text-transform:uppercase}
+h2{font-size:24px;margin:28px 0 6px;color:var(--p)}
+@media (prefers-color-scheme: dark){h2{color:var(--hi)}.lab{color:var(--hi)}.help{color:var(--t)}}
+h3{margin:.2em 0 .4em}
+.article p{margin:.7em 0}
+.article h3{font-size:21px}
+label{font:600 14px Arial,Helvetica,sans-serif;display:block;margin:12px 0 4px}
+input[type=text],textarea,select{width:100%;font:16px/1.5 Arial,Helvetica,sans-serif;padding:9px 10px;border:1.5px solid var(--line);border-radius:7px;background:#fffdf9;color:#222}
+textarea{min-height:80px;resize:vertical}
+.bad{border-color:#B03A2E!important;background:#fdeceb!important}
+.names{display:grid;grid-template-columns:1fr 1fr 110px 150px;gap:10px}
+@media(max-width:620px){.names{grid-template-columns:1fr 1fr}}
+.meter{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line)}
+.bar{height:10px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--a);transition:width .3s}
+.mtext{font:600 14px Arial,sans-serif;margin-bottom:6px}
+.case{background:var(--card);border:1px solid var(--line);border-left:8px solid var(--line);border-radius:10px;padding:16px 18px;margin:22px 0}
+.case.done{border-left-color:var(--p)} .case.isS{border-left-color:var(--s)} .case.isV{border-left-color:var(--v)}
+.chip{display:inline-block;background:var(--p);color:#fff;font:700 13px Arial,sans-serif;padding:3px 10px;border-radius:20px;margin-right:8px}
+.cnum{font:700 13px Arial,sans-serif;letter-spacing:.1em;color:var(--mut);text-transform:uppercase}
+.who{font:600 15px Arial,sans-serif;margin:.6em 0 .2em}
+.intro{margin:.3em 0}
+blockquote{margin:12px 0;padding:12px 16px;background:#F4F1EA;color:#0F1C26;border-left:5px solid var(--g);font-style:italic;border-radius:0 8px 8px 0}
+.cite{font:13px/1.45 Arial,sans-serif;color:var(--mut)}
+.help{font:14px/1.5 Arial,sans-serif;color:var(--t);background:rgba(229,176,142,.25);padding:8px 10px;border-radius:6px;margin:8px 0}
+.ask{font:700 15px Arial,sans-serif;margin:14px 0 6px}
+.stances{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+@media(max-width:620px){.stances{grid-template-columns:1fr}}
+.st{font:700 15px Arial,sans-serif;padding:10px;border-radius:8px;border:2px solid var(--p);background:#fff;color:var(--p);cursor:pointer;text-align:left}
+.st small{display:block;font-weight:400;font-size:12.5px;color:#444;margin-top:3px}
+.st[data-v=S]{border-color:var(--s);color:var(--s)} .st[data-v=V]{border-color:var(--v);color:var(--v)}
+.st[aria-pressed=true]{background:var(--p);color:#fff} .st[data-v=S][aria-pressed=true]{background:var(--s)} .st[data-v=V][aria-pressed=true]{background:var(--v)}
+.st[aria-pressed=true] small{color:#fff}
+.how ol{margin:.4em 0;padding-left:1.3em}
+.checks label{font-weight:400;display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.checks input{flex:none;width:20px;height:20px;margin-top:2px}
+.wc{font:600 14px Arial,sans-serif;color:var(--mut);margin-top:4px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 8px}
+button.b{font:700 15px Arial,sans-serif;padding:12px 16px;border-radius:8px;border:0;cursor:pointer;background:var(--p);color:#fff}
+button.b.alt{background:#fff;color:var(--p);border:2px solid var(--p)}
+button.b.fin{background:var(--a)}
+button.b:disabled{background:#6f6f6f;color:#fff;cursor:not-allowed}
+#status{font:600 15px Arial,sans-serif;margin:8px 0} #status.err{color:#b03a2e} #status.ok{color:var(--v)}
+#todo{font:14px Arial,sans-serif;color:var(--mut)}
+.key{color:#0F1C26;background:rgba(229,176,142,.3);border:1px solid var(--g);border-radius:8px;padding:10px 12px;margin-top:10px;font:15px/1.5 Arial,sans-serif}
+.badge{display:inline-block;font:700 13px Arial,sans-serif;color:#fff;padding:3px 9px;border-radius:5px;margin-right:6px}
+footer{margin-top:36px;padding:16px;background:#284B63;color:#E5B08E;font:700 12.5px Arial,sans-serif;letter-spacing:.08em;text-align:center}
+
+.grp{margin:34px 0 4px;padding:12px 16px;background:var(--p);color:#fff;border-radius:10px}
+.grp .gl{font:700 12px Arial,sans-serif;letter-spacing:.14em;color:var(--hi)}
+.grp h2{color:#fff;margin:4px 0 0;font-size:21px}
+.dq ul{margin:.4em 0;padding-left:1.2em}
+.dq li{margin:.35em 0;font:15px/1.5 Arial,sans-serif}
+.rd h3{margin-top:0}
+.essaysamp p{margin:.7em 0}
+</style></head><body>
+<header class="hero"><div class="in">
+<div class="eyebrow">THINKING LIKE A HISTORIAN 12 · 1889–1916</div>
+<h1>Progress for Whom?</h1>
+<div class="sub">Progressivism and the Search for a Modern State · Thinking Like a Historian</div>
+</div></header>
+<main class="wrap">
+<div class="box cq"><div class="lab">Central Question:</div><p style="margin:.3em 0;font-size:19px"><b>Did white progressives mostly ignore or harm Black Americans in the name of reform, or did Black progressives build their own reform movement that kept the fight for justice alive?</b></p><p style="margin:.3em 0">Your job: read the background, crack 4 case files (the documents historians use as evidence), then close the case with a one-page essay.</p></div>
+<div class="box how"><div class="lab">How to play</div><ol><li><b>Part 1:</b> Read the Background Reading and answer the one-sentence check.</li><li><b>Part 2:</b> For each case file, read the excerpt, then tap which historian’s argument it helps most. The three buttons change with each debate, so read them. Each has a symbol (★, ◆, ●) as well as a label.</li><li>Type who made the source, when, and the key fact (use the Background Reading). Then copy the clue words that prove your choice and finish the sentence “This source helps…”.</li><li><b>Part 3:</b> Answer the central question. Write your one-page essay and check the four boxes.</li><li>Use <b>Save Progress</b> any time. When everything is done, <b>Finished</b> turns on.</li></ol></div>
+<div class="box"><div class="names">
+<div><label for="first">First name</label><input type="text" id="first" data-id="first" autocomplete="given-name"></div>
+<div><label for="last">Last name</label><input type="text" id="last" data-id="last" autocomplete="family-name"></div>
+<div><label for="period">Period</label><input type="text" id="period" data-id="period"></div>
+<div><label for="date">Date</label><input type="text" id="date" readonly placeholder="fills in at Finished"></div>
+</div></div>
+<h2>Part 1 · Background Reading</h2>
+<div class="box rd"><div class="article"><h3>A Movement for Everyone, or for Some?</h3><p>Between about 1890 and 1920, reformers across the United States set out to repair the problems that factories, big cities, and giant corporations had created. Historians call them progressives because they had an unusual faith in progress, the belief that American life could keep getting better. They trusted facts and expert knowledge: investigators gathered data, and reformers used it to argue for new laws. They worked wherever they could, in city halls, state legislatures, and finally Washington, trying to bring order, stability, and what they called social justice to a society that seemed to be spinning out of control.</p><p>Historians have never agreed on who the progressives really were. Richard Hofstadter described them as old elites whose status was shaken by industrial change. Others pictured corporate leaders using regulation to push out competitors, or a movement of workers against special interests, or a movement shaped by women reformers. In 1970 Peter Filene went so far as to declare the idea of one progressive movement “dead,” since the reformers and their causes were too varied. Michael McGerr offered a sharper answer: progressives were mostly white, middle-class people who wanted to remake society in their own image by ending class conflict and regulating big business.</p><p>That last point leads to the question of this assignment. In 1954 Rayford Logan called the years after Reconstruction the nadir of American race relations, and the Progressive Era fell right inside that low point. Segregation spread, Black voters were pushed out of politics, and mobs lynched Black Americans with little fear of punishment. McGerr and David Southern argued that most white progressives either ignored these injustices or even supported segregation as a reform, and a few, such as Jane Addams and Lillian Wald, who spoke out against racial prejudice, were the exceptions. Another group of scholars looks at the same years from a different angle. Paula Giddings, Glenda Gilmore, and Kevin Gaines emphasize that Black leaders such as Ida B. Wells, Mary Church Terrell, Booker T. Washington, and W. E. B. Du Bois fought discrimination in work, schooling, law, and politics. Gilmore stressed that when white reformers shut Black Americans out, Black women built their own progressive projects in education, public health, and community improvement, working through churches, clubs, schools, and the Black press.</p><p>Four voices will let you test these arguments. In 1905 W. E. B. Du Bois and about thirty other Black leaders met near Niagara Falls and founded the Niagara Movement, which later grew into the National Association for the Advancement of Colored People (NAACP). At a 1906 meeting at Harpers Ferry, West Virginia, the site of John Brown’s raid, Du Bois spoke for it. In 1909 Ida B. Wells, who had made her name by investigating lynching, addressed the National Negro Conference in New York, the meeting that led to the NAACP’s founding. In 1912 Theodore Roosevelt, a former president who was challenging President William Howard Taft for the Republican nomination, explained what a progressive should stand for. Woodrow Wilson then won the White House in 1912 on a progressive program, backed by some Black leaders who trusted his promise of fair treatment. Yet segregation spread in federal offices under his administration, and in November 1914 William Monroe Trotter, a Black newspaper editor in Boston, led a delegation to the White House to protest it. Ask of each source: whose argument does this evidence help most?</p></div>
+<label for="rdg">In one sentence, explain how McGerr and Southern differ from Giddings, Gilmore, and Gaines about progressives and Black Americans.</label>
+<textarea id="rdg" data-id="rdg" rows="2"></textarea></div>
+
+<h2>Part 2 · The Case Files</h2>
+<div class="meter"><div class="mtext" id="mtext">0 of 4 case files cracked</div><div class="bar"><i id="mbar"></i></div></div>
+<div class="grp"><div class="gl">DEBATE 1 · CASE FILES 1–4</div><h2>Progressivism and Racism: How Progressive Was It?</h2></div>
+<div class="box dq"><div class="lab">The debate:</div><p style="margin:.3em 0"><b>Did white progressives mostly ignore or harm Black Americans in the name of reform, or did Black progressives build their own reform movement that kept the fight for justice alive?</b></p><ul><li><b>★ WHITE REFORMERS FELL SHORT</b>: Michael McGerr and David Southern saw white progressives as uninterested in racial justice and often hostile to it; Rayford Logan (1954) called the era the “nadir,” or lowest point, of American race relations.</li><li><b>◆ BLACK PROGRESSIVES LED</b>: Paula Giddings, Glenda Gilmore, and Kevin Gaines showed that, despite white hostility, many Black progressives tackled discrimination and built their own reform networks.</li><li><b>● BOTH / MIXED</b>: A source that fits both arguments: it speaks of progressive ideals and also shows the racial blind spot, or it helps both groups of historians.</li></ul></div>
+<section class="case" id="case1" data-i="1"><div><span class="chip">1906</span><span class="cnum">Case file 1 of 4</span></div>
+<div class="who">Who: W. E. B. Du Bois, scholar and leader of the Niagara Movement<br>From: Speech, “Address to the Country,” Harpers Ferry, West Virginia</div>
+<p class="intro">A Black leader tells the nation what his organization demands, on the ground made famous by John Brown.</p>
+<blockquote>We claim for ourselves every single right that belongs to a freeborn American, political, civil, and social; and until we get these rights we will never cease to protest and assail the ears of America. The battle we wage is not for ourselves alone but for all true Americans.&nbsp;.&nbsp;.&nbsp;. We want full manhood suffrage, and we want it now, henceforth, and forever. Second. We want discrimination in public accommodation to cease. Separation in railway and street cars, based simply on race and color, is un-American, un-democratic, and silly.</blockquote>
+<div class="cite">W. E. B. Du Bois, “Address to the Country,” speech at Harpers Ferry, West Virginia, August 19, 1906, <i>The Broad Ax</i> (Chicago), August 25, 1906, p. 1, via Teaching American History, Ashbrook Center. Norton’s credit is <i>The New York Times</i>, August 20, 1906; its text reads “henceforth and forever,” without the second comma. The Broad Ax wording is used here.</div>
+<div class="help"><b>Word help:</b> freeborn = born free, not enslaved · suffrage = the right to vote · manhood suffrage = voting rights for men (Du Bois’s phrase in 1906) · public accommodation = places open to the public, such as trains and hotels · un-democratic = against democracy</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 1"><button type="button" class="st" data-v="N" aria-pressed="false">★ WHITE REFORMERS FELL SHORT<small>white progressives ignored, or even backed, racial injustice</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ BLACK PROGRESSIVES LED<small>Black reformers made their own fight for rights and reform</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows progressive ideals and the racial blind spot together</small></button></div>
+<label for="ctx1">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx1" data-id="ctx1" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note1">Clue words</label>
+<textarea id="note1" data-id="note1" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case2" data-i="2"><div><span class="chip">1909</span><span class="cnum">Case file 2 of 4</span></div>
+<div class="who">Who: Ida B. Wells, anti-lynching journalist and civil rights activist<br>From: Speech, “Lynching, Our National Crime,” National Negro Conference, New York</div>
+<p class="intro">A journalist who has studied lynching for years gives a conference her findings and her remedy.</p>
+<blockquote>The lynching record for a quarter of a century merits the thoughtful study of the American people. It presents three salient facts: First: Lynching is color line murder. Second: Crimes against women is the excuse, not the cause. Third: It is a national crime and requires a national remedy.&nbsp;.&nbsp;.&nbsp;. The only certain remedy is an appeal to law. Lawbreakers must be made to know that human life is sacred and that every citizen of this country is first a citizen of the United States and secondly a citizen of the state in which he belongs.</blockquote>
+<div class="cite">Ida B. Wells-Barnett, “Lynching, Our National Crime,” in <i>Proceedings of the National Negro Conference 1909</i> (New York, May 31 and June 1, 1909), pp. 174–177, Internet Archive full text. Norton’s printing continues a few words past this point, so this excerpt stops one sentence earlier.</div>
+<div class="help"><b>Word help:</b> salient = most important · color line = the dividing line between Black and white Americans · remedy = a cure or fix · federal = of the national government · lawlessness = ignoring the law</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 2"><button type="button" class="st" data-v="N" aria-pressed="false">★ WHITE REFORMERS FELL SHORT<small>white progressives ignored, or even backed, racial injustice</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ BLACK PROGRESSIVES LED<small>Black reformers made their own fight for rights and reform</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows progressive ideals and the racial blind spot together</small></button></div>
+<label for="ctx2">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx2" data-id="ctx2" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note2">Clue words</label>
+<textarea id="note2" data-id="note2" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case3" data-i="3"><div><span class="chip">1912</span><span class="cnum">Case file 3 of 4</span></div>
+<div class="who">Who: Theodore Roosevelt, former president and candidate for the Republican nomination<br>From: Speech, “Who Is a Progressive?”</div>
+<p class="intro">A leading progressive explains what it means to stand for “social justice.”</p>
+<blockquote>Every man is to that extent a Progressive if he stands for any form of social justice .&nbsp;.&nbsp;. for securing a proper limitation of hours of labor for women and children in industry, for securing proper living conditions for those who dwell in the thickly crowded regions of our great cities .&nbsp;.&nbsp;.&nbsp;. This country will not be a good place for any of us to live in if it is not a reasonably good place for all of us to live in.&nbsp;.&nbsp;.&nbsp;. Our cause is the cause of justice for all, in the interest of all.</blockquote>
+<div class="cite">Theodore Roosevelt, “Who Is a Progressive?” (1912), in <i>Social Justice and Popular Rule: Essays, Addresses, and Public Statements Relating to the Progressive Movement (1910–1916)</i> (New York: Charles Scribner’s Sons, 1926), text from Teaching American History, Ashbrook Center. A typo in the printed list (“whether it securing”) is skipped with an ellipsis.</div>
+<div class="help"><b>Word help:</b> social justice = fair treatment and fair chances for everyone · hours of labor = how long people must work in a day · thickly crowded regions = packed city neighborhoods</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 3"><button type="button" class="st" data-v="N" aria-pressed="false">★ WHITE REFORMERS FELL SHORT<small>white progressives ignored, or even backed, racial injustice</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ BLACK PROGRESSIVES LED<small>Black reformers made their own fight for rights and reform</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows progressive ideals and the racial blind spot together</small></button></div>
+<label for="ctx3">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx3" data-id="ctx3" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note3">Clue words</label>
+<textarea id="note3" data-id="note3" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case4" data-i="4"><div><span class="chip">1914</span><span class="cnum">Case file 4 of 4</span></div>
+<div class="who">Who: Monroe Trotter, Black newspaper editor, and President Woodrow Wilson<br>From: Conversation at the White House, as printed in <i>The Crisis</i></div>
+<p class="intro">A delegation of Black leaders protests a new policy to the president who promised them fair treatment.</p>
+<blockquote>Mr. Monroe Trotter. Mr. President, we are here to renew our protest against the segregation of colored employes in the departments of our National Government.&nbsp;.&nbsp;.&nbsp;. President Woodrow Wilson. The white people of the country, the President continued, as well as I, wish to see the colored people progress, and admire the progress they have already made, and want to see them continue along independent lines. There is, however, a great prejudice against colored people.&nbsp;.&nbsp;.&nbsp;. Segregation is not humiliating, but a benefit, and ought to be so regarded by you gentlemen.</blockquote>
+<div class="cite">Exchange between Woodrow Wilson and Monroe Trotter, November 1914, “Opinion,” <i>The Crisis</i>, January 1915, pp. 119–120, as printed in the Norton exercise. Spelling and “colored” are the source’s.</div>
+<div class="help"><b>Word help:</b> segregation = forced separation of people by race · colored = a term for Black Americans used at the time · prejudice = an unfair opinion held without good reason · independent lines = separate, not shared</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 4"><button type="button" class="st" data-v="N" aria-pressed="false">★ WHITE REFORMERS FELL SHORT<small>white progressives ignored, or even backed, racial injustice</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ BLACK PROGRESSIVES LED<small>Black reformers made their own fight for rights and reform</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows progressive ideals and the racial blind spot together</small></button></div>
+<label for="ctx4">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx4" data-id="ctx4" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note4">Clue words</label>
+<textarea id="note4" data-id="note4" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+
+<h2>Part 3 · Case Closed</h2>
+<div class="box cq"><div class="lab">Central Question:</div><p style="margin:.3em 0"><b>Did white progressives mostly ignore or harm Black Americans in the name of reform, or did Black progressives build their own reform movement that kept the fight for justice alive?</b></p></div>
+<div class="box"><p><b>Your essay question:</b> Did white progressives mostly ignore or harm Black Americans in the name of reform, or did Black progressives build their own reform movement that kept the fight for justice alive? Take a position and defend it with the case files.</p>
+<p>Write about one page (about 250 to 350 words; at least 150 words to finish). Use this order:</p>
+<ol><li><b>Claim:</b> your answer to the question in one or two sentences.</li>
+<li><b>Evidence 1:</b> a quote from one case file, with what it shows and one context fact.</li>
+<li><b>Evidence 2:</b> a quote from a <i>different</i> case file, explained the same way.</li>
+<li><b>Counter-Argument:</b> name a case file (or a historian) someone on the other side would use, explain their point, then answer it.</li>
+<li><b>Conclusion:</b> what your answer shows about how “progressive” the progressive movement really was.</li></ol>
+<label for="essay">Your essay</label>
+<textarea id="essay" data-id="essay" rows="18" style="min-height:360px"></textarea>
+<div class="wc" id="wc">0 words</div>
+<div class="checks" style="margin-top:12px">
+<label><input type="checkbox" id="chk1" data-id="chk1"> My essay opens with a clear claim.</label>
+<label><input type="checkbox" id="chk2" data-id="chk2"> I used evidence from at least two different case files.</label>
+<label><input type="checkbox" id="chk3" data-id="chk3"> I stated a Counter-Argument and answered it.</label>
+<label><input type="checkbox" id="chk4" data-id="chk4"> My conclusion explains what the evidence shows about how “progressive” the progressive movement really was.</label>
+</div></div>
+<div class="btns">
+<button type="button" class="b" id="save">Save Progress</button>
+<button type="button" class="b alt" id="loadBtn">Load Progress</button>
+<input type="file" id="loadFile" accept=".json,application/json" hidden>
+<button type="button" class="b fin" id="finish" disabled>Finished — Download File to Submit</button>
+</div>
+<div id="status" role="status" aria-live="polite"></div>
+<div id="todo"></div>
+</main>
+<footer>UNIT 5 · MODERN AMERICA | HIST C1002 | DANIEL GARZA, M.A.</footer>
+<script>
+(function(){
+var PACKET="L12_Thinking_Like_a_Historian", STORE="c1002_l12_thinking_like_a_historian", COURSE="HIST C1002", NC=4, GROUPS=[[1, 2, 3, 4]], MULTI=false, RDG=["rdg"];
+var $=function(id){return document.getElementById(id)};
+var sides={};
+function fields(){return Array.prototype.slice.call(document.querySelectorAll('[data-id]'))}
+function words(t){t=(t||'').trim();return t?t.split(/\s+/).length:0}
+function val(id){var e=$(id);return e?(e.value||'').trim():''}
+function cracked(i){return !!sides[i]&&val('note'+i)&&val('ctx'+i)}
+function missing(){
+  var m=[];
+  if(!val('first')||!val('last')||!val('period'))m.push('first name, last name, and period');
+  var r=[];RDG.forEach(function(id,k){if(!val(id))r.push(k+1)});
+  if(r.length)m.push('Background Reading check'+(RDG.length>1?(r.length>1?'s ':' ')+r.join(', '):''));
+  var c=[];for(var i=1;i<=NC;i++){if(!cracked(i))c.push(i)}
+  if(c.length)m.push('case file'+(c.length>1?'s ':' ')+c.join(', ')+' (stance, context, and clue words)');
+  if(MULTI&&!val('debate'))m.push('the debate you will write about');
+  if(words(val('essay'))<150)m.push('essay (at least 150 words)');
+  var k=[];for(var j=1;j<=4;j++){if(!$('chk'+j).checked)k.push(j)}
+  if(k.length)m.push('checklist box'+(k.length>1?'es ':' ')+k.join(', '));
+  return m;
+}
+function render(){
+  var n=0;
+  for(var i=1;i<=NC;i++){
+    var card=$('case'+i);var ok=cracked(i);if(ok)n++;
+    card.classList.toggle('done',!!sides[i]);card.classList.toggle('isS',sides[i]==='S');card.classList.toggle('isV',sides[i]==='V');
+    card.querySelectorAll('.st').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.v===sides[i]?'true':'false')});
+  }
+  $('mtext').textContent=n+' of '+NC+' case files cracked';$('mbar').style.width=(n*100/NC)+'%';
+  var w=words(val('essay'));$('wc').textContent=w+' word'+(w===1?'':'s')+(w<150?' (150 needed to finish)':'');
+  var m=missing();$('finish').disabled=m.length>0;
+  $('todo').textContent=m.length?('Still to do: '+m.join('; ')):'Everything is done. Click Finished to download your file.';
+}
+function tallyOf(list){var t={national:0,state:0,voice:0};list.forEach(function(i){if(sides[i]==='N')t.national++;if(sides[i]==='S')t.state++;if(sides[i]==='V')t.voice++});return t}
+function collect(done){
+  var a={},ch={};
+  fields().forEach(function(e){var id=e.dataset.id;if(e.type==='checkbox')ch[id]=e.checked;else if(['first','last','period'].indexOf(id)<0)a[id]=e.value});
+  var all=[];for(var i=1;i<=NC;i++)all.push(i);
+  var byDebate={};GROUPS.forEach(function(g,k){byDebate['debate'+(k+1)]=tallyOf(g)});
+  return {packet:PACKET,course:COURSE,version:1,saved:new Date().toISOString(),completed:!!done,
+    student:{first:val('first'),last:val('last'),period:val('period'),date:$('date').value||''},
+    sides:JSON.parse(JSON.stringify(sides)),answers:a,checks:ch,tally:tallyOf(all),tallyByDebate:byDebate};
+}
+function apply(d){
+  sides={};Object.keys(d.sides||{}).forEach(function(k){sides[k]=d.sides[k]});
+  var s=d.student||{};$('first').value=s.first||'';$('last').value=s.last||'';$('period').value=s.period||'';$('date').value=s.date||'';
+  var a=d.answers||{},ch=d.checks||{};
+  fields().forEach(function(e){var id=e.dataset.id;if(e.type==='checkbox')e.checked=!!ch[id];else if(id in a)e.value=a[id]});
+  render();
+}
+function persist(){try{localStorage.setItem(STORE,JSON.stringify(collect(false)))}catch(e){}}
+function fname(){return (val('last')+'_'+val('first')).normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^A-Za-z0-9_\-]+/g,'_')}
+function download(name,obj){
+  var blob=new Blob([JSON.stringify(obj,null,2)],{type:'application/json'});var u=URL.createObjectURL(blob);
+  var a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();
+  setTimeout(function(){URL.revokeObjectURL(u);a.remove()},1500);
+}
+function msg(t,cls){var s=$('status');s.textContent=t;s.className=cls||''}
+function needNames(){
+  var bad=false;['first','last','period'].forEach(function(id){var e=$(id);var b=!e.value.trim();e.classList.toggle('bad',b);if(b)bad=true});
+  return bad;
+}
+document.querySelectorAll('.case').forEach(function(card){
+  var i=card.dataset.i;
+  card.querySelectorAll('.st').forEach(function(b){b.addEventListener('click',function(){sides[i]=b.dataset.v;render();persist()})});
+});
+fields().forEach(function(e){e.addEventListener((e.type==='checkbox'||e.tagName==='SELECT')?'change':'input',function(){if(e.classList.contains('bad')&&e.value.trim())e.classList.remove('bad');render();persist()})});
+$('save').addEventListener('click',function(){
+  if(needNames()){msg('Type your first name, last name, and period before you save.','err');return}
+  var f=fname()+'-'+PACKET+'-PROGRESS.json';download(f,collect(false));
+  msg('Saved '+f+'. Keep that file. Use Load Progress later. Do not upload it to Canvas until you are finished.','ok');
+});
+$('loadBtn').addEventListener('click',function(){$('loadFile').value='';$('loadFile').click()});
+$('loadFile').addEventListener('change',function(){
+  var f=this.files&&this.files[0];if(!f)return;var r=new FileReader();
+  r.onload=function(){try{var d=JSON.parse(r.result);if(!d||d.packet!==PACKET)throw 0;apply(d);persist();msg('Progress loaded. Pick up where you left off.','ok')}
+    catch(e){msg('That file is not a saved file from this assignment. Choose the file that ends in -'+PACKET+'-PROGRESS.json.','err')}};
+  r.readAsText(f);
+});
+$('finish').addEventListener('click',function(){
+  if(missing().length){msg('Not finished yet. Read the line below to see what is missing.','err');render();return}
+  var d=new Date();$('date').value=(d.getMonth()+1)+'/'+d.getDate()+'/'+d.getFullYear();
+  var f=fname()+'-'+PACKET+'.json';download(f,collect(true));persist();
+  msg('Finished! Your file '+f+' downloaded. Upload that file to Canvas.','ok');
+});
+try{var raw=localStorage.getItem(STORE);if(raw){var d=JSON.parse(raw);if(d&&d.packet===PACKET)apply(d)}}catch(e){}
+render();
+})();
+</script></body></html>

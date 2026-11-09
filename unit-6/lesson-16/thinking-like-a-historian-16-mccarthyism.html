@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Security or Politics? · Thinking Like a Historian 16</title><style>
+
+
+:root{--p:#0E3E5C;--bg:#EAF4FA;--a:#17608C;--g:#E0942F;--hi:#F0BE7A;--s:#94621F;--v:#2E6B3E;--t:#061C29;--card:#fff;--line:#D1DFE8;--mut:#0B324A}
+@media (prefers-color-scheme: dark){:root{--bg:#061925;--card:#082537;--t:#EAF4FA;--line:#176698;--mut:#B0B7BC;--hi:#604C31}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--t);font:17px/1.6 Georgia,'Times New Roman',serif}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px 40px}
+.hero{background:#0E3E5C;color:#EAF4FA;padding:30px 16px 24px;border-bottom:6px solid #E0942F}
+.hero .in{max-width:860px;margin:0 auto}
+.eyebrow{font:700 13px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.18em;color:#F0BE7A}
+.hero h1{margin:.35em 0 .2em;font-size:clamp(28px,5vw,40px);line-height:1.15}
+.hero .sub{font-style:italic;color:#F0BE7A}
+.flag{display:inline-block;margin-top:12px;background:#17608C;color:#fff;font:700 13px Arial,sans-serif;letter-spacing:.08em;padding:6px 10px;border-radius:4px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:18px 0}
+.cq{border-left:6px solid var(--a)}
+.lab{font:700 13px Arial,Helvetica,sans-serif;letter-spacing:.12em;color:var(--a);text-transform:uppercase}
+h2{font-size:24px;margin:28px 0 6px;color:var(--p)}
+@media (prefers-color-scheme: dark){h2,.lab{color:#F0BE7A}}
+h3{margin:.2em 0 .4em}
+.article p{margin:.7em 0}
+.article h3{font-size:21px}
+label{font:600 14px Arial,Helvetica,sans-serif;display:block;margin:12px 0 4px}
+input[type=text],textarea,select{width:100%;font:16px/1.5 Arial,Helvetica,sans-serif;padding:9px 10px;border:1.5px solid var(--line);border-radius:7px;background:#fffdf9;color:#222}
+textarea{min-height:80px;resize:vertical}
+.bad{border-color:#c0392b!important;background:#fdeceb!important}
+.names{display:grid;grid-template-columns:1fr 1fr 110px 150px;gap:10px}
+@media(max-width:620px){.names{grid-template-columns:1fr 1fr}}
+.meter{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line)}
+.bar{height:10px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--a);transition:width .3s}
+.mtext{font:600 14px Arial,sans-serif;margin-bottom:6px}
+.case{background:var(--card);border:1px solid var(--line);border-left:8px solid var(--line);border-radius:10px;padding:16px 18px;margin:22px 0}
+.case.done{border-left-color:var(--p)} .case.isS{border-left-color:var(--s)} .case.isV{border-left-color:var(--v)}
+.chip{display:inline-block;background:var(--p);color:#fff;font:700 13px Arial,sans-serif;padding:3px 10px;border-radius:20px;margin-right:8px}
+.cnum{font:700 13px Arial,sans-serif;letter-spacing:.1em;color:var(--mut);text-transform:uppercase}
+.who{font:600 15px Arial,sans-serif;margin:.6em 0 .2em}
+.intro{margin:.3em 0}
+blockquote{margin:12px 0;padding:12px 16px;background:#EAF4FA;color:#061C29;border-left:5px solid var(--g);font-style:italic;border-radius:0 8px 8px 0}
+.cite{font:13px/1.45 Arial,sans-serif;color:var(--mut)}
+.help{font:14px/1.5 Arial,sans-serif;background:rgba(240,190,122,.25);padding:8px 10px;border-radius:6px;margin:8px 0}
+.ask{font:700 15px Arial,sans-serif;margin:14px 0 6px}
+.stances{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+@media(max-width:620px){.stances{grid-template-columns:1fr}}
+.st{font:700 15px Arial,sans-serif;padding:10px;border-radius:8px;border:2px solid var(--p);background:#fff;color:var(--p);cursor:pointer;text-align:left}
+.st small{display:block;font-weight:400;font-size:12.5px;color:#444;margin-top:3px}
+.st[data-v=S]{border-color:var(--s);color:var(--s)} .st[data-v=V]{border-color:var(--v);color:var(--v)}
+.st[aria-pressed=true]{background:var(--p);color:#fff} .st[data-v=S][aria-pressed=true]{background:var(--s)} .st[data-v=V][aria-pressed=true]{background:var(--v)}
+.st[aria-pressed=true] small{color:#fff}
+.how ol{margin:.4em 0;padding-left:1.3em}
+.checks label{font-weight:400;display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.checks input{width:20px;height:20px;margin-top:2px}
+.wc{font:600 14px Arial,sans-serif;color:var(--mut);margin-top:4px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 8px}
+button.b{font:700 15px Arial,sans-serif;padding:12px 16px;border-radius:8px;border:0;cursor:pointer;background:var(--p);color:#fff}
+button.b.alt{background:#fff;color:var(--p);border:2px solid var(--p)}
+button.b.fin{background:var(--a)}
+button.b:disabled{background:#6b6b6b;color:#ffffff;cursor:not-allowed}
+#status{font:600 15px Arial,sans-serif;margin:8px 0} #status.err{color:#b03a2e} #status.ok{color:var(--v)}
+#todo{font:14px Arial,sans-serif;color:var(--mut)}
+.key{background:rgba(240,190,122,.3);border:1px solid var(--g);border-radius:8px;padding:10px 12px;margin-top:10px;font:15px/1.5 Arial,sans-serif}
+.badge{display:inline-block;font:700 13px Arial,sans-serif;color:#fff;padding:3px 9px;border-radius:5px;margin-right:6px}
+footer{margin-top:36px;padding:16px;background:#0E3E5C;color:#F0BE7A;font:700 12.5px Arial,sans-serif;letter-spacing:.08em;text-align:center}
+</style></head><body>
+<header class="hero"><div class="in">
+<div class="eyebrow">THINKING LIKE A HISTORIAN 16 · 1944–1953</div>
+<h1>Security or Politics?</h1>
+<div class="sub">The Cold War Order and the Fair Deal · Debating McCarthyism · Crack the Case</div>
+</div></header>
+<main class="wrap">
+<div class="box cq"><div class="lab">Central Question:</div><p style="margin:.3em 0;font-size:19px"><b>Was McCarthyism an exaggerated response to real Soviet threats, or did McCarthy and his supporters use the Cold War to gain political advantage?</b></p>
+<p style="margin:.3em 0">Your job: read the background, examine four primary sources that historians use in this debate, then close the case with a one-page essay.</p></div>
+<div class="box how"><div class="lab">How to play</div><ol>
+<li><b>Part 1:</b> Read the Background Reading and answer the one-sentence check.</li>
+<li><b>Part 2:</b> For each case file, read the excerpt, then tap which historian’s argument it helps most:<ul><li><b>★ SECURITY RESPONSE</b>: Anticommunism was not cut off from real Soviet expansion, the nuclear arms race, and spies who passed secrets, even though McCarthy grossly exaggerated the danger.</li><li><b>◆ POLITICAL ADVANTAGE</b>: McCarthy and his supporters used the Cold War to paint New Deal liberals, labor, civil rights leaders, and Democrats as enemies of freedom.</li><li><b>● BOTH / MIXED</b>: Helps both sides, or does not fit either one cleanly.</li></ul></li>
+<li>Type who made the source, when, and one key fact from the Background Reading, then copy the clue words that prove your choice and finish the sentence “This helps ___ because…”.</li>
+<li><b>Part 3:</b> Write your one-page essay and check the four boxes.</li>
+<li>Use <b>Save Progress</b> any time. When everything is done, <b>Finished</b> turns on.</li></ol></div>
+<div class="box"><div class="names">
+<div><label for="first">First name</label><input type="text" id="first" data-id="first" autocomplete="given-name"></div>
+<div><label for="last">Last name</label><input type="text" id="last" data-id="last" autocomplete="family-name"></div>
+<div><label for="period">Period</label><input type="text" id="period" data-id="period"></div>
+<div><label for="date">Date</label><input type="text" id="date" readonly placeholder="fills in at Finished"></div>
+</div></div>
+<h2>Part 1 · Background Reading</h2>
+<div class="box"><div class="article"><h3>Fear, Proof, and Power in the Early Cold War</h3><p>When World War II ended, the United States and the Soviet Union, allies against Germany, became rivals. Soviet armies stayed in Eastern Europe, and many Americans came to see the Kremlin as a government bent on controlling as much of the world as it could. President Harry Truman answered with a policy of resisting Soviet expansion, and in 1948 and 1949 the United States airlifted supplies into blockaded Berlin. Then, in the fall of 1949, the Soviets tested an atomic bomb and Communists won the civil war in China. Americans asked how their nation could have lost its advantages so quickly, and some began to look for explanations at home.</p><p>Fear of communism inside the country was older than the Cold War, but now it had a government program behind it. In 1947 Truman created a loyalty program to check federal employees. Congressional committees also hunted for disloyalty. In 1948 a former Communist and magazine editor, Whittaker Chambers, accused State Department official Alger Hiss of passing secret documents. Hiss denied it, and in January 1950 a jury convicted him of perjury, not of spying, for lying about that charge. To many conservatives the case proved that traitors had reached high office; to many liberals it showed how thin the evidence could be.</p><p>On February 9, 1950, Senator Joseph McCarthy, a Republican from Wisconsin who was looking for an issue before his 1952 reelection campaign, spoke to a Republican women’s club in Wheeling, West Virginia. He claimed that the State Department was full of Communists and that he held a list of their names. Accounts disagree about the number: it was 205 in some reports and 57 in the text he later placed in the Congressional Record. He never proved that any of them was a Communist working in the government. Two days later he sent Truman a telegram demanding that the president open State Department loyalty files to Congress; Truman had ordered those files closed, fearing a witch hunt. At a news conference at Key West on March 30, the president answered that the Soviets were a real danger and that his administration already ran a loyalty program, but he accused Republicans of hunting for a campaign issue. On June 1, Senator Margaret Chase Smith, a Republican from Maine, rose in the Senate with six other Republicans to criticize both parties for turning fear into a weapon. Their statement became known as the Declaration of Conscience.</p><p>Historians have argued about what to make of all this. John Earl Haynes describes two camps. He calls scholars who stress the reality of Soviet spying and the American Communist Party’s ties to Moscow “Traditionalists,” and he calls scholars who stress that the party posed little real danger, and who point to the innocent people who lost jobs and friends to suspicion, “Revisionists.” After the Soviet Union fell and some of its archives opened, researchers found real ties between some American Communists and Moscow. Even so, the evidence does not support McCarthy’s claims of widespread infiltration, and historians generally agree that he grossly exaggerated the danger. The live question is why the fear took the form it did. Was anticommunism an exaggerated response to real dangers such as Soviet expansion, the arms race, and spies who passed secrets? Or did the Cold War give McCarthy and his supporters a chance to gain political advantage by painting New Deal liberals, labor, civil rights leaders, and a large part of the Democratic Party as enemies of American freedom? As you read each source, ask which argument it helps most, and remember that some sources help both.</p></div>
+<label for="rdg">In one sentence, name one reason Americans feared communism in 1949–1950 and one claim McCarthy made about the State Department.</label>
+<textarea id="rdg" data-id="rdg" rows="2"></textarea></div>
+<h2>Part 2 · The Case Files</h2>
+<div class="meter"><div class="mtext" id="mtext">0 of 4 case files cracked</div><div class="bar"><i id="mbar"></i></div></div>
+<section class="case" id="case1" data-i="1"><div><span class="chip">1950</span><span class="cnum">Case file 1 of 4</span></div>
+<div class="who">Who: Joseph McCarthy, Republican senator from Wisconsin<br>From: Speech at Wheeling, West Virginia, February 9, 1950 (text as placed in the <i>Congressional Record</i>)</div>
+<p class="intro">At a Republican women’s club, a senator says the United States is losing the Cold War because of people inside its own government.</p>
+<blockquote>The reason why we find ourselves in a position of impotency is not because our only powerful potential enemy has sent men to invade our shores, but rather because of the traitorous actions of those who have been treated so well by this Nation.&nbsp;.&nbsp;.&nbsp;. This is glaringly true in the State Department. There the bright young men who are born with silver spoons in their mouths are the ones who have been the worst.&nbsp;.&nbsp;.&nbsp;. I have in my hand 57 cases of individuals who would appear to be either card carrying members or certainly loyal to the Communist Party, but who nevertheless are still helping to shape our foreign policy.</blockquote>
+<div class="cite">Joseph McCarthy, speech at Wheeling, West Virginia, February 9, 1950, text as McCarthy later placed it in the <i>Congressional Record</i>, 81st Cong., 2nd sess., February 20, 1950, pp. 1954–57 (this version says “57 cases”; the copy of the speech given to a Senate committee says “205”), as reproduced at Tennessee State University (faculty.tnstate.edu).</div>
+<div class="help"><b>Word help:</b> impotency = powerlessness · traitorous = betraying one’s country · card carrying = officially enrolled</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 1"><button type="button" class="st" data-v="N" aria-pressed="false">★ SECURITY RESPONSE<small>answered real Soviet dangers, though it was exaggerated</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ POLITICAL ADVANTAGE<small>used fear of communism to attack rivals and win power</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows a real threat and political use together</small></button></div>
+<label for="ctx1">Context: who made this, when, and what was going on? Use facts from the Background Reading.</label>
+<textarea id="ctx1" data-id="ctx1" rows="2" placeholder="Who made it, when, and one key fact from the Background Reading"></textarea>
+<label for="note1">Clue words</label>
+<textarea id="note1" data-id="note1" rows="2" placeholder="“clue words” — This helps ___ because…"></textarea>
+</section>
+<section class="case" id="case2" data-i="2"><div><span class="chip">1950</span><span class="cnum">Case file 2 of 4</span></div>
+<div class="who">Who: Joseph McCarthy, Republican senator from Wisconsin<br>From: Telegram to President Harry S. Truman, February 11, 1950</div>
+<p class="intro">Two days after Wheeling, the senator sends the president a list of demands.</p>
+<blockquote>In a Lincoln Day speech at Wheeling Thursday night I stated that the State Department harbors a nest of communists and communist sympathizers who are helping to shape our foreign policy.&nbsp;.&nbsp;.&nbsp;. That under no circumstances could a congressional committee obtain any information or help from the Executive Department in exposing communists. Failure on your part will label the Democratic Party of being the bed-fellow of inter-national communism. Certainly this label is not deserved by the hundreds of thousands of loyal American Democrats throughout the nation, and by the sizable number of able loyal Democrats in both the Senate and the House.</blockquote>
+<div class="cite">Joseph McCarthy to Harry S. Truman, telegram, Reno, Nevada, February 11, 1950, Harry S. Truman Library, Official Files (OF 3371), National Archives Identifier 310800844. The original is typed in capital letters; capitalization is normalized here, and the original spelling “bed-fellow” and “inter-national” is kept.</div>
+<div class="help"><b>Word help:</b> harbors = shelters · sympathizers = people who support a cause · congressional committee = a group of lawmakers that investigates · label = brand</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 2"><button type="button" class="st" data-v="N" aria-pressed="false">★ SECURITY RESPONSE<small>answered real Soviet dangers, though it was exaggerated</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ POLITICAL ADVANTAGE<small>used fear of communism to attack rivals and win power</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows a real threat and political use together</small></button></div>
+<label for="ctx2">Context: who made this, when, and what was going on? Use facts from the Background Reading.</label>
+<textarea id="ctx2" data-id="ctx2" rows="2" placeholder="Who made it, when, and one key fact from the Background Reading"></textarea>
+<label for="note2">Clue words</label>
+<textarea id="note2" data-id="note2" rows="2" placeholder="“clue words” — This helps ___ because…"></textarea>
+</section>
+<section class="case" id="case3" data-i="3"><div><span class="chip">1950</span><span class="cnum">Case file 3 of 4</span></div>
+<div class="who">Who: President Harry S. Truman<br>From: News conference at Key West, Florida, March 30, 1950</div>
+<p class="intro">A reporter asks the president whether McCarthy is getting anywhere, and Truman gives a long answer.</p>
+<blockquote>I think the greatest asset that the Kremlin has is Senator McCarthy.&nbsp;.&nbsp;.&nbsp;. And it became evident that there was an endeavor on the part of the Kremlin to control the world.&nbsp;.&nbsp;.&nbsp;. And then, for political background, the Republicans have been trying vainly to find an issue on which to make a bid for the control of the Congress for next year.&nbsp;.&nbsp;.&nbsp;. And this fiasco which has been going on in the Senate is the very best asset that the Kremlin could have in the operation of the cold war.</blockquote>
+<div class="cite">Harry S. Truman, “The President’s News Conference at Key West,” March 30, 1950, <i>Public Papers of the Presidents of the United States: Harry S. Truman, 1950</i>, Harry S. Truman Library and Museum.</div>
+<div class="help"><b>Word help:</b> Kremlin = the Soviet government · asset = an advantage · fiasco = a complete failure · vainly = without success</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 3"><button type="button" class="st" data-v="N" aria-pressed="false">★ SECURITY RESPONSE<small>answered real Soviet dangers, though it was exaggerated</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ POLITICAL ADVANTAGE<small>used fear of communism to attack rivals and win power</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows a real threat and political use together</small></button></div>
+<label for="ctx3">Context: who made this, when, and what was going on? Use facts from the Background Reading.</label>
+<textarea id="ctx3" data-id="ctx3" rows="2" placeholder="Who made it, when, and one key fact from the Background Reading"></textarea>
+<label for="note3">Clue words</label>
+<textarea id="note3" data-id="note3" rows="2" placeholder="“clue words” — This helps ___ because…"></textarea>
+</section>
+<section class="case" id="case4" data-i="4"><div><span class="chip">1950</span><span class="cnum">Case file 4 of 4</span></div>
+<div class="who">Who: Margaret Chase Smith, Republican senator from Maine<br>From: “Declaration of Conscience,” Senate floor, June 1, 1950</div>
+<p class="intro">A Republican senator rises to criticize her own colleagues and the other party as well.</p>
+<blockquote>I am not proud of the way in which the Senate has been made a publicity platform for irresponsible sensationalism.&nbsp;.&nbsp;.&nbsp;. The Democratic administration has initially created the confusion by its lack of effective leadership, by its contradictory grave warnings and optimistic assurances, by its complacency to the threat of communism here at home, by its oversensitiveness to rightful criticism, by its petty bitterness against its critics. Certain elements of the Republican party have materially added to this confusion in the hopes of riding the Republican party to victory through the selfish political exploitation of fear, bigotry, ignorance, and intolerance.</blockquote>
+<div class="cite">Margaret Chase Smith, “Declaration of Conscience” and Statement of Seven Republican Senators, June 1, 1950, <i>Congressional Record</i>, 81st Cong., 2nd sess., pp. 7894–95, text as reproduced in <i>The American Yawp Reader</i> and checked against the Record text at Teaching American History.</div>
+<div class="help"><b>Word help:</b> publicity platform = a stage used to get attention · sensationalism = shocking claims for effect · complacency = lazy satisfaction · exploitation = using for one’s own gain</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 4"><button type="button" class="st" data-v="N" aria-pressed="false">★ SECURITY RESPONSE<small>answered real Soviet dangers, though it was exaggerated</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ POLITICAL ADVANTAGE<small>used fear of communism to attack rivals and win power</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows a real threat and political use together</small></button></div>
+<label for="ctx4">Context: who made this, when, and what was going on? Use facts from the Background Reading.</label>
+<textarea id="ctx4" data-id="ctx4" rows="2" placeholder="Who made it, when, and one key fact from the Background Reading"></textarea>
+<label for="note4">Clue words</label>
+<textarea id="note4" data-id="note4" rows="2" placeholder="“clue words” — This helps ___ because…"></textarea>
+</section>
+<h2>Part 3 · Case Closed</h2>
+<div class="box cq"><div class="lab">Central Question:</div><p style="margin:.3em 0"><b>Was McCarthyism an exaggerated response to real Soviet threats, or did McCarthy and his supporters use the Cold War to gain political advantage?</b></p></div>
+<div class="box"><p><b>Your essay question:</b> Was McCarthyism an exaggerated response to real Soviet threats, or did McCarthy and his supporters use the Cold War to gain political advantage? Take a position and defend it with the case files.</p>
+<p>Write about one page (about 250 to 350 words; at least 150 words to finish). Use this order:</p>
+<ol><li><b>Claim:</b> your answer to the question in one or two sentences.</li>
+<li><b>Evidence 1:</b> a quote from one case file, with what it shows and one context fact.</li>
+<li><b>Evidence 2:</b> a quote from a <i>different</i> case file, explained the same way.</li>
+<li><b>Counter-Argument:</b> name a case file someone on the other side would use, explain their point, then answer it.</li>
+<li><b>Conclusion:</b> what your answer shows about the historians’ debate, and how the evidence helps decide it.</li></ol>
+<label for="essay">Your essay</label>
+<textarea id="essay" data-id="essay" rows="18" style="min-height:360px"></textarea>
+<div class="wc" id="wc">0 words</div>
+<div class="checks" style="margin-top:12px">
+<label><input type="checkbox" id="chk1" data-id="chk1"> My essay opens with a clear claim.</label>
+<label><input type="checkbox" id="chk2" data-id="chk2"> I used evidence from at least two different case files.</label>
+<label><input type="checkbox" id="chk3" data-id="chk3"> I stated a Counter-Argument and answered it.</label>
+<label><input type="checkbox" id="chk4" data-id="chk4"> My conclusion explains what the evidence shows about the historians’ debate.</label>
+</div></div>
+<div class="btns">
+<button type="button" class="b" id="save">Save Progress</button>
+<button type="button" class="b alt" id="loadBtn">Load Progress</button>
+<input type="file" id="loadFile" accept=".json,application/json" hidden>
+<button type="button" class="b fin" id="finish" disabled>Finished — Download File to Submit</button>
+</div>
+<div id="status" role="status" aria-live="polite"></div>
+<div id="todo"></div>
+</main>
+<footer>UNIT 6 · THE AMERICAN AGE | HIST C1002 | DANIEL GARZA, M.A.</footer>
+<script>
+(function(){
+var PACKET="L16_Thinking_Like_a_Historian", STORE="c1002_l16_thinking_like_a_historian", COURSE="HIST C1002", NC=4;
+var $=function(id){return document.getElementById(id)};
+var sides={};
+function fields(){return Array.prototype.slice.call(document.querySelectorAll('[data-id]'))}
+function words(t){t=(t||'').trim();return t?t.split(/\s+/).length:0}
+function val(id){var e=$(id);return e?(e.value||'').trim():''}
+function cracked(i){return !!sides[i]&&val('note'+i)&&val('ctx'+i)}
+function missing(){
+  var m=[];
+  if(!val('first')||!val('last')||!val('period'))m.push('first name, last name, and period');
+  if(!val('rdg'))m.push('Background Reading check');
+  var c=[];for(var i=1;i<=NC;i++){if(!cracked(i))c.push(i)}
+  if(c.length)m.push('case file'+(c.length>1?'s ':' ')+c.join(', ')+' (stance, context, and clue words)');
+  if(words(val('essay'))<150)m.push('essay (at least 150 words)');
+  var k=[];for(var j=1;j<=4;j++){if(!$('chk'+j).checked)k.push(j)}
+  if(k.length)m.push('checklist box'+(k.length>1?'es ':' ')+k.join(', '));
+  return m;
+}
+function render(){
+  var n=0;
+  for(var i=1;i<=NC;i++){
+    var card=$('case'+i);var ok=cracked(i);if(ok)n++;
+    card.classList.toggle('done',!!sides[i]);card.classList.toggle('isS',sides[i]==='S');card.classList.toggle('isV',sides[i]==='V');
+    card.querySelectorAll('.st').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.v===sides[i]?'true':'false')});
+  }
+  $('mtext').textContent=n+' of '+NC+' case files cracked';$('mbar').style.width=(n*100/NC)+'%';
+  var w=words(val('essay'));$('wc').textContent=w+' word'+(w===1?'':'s')+(w<150?' (150 needed to finish)':'');
+  var m=missing();$('finish').disabled=m.length>0;
+  $('todo').textContent=m.length?('Still to do: '+m.join('; ')):'Everything is done. Click Finished to download your file.';
+}
+function collect(done){
+  var a={},ch={};
+  fields().forEach(function(e){var id=e.dataset.id;if(e.type==='checkbox')ch[id]=e.checked;else if(['first','last','period'].indexOf(id)<0)a[id]=e.value});
+  var t={national:0,state:0,voice:0};for(var i=1;i<=NC;i++){if(sides[i]==='N')t.national++;if(sides[i]==='S')t.state++;if(sides[i]==='V')t.voice++}
+  return {packet:PACKET,course:COURSE,version:1,saved:new Date().toISOString(),completed:!!done,
+    student:{first:val('first'),last:val('last'),period:val('period'),date:$('date').value||''},
+    sides:JSON.parse(JSON.stringify(sides)),answers:a,checks:ch,tally:t};
+}
+function apply(d){
+  sides={};Object.keys(d.sides||{}).forEach(function(k){sides[k]=d.sides[k]});
+  var s=d.student||{};$('first').value=s.first||'';$('last').value=s.last||'';$('period').value=s.period||'';$('date').value=s.date||'';
+  var a=d.answers||{},ch=d.checks||{};
+  fields().forEach(function(e){var id=e.dataset.id;if(e.type==='checkbox')e.checked=!!ch[id];else if(id in a)e.value=a[id]});
+  render();
+}
+function persist(){try{localStorage.setItem(STORE,JSON.stringify(collect(false)))}catch(e){}}
+function fname(){return (val('last')+'_'+val('first')).normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^A-Za-z0-9_\-]+/g,'_')}
+function download(name,obj){
+  var blob=new Blob([JSON.stringify(obj,null,2)],{type:'application/json'});var u=URL.createObjectURL(blob);
+  var a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();
+  setTimeout(function(){URL.revokeObjectURL(u);a.remove()},1500);
+}
+function msg(t,cls){var s=$('status');s.textContent=t;s.className=cls||''}
+function needNames(){
+  var bad=false;['first','last','period'].forEach(function(id){var e=$(id);var b=!e.value.trim();e.classList.toggle('bad',b);if(b)bad=true});
+  return bad;
+}
+document.querySelectorAll('.case').forEach(function(card){
+  var i=card.dataset.i;
+  card.querySelectorAll('.st').forEach(function(b){b.addEventListener('click',function(){sides[i]=b.dataset.v;render();persist()})});
+});
+fields().forEach(function(e){e.addEventListener(e.type==='checkbox'?'change':'input',function(){if(e.classList.contains('bad')&&e.value.trim())e.classList.remove('bad');render();persist()})});
+$('save').addEventListener('click',function(){
+  if(needNames()){msg('Type your first name, last name, and period before you save.','err');return}
+  var f=fname()+'-'+PACKET+'-PROGRESS.json';download(f,collect(false));
+  msg('Saved '+f+'. Keep that file. Use Load Progress later. Do not upload it to Canvas until you are finished.','ok');
+});
+$('loadBtn').addEventListener('click',function(){$('loadFile').value='';$('loadFile').click()});
+$('loadFile').addEventListener('change',function(){
+  var f=this.files&&this.files[0];if(!f)return;var r=new FileReader();
+  r.onload=function(){try{var d=JSON.parse(r.result);if(!d||d.packet!==PACKET)throw 0;apply(d);persist();msg('Progress loaded. Pick up where you left off.','ok')}
+    catch(e){msg('That file is not a saved file from this assignment. Choose the file that ends in -'+PACKET+'-PROGRESS.json.','err')}};
+  r.readAsText(f);
+});
+$('finish').addEventListener('click',function(){
+  if(missing().length){msg('Not finished yet. Read the line below to see what is missing.','err');render();return}
+  var d=new Date();$('date').value=(d.getMonth()+1)+'/'+d.getDate()+'/'+d.getFullYear();
+  var f=fname()+'-'+PACKET+'.json';download(f,collect(true));persist();
+  msg('Finished! Your file '+f+' downloaded. Upload that file to Canvas.','ok');
+});
+try{var raw=localStorage.getItem(STORE);if(raw){var d=JSON.parse(raw);if(d&&d.packet===PACKET)apply(d)}}catch(e){}
+render();
+})();
+</script></body></html>

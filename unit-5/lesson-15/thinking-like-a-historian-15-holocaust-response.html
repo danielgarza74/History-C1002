@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Failure or Limits? · Thinking Like a Historian 15</title><style>
+:root{--p:#1C2A3A;--bg:#F2F4F6;--a:#466B8A;--g:#B8892D;--hi:#E3C77A;--s:#8A6822;--v:#2E6B3E;--t:#0B1016;--card:#fff;--line:#D4D8DC;--mut:#5C6064}
+@media (prefers-color-scheme: dark){:root{--bg:#080C10;--card:#0D131A;--t:#F2F4F6;--line:#374452;--mut:#B2B7BE}.lab{color:var(--hi)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--t);font:17px/1.6 Georgia,'Times New Roman',serif}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px 40px}
+.hero{background:#1C2A3A;color:#F2F4F6;padding:30px 16px 24px;border-bottom:6px solid #B8892D}
+.hero .in{max-width:860px;margin:0 auto}
+.eyebrow{font:700 13px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.18em;color:#E3C77A}
+.hero h1{margin:.35em 0 .2em;font-size:clamp(28px,5vw,40px);line-height:1.15}
+.hero .sub{font-style:italic;color:#E3C77A}
+.flag{display:inline-block;margin-top:12px;background:#466B8A;color:#fff;font:700 13px Arial,sans-serif;letter-spacing:.08em;padding:6px 10px;border-radius:4px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:18px 0}
+.cq{border-left:6px solid var(--a)}
+.lab{font:700 13px Arial,Helvetica,sans-serif;letter-spacing:.12em;color:var(--a);text-transform:uppercase}
+h2{font-size:24px;margin:28px 0 6px;color:var(--p)}
+@media (prefers-color-scheme: dark){h2{color:var(--hi)}.lab{color:var(--hi)}.help{color:var(--t)}}
+h3{margin:.2em 0 .4em}
+.article p{margin:.7em 0}
+.article h3{font-size:21px}
+label{font:600 14px Arial,Helvetica,sans-serif;display:block;margin:12px 0 4px}
+input[type=text],textarea,select{width:100%;font:16px/1.5 Arial,Helvetica,sans-serif;padding:9px 10px;border:1.5px solid var(--line);border-radius:7px;background:#fffdf9;color:#222}
+textarea{min-height:80px;resize:vertical}
+.bad{border-color:#B03A2E!important;background:#fdeceb!important}
+.names{display:grid;grid-template-columns:1fr 1fr 110px 150px;gap:10px}
+@media(max-width:620px){.names{grid-template-columns:1fr 1fr}}
+.meter{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line)}
+.bar{height:10px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--a);transition:width .3s}
+.mtext{font:600 14px Arial,sans-serif;margin-bottom:6px}
+.case{background:var(--card);border:1px solid var(--line);border-left:8px solid var(--line);border-radius:10px;padding:16px 18px;margin:22px 0}
+.case.done{border-left-color:var(--p)} .case.isS{border-left-color:var(--s)} .case.isV{border-left-color:var(--v)}
+.chip{display:inline-block;background:var(--p);color:#fff;font:700 13px Arial,sans-serif;padding:3px 10px;border-radius:20px;margin-right:8px}
+.cnum{font:700 13px Arial,sans-serif;letter-spacing:.1em;color:var(--mut);text-transform:uppercase}
+.who{font:600 15px Arial,sans-serif;margin:.6em 0 .2em}
+.intro{margin:.3em 0}
+blockquote{margin:12px 0;padding:12px 16px;background:#F2F4F6;color:#0B1016;border-left:5px solid var(--g);font-style:italic;border-radius:0 8px 8px 0}
+.cite{font:13px/1.45 Arial,sans-serif;color:var(--mut)}
+.help{font:14px/1.5 Arial,sans-serif;color:var(--t);background:rgba(227,199,122,.25);padding:8px 10px;border-radius:6px;margin:8px 0}
+.ask{font:700 15px Arial,sans-serif;margin:14px 0 6px}
+.stances{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+@media(max-width:620px){.stances{grid-template-columns:1fr}}
+.st{font:700 15px Arial,sans-serif;padding:10px;border-radius:8px;border:2px solid var(--p);background:#fff;color:var(--p);cursor:pointer;text-align:left}
+.st small{display:block;font-weight:400;font-size:12.5px;color:#444;margin-top:3px}
+.st[data-v=S]{border-color:var(--s);color:var(--s)} .st[data-v=V]{border-color:var(--v);color:var(--v)}
+.st[aria-pressed=true]{background:var(--p);color:#fff} .st[data-v=S][aria-pressed=true]{background:var(--s)} .st[data-v=V][aria-pressed=true]{background:var(--v)}
+.st[aria-pressed=true] small{color:#fff}
+.how ol{margin:.4em 0;padding-left:1.3em}
+.checks label{font-weight:400;display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.checks input{flex:none;width:20px;height:20px;margin-top:2px}
+.wc{font:600 14px Arial,sans-serif;color:var(--mut);margin-top:4px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 8px}
+button.b{font:700 15px Arial,sans-serif;padding:12px 16px;border-radius:8px;border:0;cursor:pointer;background:var(--p);color:#fff}
+button.b.alt{background:#fff;color:var(--p);border:2px solid var(--p)}
+button.b.fin{background:var(--a)}
+button.b:disabled{background:#6f6f6f;color:#fff;cursor:not-allowed}
+#status{font:600 15px Arial,sans-serif;margin:8px 0} #status.err{color:#b03a2e} #status.ok{color:var(--v)}
+#todo{font:14px Arial,sans-serif;color:var(--mut)}
+.key{color:#0B1016;background:rgba(227,199,122,.3);border:1px solid var(--g);border-radius:8px;padding:10px 12px;margin-top:10px;font:15px/1.5 Arial,sans-serif}
+.badge{display:inline-block;font:700 13px Arial,sans-serif;color:#fff;padding:3px 9px;border-radius:5px;margin-right:6px}
+footer{margin-top:36px;padding:16px;background:#1C2A3A;color:#E3C77A;font:700 12.5px Arial,sans-serif;letter-spacing:.08em;text-align:center}
+
+.grp{margin:34px 0 4px;padding:12px 16px;background:var(--p);color:#fff;border-radius:10px}
+.grp .gl{font:700 12px Arial,sans-serif;letter-spacing:.14em;color:var(--hi)}
+.grp h2{color:#fff;margin:4px 0 0;font-size:21px}
+.dq ul{margin:.4em 0;padding-left:1.2em}
+.dq li{margin:.35em 0;font:15px/1.5 Arial,sans-serif}
+.rd h3{margin-top:0}
+.essaysamp p{margin:.7em 0}
+</style></head><body>
+<header class="hero"><div class="in">
+<div class="eyebrow">THINKING LIKE A HISTORIAN 15 · 1933–1946</div>
+<h1>Failure or Limits?</h1>
+<div class="sub">World War II at Home and Abroad: The United States and the Holocaust · Thinking Like a Historian</div>
+</div></header>
+<main class="wrap">
+<div class="box cq"><div class="lab">Central Question:</div><p style="margin:.3em 0;font-size:19px"><b>Was the American government’s response to the Holocaust a moral failure caused by Roosevelt’s indifference, or the limited response of leaders whose first priority was winning the war?</b></p><p style="margin:.3em 0">Your job: read the background, crack 6 case files (the documents historians use as evidence), then close the case with a one-page essay.</p></div>
+<div class="box how"><div class="lab">How to play</div><ol><li><b>Part 1:</b> Read the Background Reading and answer the one-sentence check.</li><li><b>Part 2:</b> For each case file, read the excerpt, then tap which historian’s argument it helps most. The three buttons change with each debate, so read them. Each has a symbol (★, ◆, ●) as well as a label.</li><li>Type who made the source, when, and the key fact (use the Background Reading). Then copy the clue words that prove your choice and finish the sentence “This source helps…”.</li><li><b>Part 3:</b> Answer the central question. Write your one-page essay and check the four boxes.</li><li>Use <b>Save Progress</b> any time. When everything is done, <b>Finished</b> turns on.</li></ol></div>
+<div class="box"><div class="names">
+<div><label for="first">First name</label><input type="text" id="first" data-id="first" autocomplete="given-name"></div>
+<div><label for="last">Last name</label><input type="text" id="last" data-id="last" autocomplete="family-name"></div>
+<div><label for="period">Period</label><input type="text" id="period" data-id="period"></div>
+<div><label for="date">Date</label><input type="text" id="date" readonly placeholder="fills in at Finished"></div>
+</div></div>
+<h2>Part 1 · Background Reading</h2>
+<div class="box rd"><div class="article"><h3>What Did Americans Know, and What Did They Do?</h3><p>Adolf Hitler became chancellor of Germany in 1933, and his Nazi government quickly began to strip Jews of their rights. Over the next years Jews were driven from jobs and schools, and many tried to leave Germany. Most nations, including the United States, kept strict limits on how many immigrants they would take. Congress had set those limits in law in the 1920s, and during the Depression few Americans wanted to change them. When war began in Europe in 1939, escape grew harder, and after Germany invaded the Soviet Union in 1941 the Nazis and their collaborators began a systematic campaign to murder the Jews of Europe. In the end about six million Jewish men, women, and children were killed. We call this the Holocaust.</p><p>News of the killing reached the United States in 1942. By December, Jewish leaders from the major American organizations came to President Franklin D. Roosevelt and asked him to speak out and take action. Roosevelt and his officials replied that the best way to help was to win the war quickly, and they pointed out that the immigration laws were set by Congress. In 1943 American and British officials met at the Bermuda Conference to discuss refugees. The conference recommended only small steps, and critics have said it was meant to look like action. Inside the government a conflict grew. Treasury Secretary Henry Morgenthau, the highest-ranking Jewish member of Roosevelt’s cabinet, and his aide John Pehle accused officials in the State Department, among them Assistant Secretary Breckinridge Long, of blocking rescue. In 1944 Roosevelt publicly warned that those who took part in the killing would be punished. Later that year, Pehle, who now led the War Refugee Board, asked the War Department to bomb railway lines used to carry Jews to the death camps, and Assistant Secretary of War John McCloy refused.</p><p>Historians have argued for decades about how to judge these choices. David Wyman’s book <i>The Abandonment of the Jews</i> offered a harsh verdict. He argued that the government could have saved many more lives and that Roosevelt’s indifference was “the worst failure of his presidency.” Richard Breitman and Allan Lichtman, in <i>FDR and the Jews</i>, gave a different judgment. They argued that Roosevelt did little for most of his presidency because he put other priorities, including winning the war and holding his political coalition together, ahead of saving Jews, yet at times he acted decisively. The two sides are not only arguing about facts. They also hold different ideas of what leaders owe to people in danger, and of what could be done at the time.</p><p>Six documents will help you test these views. They include a letter from Jewish leaders, State Department and White House papers, a memo about an argument inside the government, a statement from Roosevelt, and a letter from the War Department. Read each one with care, remembering that the people who wrote them did not know how the war would end. Ask of each source: whose argument does this evidence help most?</p></div>
+<label for="rdg">In one sentence, explain what Jewish leaders asked Roosevelt to do in December 1942 and what two reasons officials gave for limiting what the United States did.</label>
+<textarea id="rdg" data-id="rdg" rows="2"></textarea></div>
+
+<h2>Part 2 · The Case Files</h2>
+<div class="meter"><div class="mtext" id="mtext">0 of 6 case files cracked</div><div class="bar"><i id="mbar"></i></div></div>
+<div class="grp"><div class="gl">DEBATE 1 · CASE FILES 1–6</div><h2>The United States and the Holocaust: Failure or Limits?</h2></div>
+<div class="box dq"><div class="lab">The debate:</div><p style="margin:.3em 0"><b>Was the American government’s response to the Holocaust a moral failure caused by Roosevelt’s indifference, or the limited response of leaders whose first priority was winning the war?</b></p><ul><li><b>★ A MORAL FAILURE</b>: David Wyman, in <i>The Abandonment of the Jews</i>, argued that Roosevelt’s indifference was “the worst failure of his presidency.”</li><li><b>◆ LIMITED BY WAR PRIORITIES</b>: Richard Breitman and Allan Lichtman, in <i>FDR and the Jews</i>, argued that Roosevelt did little for most of his presidency because he put other priorities, including winning the war and holding his coalition together, ahead of saving Jews, yet at times acted decisively.</li><li><b>● BOTH / MIXED</b>: A source that fits both arguments: it shows leaders held back by the war or the law and also shows a failure to act.</li></ul></div>
+<section class="case" id="case1" data-i="1"><div><span class="chip">1942</span><span class="cnum">Case file 1 of 6</span></div>
+<div class="who">Who: Maurice Wertheim, Stephen Wise, and other Jewish leaders<br>From: Letter to the President, December 8, 1942</div>
+<p class="intro">Leaders of the main American Jewish organizations write to Roosevelt after news of the killings arrives.</p>
+<blockquote>Already almost two million Jews, men, women and children, have been cruelly done to death, and five million more Jews live under the threat of a similar doom.&nbsp;.&nbsp;.&nbsp;. Unless action is taken immediately, the Jews of Hitler’s Europe are doomed. In this hour of deepest anguish and despair we turn to you, Mr. President.&nbsp;.&nbsp;.&nbsp;. We ask you to employ every available means to bring solemn protest and warning to the peoples of the Axis countries so that they may be deterred from acting as the instruments of the monstrous designs of their mad leaders.</blockquote>
+<div class="cite">Representatives of the Jewish Community of the United States, “Letter to the President,” December 8, 1942, Franklin D. Roosevelt Presidential Library, as printed in the Norton exercise. The opening passages were also checked on the Jewish Virtual Library.</div>
+<div class="help"><b>Word help:</b> heinous = very evil · scourge = a cause of great suffering · subjugated = conquered and ruled by force · doomed = certain to die · deterred = stopped from doing something</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 1"><button type="button" class="st" data-v="N" aria-pressed="false">★ A MORAL FAILURE<small>leaders were indifferent and could have done much more</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ LIMITED BY WAR PRIORITIES<small>winning the war and the law came first</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows real limits and real failures together</small></button></div>
+<label for="ctx1">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx1" data-id="ctx1" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note1">Clue words</label>
+<textarea id="note1" data-id="note1" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case2" data-i="2"><div><span class="chip">1943</span><span class="cnum">Case file 2 of 6</span></div>
+<div class="who">Who: U.S. Department of State<br>From: Memorandum in response to the British Embassy on refugees, February 25, 1943</div>
+<p class="intro">The State Department explains to the British government what the United States is and is not able to do for refugees.</p>
+<blockquote>Since the entry of the United States into the war, there have been no new restrictions placed by the Government of the United States upon the number of aliens of any nationality permitted to proceed to this country under existing laws, except for the more intensive examination of aliens required for security reasons.&nbsp;.&nbsp;.&nbsp;. In affording asylum to refugees, however, it is and must be bound by legislation enacted by Congress in determining the immigration policy of the United States.</blockquote>
+<div class="cite">U.S. Department of State, “Refugees from Nazi-Occupied Territory: Reception in the United Kingdom and British Colonial Territory,” February 25, 1943, President’s Secretary’s File, Box 71, Franklin D. Roosevelt Presidential Library, as printed in the Norton exercise.</div>
+<div class="help"><b>Word help:</b> aliens = people who are not citizens · asylum = protection given to people fleeing danger · legislation = laws · immigration = moving to a new country to live</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 2"><button type="button" class="st" data-v="N" aria-pressed="false">★ A MORAL FAILURE<small>leaders were indifferent and could have done much more</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ LIMITED BY WAR PRIORITIES<small>winning the war and the law came first</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows real limits and real failures together</small></button></div>
+<label for="ctx2">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx2" data-id="ctx2" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note2">Clue words</label>
+<textarea id="note2" data-id="note2" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case3" data-i="3"><div><span class="chip">1943</span><span class="cnum">Case file 3 of 6</span></div>
+<div class="who">Who: Cordell Hull, Secretary of State, and President Roosevelt<br>From: Abstract of Hull’s letter to the president on the Bermuda Conference, May 7, 1943</div>
+<p class="intro">A summary of the Bermuda Conference on refugees and the president’s reaction to it.</p>
+<blockquote>The most important of the items recommended at Bermuda concerns the evacuation of some 5,000 persons from Bulgaria via Turkey to Palestine .&nbsp;.&nbsp;.&nbsp;. The President made certain suggestions .&nbsp;.&nbsp;. as follows: that we do not give unlimited promise but that we undertake with Britain to share the cost of financing from time to time any specific cases .&nbsp;.&nbsp;. ; that we can do nothing but comply strictly with the present immigration laws.&nbsp;.&nbsp;.&nbsp;. he agrees that we cannot open the question of our immigration laws, and he agrees with Sec’y. Hull as to bringing in temporary visitors, stating: “We have already brought in a large number.”</blockquote>
+<div class="cite">Secretary of State and the President’s Correspondence, Abstract, May 7, 1943, Official File 76c, Franklin D. Roosevelt Presidential Library, as printed in the Norton exercise. This is a staff summary, not Roosevelt’s own letter.</div>
+<div class="help"><b>Word help:</b> evacuation = moving people out of a danger zone · Palestine = the region then under British control, now Israel and the Palestinian territories · cablegram = a telegram sent by cable · O.K. = approval</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 3"><button type="button" class="st" data-v="N" aria-pressed="false">★ A MORAL FAILURE<small>leaders were indifferent and could have done much more</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ LIMITED BY WAR PRIORITIES<small>winning the war and the law came first</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows real limits and real failures together</small></button></div>
+<label for="ctx3">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx3" data-id="ctx3" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note3">Clue words</label>
+<textarea id="note3" data-id="note3" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case4" data-i="4"><div><span class="chip">1944</span><span class="cnum">Case file 4 of 6</span></div>
+<div class="who">Who: John Pehle, a Treasury Department official, reporting on Secretary Henry Morgenthau’s meeting with the president<br>From: Memorandum, “U.S. State Department’s Efforts to Rescue European Jews,” January 16, 1944</div>
+<p class="intro">A Treasury aide records what Morgenthau told the president about the State Department.</p>
+<blockquote>Secretary Morgenthau advised the President that he was deeply disturbed about the failure of the State Department to take any effective action to save the remaining Jews in Europe. He explained that the Treasury Department .&nbsp;.&nbsp;. had uncovered evidence indicating that not only were the people in the State Department inefficient in dealing with this problem, but that they were actually taking action to prevent the rescue of the Jews.&nbsp;.&nbsp;.&nbsp;. The President seemed disinclined to believe that Long [Assistant Secretary of State Breckinridge Long] wanted to stop effective action from being taken .&nbsp;.&nbsp;.&nbsp;.</blockquote>
+<div class="cite">John Pehle, memorandum of January 16, 1944, Morgenthau Diary, vol. 694, Franklin D. Roosevelt Presidential Library, as printed in the Norton exercise. The bracketed words are Norton’s.</div>
+<div class="help"><b>Word help:</b> obstructing = getting in the way · inefficient = wasting effort or doing a poor job · disinclined = not willing · effective = working well</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 4"><button type="button" class="st" data-v="N" aria-pressed="false">★ A MORAL FAILURE<small>leaders were indifferent and could have done much more</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ LIMITED BY WAR PRIORITIES<small>winning the war and the law came first</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows real limits and real failures together</small></button></div>
+<label for="ctx4">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx4" data-id="ctx4" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note4">Clue words</label>
+<textarea id="note4" data-id="note4" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case5" data-i="5"><div><span class="chip">1944</span><span class="cnum">Case file 5 of 6</span></div>
+<div class="who">Who: President Franklin D. Roosevelt (draft statement)<br>From: Draft press release, “Statement by the President,” April 3, 1944</div>
+<p class="intro">The president condemns the killing and warns those who take part in it.</p>
+<blockquote>[O]ne of the blackest crimes of all history—begun by the Nazis in the days of peace, and multiplied by them a hundred fold in time of war—the wholesale systematic murder of the Jews of Europe—goes on unabated every hour. It is therefore fitting that we should again proclaim our determination that none who participate in any of these acts of savagery shall go unpunished.&nbsp;.&nbsp;.&nbsp;. All who knowingly take part in the deportation of Jews to their death in Poland, or Norwegians and French to their death in Germany, are equally guilty with the executioner. All who share the guilt shall share the punishment.</blockquote>
+<div class="cite">Franklin D. Roosevelt, draft press release, “Statement by the President re: the Holocaust,” April 3, 1944, Significant Documents Collection, Franklin D. Roosevelt Presidential Library, as printed in the Norton exercise. The statement Roosevelt issued publicly on March 24, 1944 (American Presidency Project) has different wording; this is the draft text Norton prints.</div>
+<div class="help"><b>Word help:</b> unabated = not slowing down · savagery = cruel, violent behavior · deportation = forcing people to leave a place · functionaries = officials who carry out orders · guilty = responsible for a crime</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 5"><button type="button" class="st" data-v="N" aria-pressed="false">★ A MORAL FAILURE<small>leaders were indifferent and could have done much more</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ LIMITED BY WAR PRIORITIES<small>winning the war and the law came first</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows real limits and real failures together</small></button></div>
+<label for="ctx5">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx5" data-id="ctx5" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note5">Clue words</label>
+<textarea id="note5" data-id="note5" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case6" data-i="6"><div><span class="chip">1944</span><span class="cnum">Case file 6 of 6</span></div>
+<div class="who">Who: John J. McCloy, Assistant Secretary of War<br>From: Letter to John W. Pehle of the War Refugee Board, on bombing death camp railways, July 4, 1944</div>
+<p class="intro">The War Department replies to a request to bomb railway lines used to carry Jews to the camps.</p>
+<blockquote>I refer to your letter of June 29 .&nbsp;.&nbsp;. proposing that certain sections of railway lines between Hungary and Poland be bombed to interrupt the transportation of Jews from Hungary. The War Department is of the opinion that the suggested air operation is impracticable. It could be executed only by the diversion of considerable air support essential to the success of our forces now engaged in decisive operations and would in any case be of such very doubtful efficacy that it would not amount to a practical project.</blockquote>
+<div class="cite">John J. McCloy to John W. Pehle, July 4, 1944, Franklin D. Roosevelt Presidential Library, as printed in the Norton exercise. The last two sentences of Norton’s excerpt are left out for length.</div>
+<div class="help"><b>Word help:</b> impracticable = not able to be done in a sensible way · diversion = turning something away from its purpose · efficacy = how well something works · decisive = deciding the outcome</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 6"><button type="button" class="st" data-v="N" aria-pressed="false">★ A MORAL FAILURE<small>leaders were indifferent and could have done much more</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ LIMITED BY WAR PRIORITIES<small>winning the war and the law came first</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows real limits and real failures together</small></button></div>
+<label for="ctx6">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx6" data-id="ctx6" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note6">Clue words</label>
+<textarea id="note6" data-id="note6" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+
+<h2>Part 3 · Case Closed</h2>
+<div class="box cq"><div class="lab">Central Question:</div><p style="margin:.3em 0"><b>Was the American government’s response to the Holocaust a moral failure caused by Roosevelt’s indifference, or the limited response of leaders whose first priority was winning the war?</b></p></div>
+<div class="box"><p><b>Your essay question:</b> Was the American government’s response to the Holocaust a moral failure caused by Roosevelt’s indifference, or the limited response of leaders whose first priority was winning the war? Take a position and defend it with the case files.</p>
+<p>Write about one page (about 250 to 350 words; at least 150 words to finish). Use this order:</p>
+<ol><li><b>Claim:</b> your answer to the question in one or two sentences.</li>
+<li><b>Evidence 1:</b> a quote from one case file, with what it shows and one context fact.</li>
+<li><b>Evidence 2:</b> a quote from a <i>different</i> case file, explained the same way.</li>
+<li><b>Counter-Argument:</b> name a case file (or a historian) someone on the other side would use, explain their point, then answer it.</li>
+<li><b>Conclusion:</b> what your answer shows about why the United States did not do more to rescue Europe’s Jews.</li></ol>
+<label for="essay">Your essay</label>
+<textarea id="essay" data-id="essay" rows="18" style="min-height:360px"></textarea>
+<div class="wc" id="wc">0 words</div>
+<div class="checks" style="margin-top:12px">
+<label><input type="checkbox" id="chk1" data-id="chk1"> My essay opens with a clear claim.</label>
+<label><input type="checkbox" id="chk2" data-id="chk2"> I used evidence from at least two different case files.</label>
+<label><input type="checkbox" id="chk3" data-id="chk3"> I stated a Counter-Argument and answered it.</label>
+<label><input type="checkbox" id="chk4" data-id="chk4"> My conclusion explains what the evidence shows about why the United States did not do more to rescue Europe’s Jews.</label>
+</div></div>
+<div class="btns">
+<button type="button" class="b" id="save">Save Progress</button>
+<button type="button" class="b alt" id="loadBtn">Load Progress</button>
+<input type="file" id="loadFile" accept=".json,application/json" hidden>
+<button type="button" class="b fin" id="finish" disabled>Finished — Download File to Submit</button>
+</div>
+<div id="status" role="status" aria-live="polite"></div>
+<div id="todo"></div>
+</main>
+<footer>UNIT 5 · MODERN AMERICA | HIST C1002 | DANIEL GARZA, M.A.</footer>
+<script>
+(function(){
+var PACKET="L15_Thinking_Like_a_Historian", STORE="c1002_l15_thinking_like_a_historian", COURSE="HIST C1002", NC=6, GROUPS=[[1, 2, 3, 4, 5, 6]], MULTI=false, RDG=["rdg"];
+var $=function(id){return document.getElementById(id)};
+var sides={};
+function fields(){return Array.prototype.slice.call(document.querySelectorAll('[data-id]'))}
+function words(t){t=(t||'').trim();return t?t.split(/\s+/).length:0}
+function val(id){var e=$(id);return e?(e.value||'').trim():''}
+function cracked(i){return !!sides[i]&&val('note'+i)&&val('ctx'+i)}
+function missing(){
+  var m=[];
+  if(!val('first')||!val('last')||!val('period'))m.push('first name, last name, and period');
+  var r=[];RDG.forEach(function(id,k){if(!val(id))r.push(k+1)});
+  if(r.length)m.push('Background Reading check'+(RDG.length>1?(r.length>1?'s ':' ')+r.join(', '):''));
+  var c=[];for(var i=1;i<=NC;i++){if(!cracked(i))c.push(i)}
+  if(c.length)m.push('case file'+(c.length>1?'s ':' ')+c.join(', ')+' (stance, context, and clue words)');
+  if(MULTI&&!val('debate'))m.push('the debate you will write about');
+  if(words(val('essay'))<150)m.push('essay (at least 150 words)');
+  var k=[];for(var j=1;j<=4;j++){if(!$('chk'+j).checked)k.push(j)}
+  if(k.length)m.push('checklist box'+(k.length>1?'es ':' ')+k.join(', '));
+  return m;
+}
+function render(){
+  var n=0;
+  for(var i=1;i<=NC;i++){
+    var card=$('case'+i);var ok=cracked(i);if(ok)n++;
+    card.classList.toggle('done',!!sides[i]);card.classList.toggle('isS',sides[i]==='S');card.classList.toggle('isV',sides[i]==='V');
+    card.querySelectorAll('.st').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.v===sides[i]?'true':'false')});
+  }
+  $('mtext').textContent=n+' of '+NC+' case files cracked';$('mbar').style.width=(n*100/NC)+'%';
+  var w=words(val('essay'));$('wc').textContent=w+' word'+(w===1?'':'s')+(w<150?' (150 needed to finish)':'');
+  var m=missing();$('finish').disabled=m.length>0;
+  $('todo').textContent=m.length?('Still to do: '+m.join('; ')):'Everything is done. Click Finished to download your file.';
+}
+function tallyOf(list){var t={national:0,state:0,voice:0};list.forEach(function(i){if(sides[i]==='N')t.national++;if(sides[i]==='S')t.state++;if(sides[i]==='V')t.voice++});return t}
+function collect(done){
+  var a={},ch={};
+  fields().forEach(function(e){var id=e.dataset.id;if(e.type==='checkbox')ch[id]=e.checked;else if(['first','last','period'].indexOf(id)<0)a[id]=e.value});
+  var all=[];for(var i=1;i<=NC;i++)all.push(i);
+  var byDebate={};GROUPS.forEach(function(g,k){byDebate['debate'+(k+1)]=tallyOf(g)});
+  return {packet:PACKET,course:COURSE,version:1,saved:new Date().toISOString(),completed:!!done,
+    student:{first:val('first'),last:val('last'),period:val('period'),date:$('date').value||''},
+    sides:JSON.parse(JSON.stringify(sides)),answers:a,checks:ch,tally:tallyOf(all),tallyByDebate:byDebate};
+}
+function apply(d){
+  sides={};Object.keys(d.sides||{}).forEach(function(k){sides[k]=d.sides[k]});
+  var s=d.student||{};$('first').value=s.first||'';$('last').value=s.last||'';$('period').value=s.period||'';$('date').value=s.date||'';
+  var a=d.answers||{},ch=d.checks||{};
+  fields().forEach(function(e){var id=e.dataset.id;if(e.type==='checkbox')e.checked=!!ch[id];else if(id in a)e.value=a[id]});
+  render();
+}
+function persist(){try{localStorage.setItem(STORE,JSON.stringify(collect(false)))}catch(e){}}
+function fname(){return (val('last')+'_'+val('first')).normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^A-Za-z0-9_\-]+/g,'_')}
+function download(name,obj){
+  var blob=new Blob([JSON.stringify(obj,null,2)],{type:'application/json'});var u=URL.createObjectURL(blob);
+  var a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();
+  setTimeout(function(){URL.revokeObjectURL(u);a.remove()},1500);
+}
+function msg(t,cls){var s=$('status');s.textContent=t;s.className=cls||''}
+function needNames(){
+  var bad=false;['first','last','period'].forEach(function(id){var e=$(id);var b=!e.value.trim();e.classList.toggle('bad',b);if(b)bad=true});
+  return bad;
+}
+document.querySelectorAll('.case').forEach(function(card){
+  var i=card.dataset.i;
+  card.querySelectorAll('.st').forEach(function(b){b.addEventListener('click',function(){sides[i]=b.dataset.v;render();persist()})});
+});
+fields().forEach(function(e){e.addEventListener((e.type==='checkbox'||e.tagName==='SELECT')?'change':'input',function(){if(e.classList.contains('bad')&&e.value.trim())e.classList.remove('bad');render();persist()})});
+$('save').addEventListener('click',function(){
+  if(needNames()){msg('Type your first name, last name, and period before you save.','err');return}
+  var f=fname()+'-'+PACKET+'-PROGRESS.json';download(f,collect(false));
+  msg('Saved '+f+'. Keep that file. Use Load Progress later. Do not upload it to Canvas until you are finished.','ok');
+});
+$('loadBtn').addEventListener('click',function(){$('loadFile').value='';$('loadFile').click()});
+$('loadFile').addEventListener('change',function(){
+  var f=this.files&&this.files[0];if(!f)return;var r=new FileReader();
+  r.onload=function(){try{var d=JSON.parse(r.result);if(!d||d.packet!==PACKET)throw 0;apply(d);persist();msg('Progress loaded. Pick up where you left off.','ok')}
+    catch(e){msg('That file is not a saved file from this assignment. Choose the file that ends in -'+PACKET+'-PROGRESS.json.','err')}};
+  r.readAsText(f);
+});
+$('finish').addEventListener('click',function(){
+  if(missing().length){msg('Not finished yet. Read the line below to see what is missing.','err');render();return}
+  var d=new Date();$('date').value=(d.getMonth()+1)+'/'+d.getDate()+'/'+d.getFullYear();
+  var f=fname()+'-'+PACKET+'.json';download(f,collect(true));persist();
+  msg('Finished! Your file '+f+' downloaded. Upload that file to Canvas.','ok');
+});
+try{var raw=localStorage.getItem(STORE);if(raw){var d=JSON.parse(raw);if(d&&d.packet===PACKET)apply(d)}}catch(e){}
+render();
+})();
+</script></body></html>

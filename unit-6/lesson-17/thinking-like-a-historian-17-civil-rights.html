@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>From the Top or From Below? · Thinking Like a Historian 17</title><style>
+
+
+:root{--p:#1F4E5F;--bg:#EEF5F5;--a:#2F7184;--g:#C9695A;--hi:#E7A99E;--s:#A9584C;--v:#2E6B3E;--t:#0E232B;--card:#fff;--line:#D6E2E4;--mut:#193E4C}
+@media (prefers-color-scheme: dark){:root{--bg:#0C1F26;--card:#132F39;--t:#EEF5F5;--line:#33819D;--mut:#B2B8B8;--hi:#5C443F}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--t);font:17px/1.6 Georgia,'Times New Roman',serif}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px 40px}
+.hero{background:#1F4E5F;color:#EEF5F5;padding:30px 16px 24px;border-bottom:6px solid #C9695A}
+.hero .in{max-width:860px;margin:0 auto}
+.eyebrow{font:700 13px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.18em;color:#E7A99E}
+.hero h1{margin:.35em 0 .2em;font-size:clamp(28px,5vw,40px);line-height:1.15}
+.hero .sub{font-style:italic;color:#E7A99E}
+.flag{display:inline-block;margin-top:12px;background:#2F7184;color:#fff;font:700 13px Arial,sans-serif;letter-spacing:.08em;padding:6px 10px;border-radius:4px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:18px 0}
+.cq{border-left:6px solid var(--a)}
+.lab{font:700 13px Arial,Helvetica,sans-serif;letter-spacing:.12em;color:var(--a);text-transform:uppercase}
+h2{font-size:24px;margin:28px 0 6px;color:var(--p)}
+@media (prefers-color-scheme: dark){h2,.lab{color:#E7A99E}}
+h3{margin:.2em 0 .4em}
+.article p{margin:.7em 0}
+.article h3{font-size:21px}
+label{font:600 14px Arial,Helvetica,sans-serif;display:block;margin:12px 0 4px}
+input[type=text],textarea,select{width:100%;font:16px/1.5 Arial,Helvetica,sans-serif;padding:9px 10px;border:1.5px solid var(--line);border-radius:7px;background:#fffdf9;color:#222}
+textarea{min-height:80px;resize:vertical}
+.bad{border-color:#c0392b!important;background:#fdeceb!important}
+.names{display:grid;grid-template-columns:1fr 1fr 110px 150px;gap:10px}
+@media(max-width:620px){.names{grid-template-columns:1fr 1fr}}
+.meter{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line)}
+.bar{height:10px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--a);transition:width .3s}
+.mtext{font:600 14px Arial,sans-serif;margin-bottom:6px}
+.case{background:var(--card);border:1px solid var(--line);border-left:8px solid var(--line);border-radius:10px;padding:16px 18px;margin:22px 0}
+.case.done{border-left-color:var(--p)} .case.isS{border-left-color:var(--s)} .case.isV{border-left-color:var(--v)}
+.chip{display:inline-block;background:var(--p);color:#fff;font:700 13px Arial,sans-serif;padding:3px 10px;border-radius:20px;margin-right:8px}
+.cnum{font:700 13px Arial,sans-serif;letter-spacing:.1em;color:var(--mut);text-transform:uppercase}
+.who{font:600 15px Arial,sans-serif;margin:.6em 0 .2em}
+.intro{margin:.3em 0}
+blockquote{margin:12px 0;padding:12px 16px;background:#EEF5F5;color:#0E232B;border-left:5px solid var(--g);font-style:italic;border-radius:0 8px 8px 0}
+.cite{font:13px/1.45 Arial,sans-serif;color:var(--mut)}
+.help{font:14px/1.5 Arial,sans-serif;background:rgba(231,169,158,.25);padding:8px 10px;border-radius:6px;margin:8px 0}
+.ask{font:700 15px Arial,sans-serif;margin:14px 0 6px}
+.stances{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+@media(max-width:620px){.stances{grid-template-columns:1fr}}
+.st{font:700 15px Arial,sans-serif;padding:10px;border-radius:8px;border:2px solid var(--p);background:#fff;color:var(--p);cursor:pointer;text-align:left}
+.st small{display:block;font-weight:400;font-size:12.5px;color:#444;margin-top:3px}
+.st[data-v=S]{border-color:var(--s);color:var(--s)} .st[data-v=V]{border-color:var(--v);color:var(--v)}
+.st[aria-pressed=true]{background:var(--p);color:#fff} .st[data-v=S][aria-pressed=true]{background:var(--s)} .st[data-v=V][aria-pressed=true]{background:var(--v)}
+.st[aria-pressed=true] small{color:#fff}
+.how ol{margin:.4em 0;padding-left:1.3em}
+.checks label{font-weight:400;display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.checks input{width:20px;height:20px;margin-top:2px}
+.wc{font:600 14px Arial,sans-serif;color:var(--mut);margin-top:4px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 8px}
+button.b{font:700 15px Arial,sans-serif;padding:12px 16px;border-radius:8px;border:0;cursor:pointer;background:var(--p);color:#fff}
+button.b.alt{background:#fff;color:var(--p);border:2px solid var(--p)}
+button.b.fin{background:var(--a)}
+button.b:disabled{background:#6b6b6b;color:#ffffff;cursor:not-allowed}
+#status{font:600 15px Arial,sans-serif;margin:8px 0} #status.err{color:#b03a2e} #status.ok{color:var(--v)}
+#todo{font:14px Arial,sans-serif;color:var(--mut)}
+.key{background:rgba(231,169,158,.3);border:1px solid var(--g);border-radius:8px;padding:10px 12px;margin-top:10px;font:15px/1.5 Arial,sans-serif}
+.badge{display:inline-block;font:700 13px Arial,sans-serif;color:#fff;padding:3px 9px;border-radius:5px;margin-right:6px}
+footer{margin-top:36px;padding:16px;background:#1F4E5F;color:#E7A99E;font:700 12.5px Arial,sans-serif;letter-spacing:.08em;text-align:center}
+</style></head><body>
+<header class="hero"><div class="in">
+<div class="eyebrow">THINKING LIKE A HISTORIAN 17 · 1949–1960</div>
+<h1>From the Top or From Below?</h1>
+<div class="sub">Affluence, Anxiety, and the Early Civil Rights Struggle · Perspectives on the Early Civil Rights Movement · Crack the Case</div>
+</div></header>
+<main class="wrap">
+<div class="box cq"><div class="lab">Central Question:</div><p style="margin:.3em 0;font-size:19px"><b>Did Washington enable change in Little Rock and Ruleville, or did the people of Little Rock and Ruleville enable change in Washington?</b></p>
+<p style="margin:.3em 0">Your job: read the background, examine five primary sources that historians use in this debate, then close the case with a one-page essay.</p></div>
+<div class="box how"><div class="lab">How to play</div><ol>
+<li><b>Part 1:</b> Read the Background Reading and answer the one-sentence check.</li>
+<li><b>Part 2:</b> For each case file, read the excerpt, then tap which historian’s argument it helps most:<ul><li><b>★ FROM THE TOP</b>: Washington enabled change: the courts, Congress, and the president made the movement possible (Carl Brauer, 1977, “Second Reconstruction”).</li><li><b>◆ FROM THE GRASSROOTS</b>: Local people enabled change: ordinary men, women, and students in towns like Little Rock and Ruleville made the movement and pushed Washington to act (John Dittmer, 1994; Belinda Robnett, 2000; Clayborne Carson’s “Black Freedom Struggle”).</li><li><b>● BOTH / MIXED</b>: Helps both sides, or does not fit either one cleanly.</li></ul></li>
+<li>Type who made the source, when, and one key fact from the Background Reading, then copy the clue words that prove your choice and finish the sentence “This helps ___ because…”.</li>
+<li><b>Part 3:</b> Write your one-page essay and check the four boxes.</li>
+<li>Use <b>Save Progress</b> any time. When everything is done, <b>Finished</b> turns on.</li></ol></div>
+<div class="box"><div class="names">
+<div><label for="first">First name</label><input type="text" id="first" data-id="first" autocomplete="given-name"></div>
+<div><label for="last">Last name</label><input type="text" id="last" data-id="last" autocomplete="family-name"></div>
+<div><label for="period">Period</label><input type="text" id="period" data-id="period"></div>
+<div><label for="date">Date</label><input type="text" id="date" readonly placeholder="fills in at Finished"></div>
+</div></div>
+<h2>Part 1 · Background Reading</h2>
+<div class="box"><div class="article"><h3>Who Moved the Struggle for Civil Rights?</h3><p>In the early 1950s, segregation was the law in much of the South. Black and white students attended separate schools, rode in separate sections of buses, and used separate public facilities, and in many places Black citizens were kept from voting by taxes, tests, and threats. Since 1896 the Supreme Court had allowed this under the idea of “separate but equal.” The National Association for the Advancement of Colored People (NAACP) had spent years challenging that idea through lawsuits, and in 1954 it won. In Brown v. Board of Education of Topeka, the Court ruled unanimously, in an opinion written by Chief Justice Earl Warren, that segregated public schools were unconstitutional.</p><p>Southern leaders pushed back. In March 1956, about one hundred members of Congress from Southern states signed a statement known as the Southern Manifesto, which attacked the decision and encouraged resistance. In September 1957, Governor Orval Faubus of Arkansas used the state’s National Guard to keep nine Black students from entering Central High School in Little Rock, and an angry crowd gathered outside. President Dwight D. Eisenhower, who did not want to be seen as a champion of integration, answered with Executive Order 10730 on September 24. It sent federal troops to Little Rock and placed the Arkansas National Guard under federal command. The nine students entered the school under military guard.</p><p>Other Americans were already acting on their own. In February 1960, four Black college students sat down at a whites-only lunch counter in Greensboro, North Carolina, and sit-ins spread across the South. Ella Baker, a veteran organizer who worked for the Southern Christian Leadership Conference, helped students gather at Shaw University in Raleigh that April. The meeting led to the Student Nonviolent Coordinating Committee (SNCC), and Baker wrote about it for a newspaper, the Southern Patriot. In Mississippi, SNCC workers helped local people register to vote. One was Fannie Lou Hamer, a sharecropper from Ruleville. On August 31, 1962, she and others rode to the courthouse in Indianola to try to register. She was fired from her plantation job that same day and later suffered a brutal beating in jail after returning from a voter-registration workshop in 1963. In 1964 she helped found the Mississippi Freedom Democratic Party, which challenged the all-white state delegation at the Democratic National Convention in Atlantic City, and on August 22 she testified about her experiences before the convention’s Credentials Committee.</p><p>Historians disagree about where the movement’s power came from. In 1977 Carl Brauer called the era a Second Reconstruction in which the national government, through presidents, Congress, and the courts, made change possible. Later historians, including John Dittmer in his 1994 book on Mississippi, Local People, Belinda Robnett in 2000, and Clayborne Carson, with his emphasis on a broader “Black Freedom Struggle,” stressed that local men, women, and students started and sustained the movement, and that they pushed the government to act. As you read each source, ask whether it shows Washington enabling change, local people enabling change, or the two working together, and remember that some sources help both.</p></div>
+<label for="rdg">In one sentence, name one thing the federal government did and one thing ordinary local people did to challenge segregation between 1954 and 1964.</label>
+<textarea id="rdg" data-id="rdg" rows="2"></textarea></div>
+<h2>Part 2 · The Case Files</h2>
+<div class="meter"><div class="mtext" id="mtext">0 of 5 case files cracked</div><div class="bar"><i id="mbar"></i></div></div>
+<section class="case" id="case1" data-i="1"><div><span class="chip">1954</span><span class="cnum">Case file 1 of 5</span></div>
+<div class="who">Who: Chief Justice Earl Warren, writing for a unanimous U.S. Supreme Court<br>From: <i>Brown v. Board of Education of Topeka</i>, May 17, 1954</div>
+<p class="intro">The nation’s highest court answers a question brought by Black families about their children’s schools.</p>
+<blockquote>We come then to the question presented: does segregation of children in public schools solely on the basis of race, even though the physical facilities and other “tangible” factors may be equal, deprive the children of the minority group of equal educational opportunities? We believe that it does.&nbsp;.&nbsp;.&nbsp;. We conclude that, in the field of public education, the doctrine of “separate but equal” has no place. Separate educational facilities are inherently unequal. Therefore, we hold that the plaintiffs and others similarly situated for whom the actions have been brought are, by reason of the segregation complained of, deprived of the equal protection of the laws guaranteed by the Fourteenth Amendment.</blockquote>
+<div class="cite"><i>Brown v. Board of Education of Topeka</i>, 347 U.S. 483 (1954), opinion of the Court, via Justia.</div>
+<div class="help"><b>Word help:</b> segregation = forced separation of people by race · tangible = physical, countable · doctrine = a rule or principle · plaintiffs = people who bring a lawsuit</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 1"><button type="button" class="st" data-v="N" aria-pressed="false">★ FROM THE TOP<small>national government action opened the way for change</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ FROM THE GRASSROOTS<small>local people pushed the nation to act</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows both national power and local action</small></button></div>
+<label for="ctx1">Context: who made this, when, and what was going on? Use facts from the Background Reading.</label>
+<textarea id="ctx1" data-id="ctx1" rows="2" placeholder="Who made it, when, and one key fact from the Background Reading"></textarea>
+<label for="note1">Clue words</label>
+<textarea id="note1" data-id="note1" rows="2" placeholder="“clue words” — This helps ___ because…"></textarea>
+</section>
+<section class="case" id="case2" data-i="2"><div><span class="chip">1956</span><span class="cnum">Case file 2 of 5</span></div>
+<div class="who">Who: Nineteen U.S. senators and eighty-two U.S. representatives from the South<br>From: “Declaration of Constitutional Principles” (the Southern Manifesto), March 12, 1956</div>
+<p class="intro">Members of Congress from the South answer the Supreme Court’s school decision.</p>
+<blockquote>The unwarranted decision of the Supreme Court in the public school cases is now bearing the fruit always produced when men substitute naked power for established law.&nbsp;.&nbsp;.&nbsp;. The original Constitution does not mention education. Neither does the Fourteenth Amendment nor any other amendment.&nbsp;.&nbsp;.&nbsp;. This unwarranted exercise of power by the Court, contrary to the Constitution, is creating chaos and confusion in the states principally affected. It is destroying the amicable relations between the white and Negro races that have been created through ninety years of patient effort by the good people of both races.</blockquote>
+<div class="cite">“Declaration of Constitutional Principles,” <i>Congressional Record</i>, 84th Congress, 2nd session, March 12, 1956, via Teaching American History.</div>
+<div class="help"><b>Word help:</b> unwarranted = not justified · naked power = power with no legal reason · amicable = friendly · Negro = the period word for Black people</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 2"><button type="button" class="st" data-v="N" aria-pressed="false">★ FROM THE TOP<small>national government action opened the way for change</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ FROM THE GRASSROOTS<small>local people pushed the nation to act</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows both national power and local action</small></button></div>
+<label for="ctx2">Context: who made this, when, and what was going on? Use facts from the Background Reading.</label>
+<textarea id="ctx2" data-id="ctx2" rows="2" placeholder="Who made it, when, and one key fact from the Background Reading"></textarea>
+<label for="note2">Clue words</label>
+<textarea id="note2" data-id="note2" rows="2" placeholder="“clue words” — This helps ___ because…"></textarea>
+</section>
+<section class="case" id="case3" data-i="3"><div><span class="chip">1957</span><span class="cnum">Case file 3 of 5</span></div>
+<div class="who">Who: President Dwight D. Eisenhower<br>From: Executive Order 10730, September 24, 1957</div>
+<p class="intro">A president orders the military into a state after a governor blocks nine students from a school.</p>
+<blockquote>I, DWIGHT D. EISENHOWER, President of the United States, under and by virtue of the authority vested in me by the Constitution and Statutes of the United States &nbsp;.&nbsp;.&nbsp;. do command all persons engaged in such obstruction of justice to cease and desist therefrom, and to disperse forthwith .&nbsp;.&nbsp;.&nbsp;. I hereby authorize and direct the Secretary of Defense to order into the active military service of the United States &nbsp;.&nbsp;.&nbsp;. any or all of the units of the National Guard of the United States &nbsp;.&nbsp;.&nbsp;. within the State of Arkansas .&nbsp;.&nbsp;.&nbsp;.</blockquote>
+<div class="cite">Executive Order 10730, “Providing Assistance for the Removal of an Obstruction of Justice Within the State of Arkansas,” September 24, 1957, National Archives, Milestone Documents (signed September 24; the related proclamation is dated September 23).</div>
+<div class="help"><b>Word help:</b> obstruction of justice = blocking the courts’ orders · cease and desist = stop · disperse forthwith = break up the crowd at once · National Guard = state-based military force</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 3"><button type="button" class="st" data-v="N" aria-pressed="false">★ FROM THE TOP<small>national government action opened the way for change</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ FROM THE GRASSROOTS<small>local people pushed the nation to act</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows both national power and local action</small></button></div>
+<label for="ctx3">Context: who made this, when, and what was going on? Use facts from the Background Reading.</label>
+<textarea id="ctx3" data-id="ctx3" rows="2" placeholder="Who made it, when, and one key fact from the Background Reading"></textarea>
+<label for="note3">Clue words</label>
+<textarea id="note3" data-id="note3" rows="2" placeholder="“clue words” — This helps ___ because…"></textarea>
+</section>
+<section class="case" id="case4" data-i="4"><div><span class="chip">1960</span><span class="cnum">Case file 4 of 5</span></div>
+<div class="who">Who: Ella Baker, a civil rights organizer<br>From: “Bigger Than a Hamburger,” <i>Southern Patriot</i>, May 1960</div>
+<p class="intro">An organizer writes about a meeting of student protesters at Shaw University.</p>
+<blockquote>The Student Leadership Conference made it crystal clear that current sit-ins and other demonstrations are concerned with something much bigger than a hamburger or even a giant-sized Coke. Whatever may be the difference in approach to their goal, the Negro and white students, North and South, are seeking to rid America of the scourge of racial segregation and discrimination—not only at lunch counters, but in every aspect of life.&nbsp;.&nbsp;.&nbsp;. The students showed willingness to be met on the basis of equality, but were intolerant of anything that smacked of manipulation or domination.</blockquote>
+<div class="cite">Ella Baker, “Bigger Than a Hamburger,” <i>Southern Patriot</i>, May 1960, text checked against the Veterans of the Civil Rights Movement archive (crmvet.org) and History Is a Weapon (historyisaweapon.com).</div>
+<div class="help"><b>Word help:</b> demonstrations = public protests · scourge = a cause of great suffering · discrimination = unfair treatment · smacked of = seemed like · manipulation = controlling people for one’s own aims</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 4"><button type="button" class="st" data-v="N" aria-pressed="false">★ FROM THE TOP<small>national government action opened the way for change</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ FROM THE GRASSROOTS<small>local people pushed the nation to act</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows both national power and local action</small></button></div>
+<label for="ctx4">Context: who made this, when, and what was going on? Use facts from the Background Reading.</label>
+<textarea id="ctx4" data-id="ctx4" rows="2" placeholder="Who made it, when, and one key fact from the Background Reading"></textarea>
+<label for="note4">Clue words</label>
+<textarea id="note4" data-id="note4" rows="2" placeholder="“clue words” — This helps ___ because…"></textarea>
+</section>
+<section class="case" id="case5" data-i="5"><div><span class="chip">1964</span><span class="cnum">Case file 5 of 5</span></div>
+<div class="who">Who: Fannie Lou Hamer, a sharecropper from Ruleville, Mississippi<br>From: Testimony before the Credentials Committee, Democratic National Convention, August 22, 1964</div>
+<p class="intro">A Mississippi woman tells a national party committee what happened when she tried to register to vote.</p>
+<blockquote>It was the 31st of August in 1962 that eighteen of us traveled twenty-six miles to the county courthouse in Indianola to try to register to become first-class citizens.&nbsp;.&nbsp;.&nbsp;. All of this is on account of we want to register, to become first-class citizens. And if the Freedom Democratic Party is not seated now, I question America. Is this America, the land of the free and the home of the brave, where we have to sleep with our telephones off the hooks because our lives be threatened daily, because we want to live as decent human beings, in America?</blockquote>
+<div class="cite">Fannie Lou Hamer, testimony before the Credentials Committee, Democratic National Convention, Atlantic City, N.J., August 22, 1964, as transcribed by American RadioWorks, <i>Say It Plain</i> (americanradioworks.publicradio.org); the Norton exercise agrees where the passages overlap.</div>
+<div class="help"><b>Word help:</b> register = sign up to vote · first-class citizens = citizens with full rights · seated = officially admitted as the state’s delegates · threatened = warned of harm</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 5"><button type="button" class="st" data-v="N" aria-pressed="false">★ FROM THE TOP<small>national government action opened the way for change</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ FROM THE GRASSROOTS<small>local people pushed the nation to act</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows both national power and local action</small></button></div>
+<label for="ctx5">Context: who made this, when, and what was going on? Use facts from the Background Reading.</label>
+<textarea id="ctx5" data-id="ctx5" rows="2" placeholder="Who made it, when, and one key fact from the Background Reading"></textarea>
+<label for="note5">Clue words</label>
+<textarea id="note5" data-id="note5" rows="2" placeholder="“clue words” — This helps ___ because…"></textarea>
+</section>
+<h2>Part 3 · Case Closed</h2>
+<div class="box cq"><div class="lab">Central Question:</div><p style="margin:.3em 0"><b>Did Washington enable change in Little Rock and Ruleville, or did the people of Little Rock and Ruleville enable change in Washington?</b></p></div>
+<div class="box"><p><b>Your essay question:</b> Did Washington enable change in Little Rock and Ruleville, or did the people of Little Rock and Ruleville enable change in Washington? Take a position and defend it with the case files.</p>
+<p>Write about one page (about 250 to 350 words; at least 150 words to finish). Use this order:</p>
+<ol><li><b>Claim:</b> your answer to the question in one or two sentences.</li>
+<li><b>Evidence 1:</b> a quote from one case file, with what it shows and one context fact.</li>
+<li><b>Evidence 2:</b> a quote from a <i>different</i> case file, explained the same way.</li>
+<li><b>Counter-Argument:</b> name a case file someone on the other side would use, explain their point, then answer it.</li>
+<li><b>Conclusion:</b> what your answer shows about the historians’ debate, and how the evidence helps decide it.</li></ol>
+<label for="essay">Your essay</label>
+<textarea id="essay" data-id="essay" rows="18" style="min-height:360px"></textarea>
+<div class="wc" id="wc">0 words</div>
+<div class="checks" style="margin-top:12px">
+<label><input type="checkbox" id="chk1" data-id="chk1"> My essay opens with a clear claim.</label>
+<label><input type="checkbox" id="chk2" data-id="chk2"> I used evidence from at least two different case files.</label>
+<label><input type="checkbox" id="chk3" data-id="chk3"> I stated a Counter-Argument and answered it.</label>
+<label><input type="checkbox" id="chk4" data-id="chk4"> My conclusion explains what the evidence shows about the historians’ debate.</label>
+</div></div>
+<div class="btns">
+<button type="button" class="b" id="save">Save Progress</button>
+<button type="button" class="b alt" id="loadBtn">Load Progress</button>
+<input type="file" id="loadFile" accept=".json,application/json" hidden>
+<button type="button" class="b fin" id="finish" disabled>Finished — Download File to Submit</button>
+</div>
+<div id="status" role="status" aria-live="polite"></div>
+<div id="todo"></div>
+</main>
+<footer>UNIT 6 · THE AMERICAN AGE | HIST C1002 | DANIEL GARZA, M.A.</footer>
+<script>
+(function(){
+var PACKET="L17_Thinking_Like_a_Historian", STORE="c1002_l17_thinking_like_a_historian", COURSE="HIST C1002", NC=5;
+var $=function(id){return document.getElementById(id)};
+var sides={};
+function fields(){return Array.prototype.slice.call(document.querySelectorAll('[data-id]'))}
+function words(t){t=(t||'').trim();return t?t.split(/\s+/).length:0}
+function val(id){var e=$(id);return e?(e.value||'').trim():''}
+function cracked(i){return !!sides[i]&&val('note'+i)&&val('ctx'+i)}
+function missing(){
+  var m=[];
+  if(!val('first')||!val('last')||!val('period'))m.push('first name, last name, and period');
+  if(!val('rdg'))m.push('Background Reading check');
+  var c=[];for(var i=1;i<=NC;i++){if(!cracked(i))c.push(i)}
+  if(c.length)m.push('case file'+(c.length>1?'s ':' ')+c.join(', ')+' (stance, context, and clue words)');
+  if(words(val('essay'))<150)m.push('essay (at least 150 words)');
+  var k=[];for(var j=1;j<=4;j++){if(!$('chk'+j).checked)k.push(j)}
+  if(k.length)m.push('checklist box'+(k.length>1?'es ':' ')+k.join(', '));
+  return m;
+}
+function render(){
+  var n=0;
+  for(var i=1;i<=NC;i++){
+    var card=$('case'+i);var ok=cracked(i);if(ok)n++;
+    card.classList.toggle('done',!!sides[i]);card.classList.toggle('isS',sides[i]==='S');card.classList.toggle('isV',sides[i]==='V');
+    card.querySelectorAll('.st').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.v===sides[i]?'true':'false')});
+  }
+  $('mtext').textContent=n+' of '+NC+' case files cracked';$('mbar').style.width=(n*100/NC)+'%';
+  var w=words(val('essay'));$('wc').textContent=w+' word'+(w===1?'':'s')+(w<150?' (150 needed to finish)':'');
+  var m=missing();$('finish').disabled=m.length>0;
+  $('todo').textContent=m.length?('Still to do: '+m.join('; ')):'Everything is done. Click Finished to download your file.';
+}
+function collect(done){
+  var a={},ch={};
+  fields().forEach(function(e){var id=e.dataset.id;if(e.type==='checkbox')ch[id]=e.checked;else if(['first','last','period'].indexOf(id)<0)a[id]=e.value});
+  var t={national:0,state:0,voice:0};for(var i=1;i<=NC;i++){if(sides[i]==='N')t.national++;if(sides[i]==='S')t.state++;if(sides[i]==='V')t.voice++}
+  return {packet:PACKET,course:COURSE,version:1,saved:new Date().toISOString(),completed:!!done,
+    student:{first:val('first'),last:val('last'),period:val('period'),date:$('date').value||''},
+    sides:JSON.parse(JSON.stringify(sides)),answers:a,checks:ch,tally:t};
+}
+function apply(d){
+  sides={};Object.keys(d.sides||{}).forEach(function(k){sides[k]=d.sides[k]});
+  var s=d.student||{};$('first').value=s.first||'';$('last').value=s.last||'';$('period').value=s.period||'';$('date').value=s.date||'';
+  var a=d.answers||{},ch=d.checks||{};
+  fields().forEach(function(e){var id=e.dataset.id;if(e.type==='checkbox')e.checked=!!ch[id];else if(id in a)e.value=a[id]});
+  render();
+}
+function persist(){try{localStorage.setItem(STORE,JSON.stringify(collect(false)))}catch(e){}}
+function fname(){return (val('last')+'_'+val('first')).normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^A-Za-z0-9_\-]+/g,'_')}
+function download(name,obj){
+  var blob=new Blob([JSON.stringify(obj,null,2)],{type:'application/json'});var u=URL.createObjectURL(blob);
+  var a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();
+  setTimeout(function(){URL.revokeObjectURL(u);a.remove()},1500);
+}
+function msg(t,cls){var s=$('status');s.textContent=t;s.className=cls||''}
+function needNames(){
+  var bad=false;['first','last','period'].forEach(function(id){var e=$(id);var b=!e.value.trim();e.classList.toggle('bad',b);if(b)bad=true});
+  return bad;
+}
+document.querySelectorAll('.case').forEach(function(card){
+  var i=card.dataset.i;
+  card.querySelectorAll('.st').forEach(function(b){b.addEventListener('click',function(){sides[i]=b.dataset.v;render();persist()})});
+});
+fields().forEach(function(e){e.addEventListener(e.type==='checkbox'?'change':'input',function(){if(e.classList.contains('bad')&&e.value.trim())e.classList.remove('bad');render();persist()})});
+$('save').addEventListener('click',function(){
+  if(needNames()){msg('Type your first name, last name, and period before you save.','err');return}
+  var f=fname()+'-'+PACKET+'-PROGRESS.json';download(f,collect(false));
+  msg('Saved '+f+'. Keep that file. Use Load Progress later. Do not upload it to Canvas until you are finished.','ok');
+});
+$('loadBtn').addEventListener('click',function(){$('loadFile').value='';$('loadFile').click()});
+$('loadFile').addEventListener('change',function(){
+  var f=this.files&&this.files[0];if(!f)return;var r=new FileReader();
+  r.onload=function(){try{var d=JSON.parse(r.result);if(!d||d.packet!==PACKET)throw 0;apply(d);persist();msg('Progress loaded. Pick up where you left off.','ok')}
+    catch(e){msg('That file is not a saved file from this assignment. Choose the file that ends in -'+PACKET+'-PROGRESS.json.','err')}};
+  r.readAsText(f);
+});
+$('finish').addEventListener('click',function(){
+  if(missing().length){msg('Not finished yet. Read the line below to see what is missing.','err');render();return}
+  var d=new Date();$('date').value=(d.getMonth()+1)+'/'+d.getDate()+'/'+d.getFullYear();
+  var f=fname()+'-'+PACKET+'.json';download(f,collect(true));persist();
+  msg('Finished! Your file '+f+' downloaded. Upload that file to Canvas.','ok');
+});
+try{var raw=localStorage.getItem(STORE);if(raw){var d=JSON.parse(raw);if(d&&d.packet===PACKET)apply(d)}}catch(e){}
+render();
+})();
+</script></body></html>

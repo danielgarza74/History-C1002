@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Why War? How Good a President? · Thinking Like a Historian 13</title><style>
+:root{--p:#26364A;--bg:#F1F3F5;--a:#47657A;--g:#B34A3C;--hi:#E3A49A;--s:#B34A3C;--v:#2E6B3E;--t:#0E151C;--card:#fff;--line:#D5D9DD;--mut:#5D6368}
+@media (prefers-color-scheme: dark){:root{--bg:#0B0F15;--card:#111821;--t:#F1F3F5;--line:#404E60;--mut:#B4BAC2}.lab{color:var(--hi)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--t);font:17px/1.6 Georgia,'Times New Roman',serif}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px 40px}
+.hero{background:#26364A;color:#F1F3F5;padding:30px 16px 24px;border-bottom:6px solid #B34A3C}
+.hero .in{max-width:860px;margin:0 auto}
+.eyebrow{font:700 13px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.18em;color:#E3A49A}
+.hero h1{margin:.35em 0 .2em;font-size:clamp(28px,5vw,40px);line-height:1.15}
+.hero .sub{font-style:italic;color:#E3A49A}
+.flag{display:inline-block;margin-top:12px;background:#47657A;color:#fff;font:700 13px Arial,sans-serif;letter-spacing:.08em;padding:6px 10px;border-radius:4px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:18px 0}
+.cq{border-left:6px solid var(--a)}
+.lab{font:700 13px Arial,Helvetica,sans-serif;letter-spacing:.12em;color:var(--a);text-transform:uppercase}
+h2{font-size:24px;margin:28px 0 6px;color:var(--p)}
+@media (prefers-color-scheme: dark){h2{color:var(--hi)}.lab{color:var(--hi)}.help{color:var(--t)}}
+h3{margin:.2em 0 .4em}
+.article p{margin:.7em 0}
+.article h3{font-size:21px}
+label{font:600 14px Arial,Helvetica,sans-serif;display:block;margin:12px 0 4px}
+input[type=text],textarea,select{width:100%;font:16px/1.5 Arial,Helvetica,sans-serif;padding:9px 10px;border:1.5px solid var(--line);border-radius:7px;background:#fffdf9;color:#222}
+textarea{min-height:80px;resize:vertical}
+.bad{border-color:#B03A2E!important;background:#fdeceb!important}
+.names{display:grid;grid-template-columns:1fr 1fr 110px 150px;gap:10px}
+@media(max-width:620px){.names{grid-template-columns:1fr 1fr}}
+.meter{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line)}
+.bar{height:10px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--a);transition:width .3s}
+.mtext{font:600 14px Arial,sans-serif;margin-bottom:6px}
+.case{background:var(--card);border:1px solid var(--line);border-left:8px solid var(--line);border-radius:10px;padding:16px 18px;margin:22px 0}
+.case.done{border-left-color:var(--p)} .case.isS{border-left-color:var(--s)} .case.isV{border-left-color:var(--v)}
+.chip{display:inline-block;background:var(--p);color:#fff;font:700 13px Arial,sans-serif;padding:3px 10px;border-radius:20px;margin-right:8px}
+.cnum{font:700 13px Arial,sans-serif;letter-spacing:.1em;color:var(--mut);text-transform:uppercase}
+.who{font:600 15px Arial,sans-serif;margin:.6em 0 .2em}
+.intro{margin:.3em 0}
+blockquote{margin:12px 0;padding:12px 16px;background:#F1F3F5;color:#0E151C;border-left:5px solid var(--g);font-style:italic;border-radius:0 8px 8px 0}
+.cite{font:13px/1.45 Arial,sans-serif;color:var(--mut)}
+.help{font:14px/1.5 Arial,sans-serif;color:var(--t);background:rgba(227,164,154,.25);padding:8px 10px;border-radius:6px;margin:8px 0}
+.ask{font:700 15px Arial,sans-serif;margin:14px 0 6px}
+.stances{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+@media(max-width:620px){.stances{grid-template-columns:1fr}}
+.st{font:700 15px Arial,sans-serif;padding:10px;border-radius:8px;border:2px solid var(--p);background:#fff;color:var(--p);cursor:pointer;text-align:left}
+.st small{display:block;font-weight:400;font-size:12.5px;color:#444;margin-top:3px}
+.st[data-v=S]{border-color:var(--s);color:var(--s)} .st[data-v=V]{border-color:var(--v);color:var(--v)}
+.st[aria-pressed=true]{background:var(--p);color:#fff} .st[data-v=S][aria-pressed=true]{background:var(--s)} .st[data-v=V][aria-pressed=true]{background:var(--v)}
+.st[aria-pressed=true] small{color:#fff}
+.how ol{margin:.4em 0;padding-left:1.3em}
+.checks label{font-weight:400;display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.checks input{flex:none;width:20px;height:20px;margin-top:2px}
+.wc{font:600 14px Arial,sans-serif;color:var(--mut);margin-top:4px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 8px}
+button.b{font:700 15px Arial,sans-serif;padding:12px 16px;border-radius:8px;border:0;cursor:pointer;background:var(--p);color:#fff}
+button.b.alt{background:#fff;color:var(--p);border:2px solid var(--p)}
+button.b.fin{background:var(--a)}
+button.b:disabled{background:#6f6f6f;color:#fff;cursor:not-allowed}
+#status{font:600 15px Arial,sans-serif;margin:8px 0} #status.err{color:#b03a2e} #status.ok{color:var(--v)}
+#todo{font:14px Arial,sans-serif;color:var(--mut)}
+.key{color:#0E151C;background:rgba(227,164,154,.3);border:1px solid var(--g);border-radius:8px;padding:10px 12px;margin-top:10px;font:15px/1.5 Arial,sans-serif}
+.badge{display:inline-block;font:700 13px Arial,sans-serif;color:#fff;padding:3px 9px;border-radius:5px;margin-right:6px}
+footer{margin-top:36px;padding:16px;background:#26364A;color:#E3A49A;font:700 12.5px Arial,sans-serif;letter-spacing:.08em;text-align:center}
+
+.grp{margin:34px 0 4px;padding:12px 16px;background:var(--p);color:#fff;border-radius:10px}
+.grp .gl{font:700 12px Arial,sans-serif;letter-spacing:.14em;color:var(--hi)}
+.grp h2{color:#fff;margin:4px 0 0;font-size:21px}
+.dq ul{margin:.4em 0;padding-left:1.2em}
+.dq li{margin:.35em 0;font:15px/1.5 Arial,sans-serif}
+.rd h3{margin-top:0}
+.essaysamp p{margin:.7em 0}
+</style></head><body>
+<header class="hero"><div class="in">
+<div class="eyebrow">THINKING LIKE A HISTORIAN 13 · 1903–1928</div>
+<h1>Why War? How Good a President?</h1>
+<div class="sub">The Great War and the Cultural Conflicts of the 1920s · Thinking Like a Historian</div>
+</div></header>
+<main class="wrap">
+<div class="box cq"><div class="lab">Central Questions:</div><p style="margin:.4em 0;font-size:18px"><b>Debate 1:</b> Why did the United States enter the Great War in 1917: to protect its national security, to protect its economic interests, or to defend democracy and a moral cause?</p><p style="margin:.4em 0;font-size:18px"><b>Debate 2:</b> Was Warren G. Harding a poor president whose scandals and weak leadership failed the country, or an underrated president whose record deserves a second look?</p><p style="margin:.3em 0">Your job: read the background, crack 8 case files (the documents historians use as evidence), then close the case with a one-page essay on ONE of the debates.</p></div>
+<div class="box how"><div class="lab">How to play</div><ol><li><b>Part 1:</b> Read the Background Readings and answer the one-sentence checks.</li><li><b>Part 2:</b> For each case file, read the excerpt, then tap which historian’s argument it helps most. The three buttons change with each debate, so read them. Each has a symbol (★, ◆, ●) as well as a label.</li><li>Type who made the source, when, and the key fact (use the Background Reading). Then copy the clue words that prove your choice and finish the sentence “This source helps…”.</li><li><b>Part 3:</b> Choose ONE debate from the menu, then write your one-page essay and check the four boxes.</li><li>Use <b>Save Progress</b> any time. When everything is done, <b>Finished</b> turns on.</li></ol></div>
+<div class="box"><div class="names">
+<div><label for="first">First name</label><input type="text" id="first" data-id="first" autocomplete="given-name"></div>
+<div><label for="last">Last name</label><input type="text" id="last" data-id="last" autocomplete="family-name"></div>
+<div><label for="period">Period</label><input type="text" id="period" data-id="period"></div>
+<div><label for="date">Date</label><input type="text" id="date" readonly placeholder="fills in at Finished"></div>
+</div></div>
+<h2>Part 1 · Background Reading</h2>
+<div class="box rd"><div class="article"><div class="lab">Debate 1</div><h3>From Neutrality to War</h3><p>When war broke out in Europe in the summer of 1914, President Woodrow Wilson asked Americans to be neutral in thought and in deed, and for nearly three years the United States stayed out. Neutrality was hard to keep. Britain and France, known as the Allies, set up a blockade that kept American ships from German ports, and American banks lent hundreds of millions of dollars to the Allies. Germany answered with submarines. In May 1915 a German submarine sank the British passenger liner Lusitania, and Americans were among the dead. Germany then promised to limit its attacks, and in 1916 Wilson won a second term with a campaign that stressed keeping the country at peace. But in early 1917 Germany announced that its submarines would sink ships in a war zone without warning, and in the weeks that followed American merchant ships were attacked. Soon afterward the British showed American officials an intercepted German message, the Zimmermann telegram, which proposed that Mexico join Germany in a war against the United States. On April 2, 1917, Wilson asked Congress to declare war, and Congress voted for war a few days later, with only a small number of members voting no.</p><p>Historians have offered three main explanations. Arthur Link and Ross Kennedy stress national security. In their view Germany’s submarine campaign and its attempt to draw in Mexico threatened American lives, American ships, and the safety of the nation, and Wilson had to respond. Critics answer that Britain’s blockade also broke the rules for neutral ships, yet no one asked for war against Britain. Charles Beard and Hartley Grattan stress economic self-interest. They argued that loans and trade tied the country to an Allied victory, so bankers and manufacturers stood to lose if Germany won. Ernest May stresses moral duty. He argued that Wilson believed the United States had a responsibility to defend democratic values and to help build a lasting peace, an idea Wilson summed up in the phrase “make the world safe for democracy.”</p><p>Three voices will let you test these arguments. In his war message to Congress on April 2, 1917, Wilson explained why he thought the country must fight. Two members of Congress, Senators Robert La Follette and George Norris, spoke against war on April 4 as the Senate prepared to vote. Each had a different reason for his doubts, and each case file may help a different historian. Notice also who is speaking and when: Wilson was making a request to a nation that had stayed out of the war for almost three years, while the two senators were speaking in the last hours before the vote. Ask of each source: whose argument does this evidence help most?</p></div>
+<label for="rdg1">In one sentence, name two events of 1915–1917 that pushed the United States toward war.</label>
+<textarea id="rdg1" data-id="rdg1" rows="2"></textarea></div>
+<div class="box rd"><div class="article"><div class="lab">Debate 2</div><h3>The Scandals and the Second Look</h3><p>Warren G. Harding, a newspaper publisher and senator from Ohio, won the presidency in 1920 with a call for a calmer, quieter government after the strains of the Great War. Voters were tired of the war years and of strong calls to reform the world, and Harding promised a return to what he called normalcy. He took office in March 1921, and in his inaugural address he asked Americans to expect less from government and to put the nation’s finances in order. He died suddenly in August 1923, in the middle of his term. After his death, stories spread of corruption among officials he had appointed. The best known is the Teapot Dome affair, in which the government’s oil reserves for the Navy were leased to private oil men in return for favors, with the approval of the secretary of the interior, Albert Fall, one of Harding’s own cabinet choices. Harding himself was not shown to have profited, but the scandals damaged his reputation for good.</p><p>In 1948 the historian Arthur Schlesinger Sr. asked a group of scholars to rank the presidents, and Harding landed near the bottom. Eugene Trani and David Wilson, who studied the Harding presidency, concluded that he was a “poor president,” a man without vision or moral leadership. Later historians looked more closely. In 1969 Robert K. Murray argued in The Harding Years that Harding had real successes and that his reputation rested too much on rumor. In 2004 John Dean, who wrote a short biography, pointed to Harding’s record on civil rights as a reason to look again. Others take a balanced view, crediting him with some achievements and blaming him for weak judgment in choosing friends. These historians are not only arguing about facts. They are also choosing different ways to judge a president: by results in office, by vision and leadership, or by personal honesty and the choices of the people he appointed.</p><p>Five voices will let you test these views. They include his own inaugural address, a sharp newspaper column about his speaking style, a speech Harding gave in Birmingham, Alabama, about race, a senator’s report on Teapot Dome, and the memory of Herbert Hoover, who served in Harding’s cabinet. As you read, remember that the writers had different reasons for writing, that some wrote in the middle of events and others looked back years later, and that critics and defenders often judged Harding by different standards. Ask of each source: whose argument does this evidence help most?</p></div>
+<label for="rdg2">In one sentence, explain what the Teapot Dome affair was and why it hurt Harding’s reputation.</label>
+<textarea id="rdg2" data-id="rdg2" rows="2"></textarea></div>
+
+<h2>Part 2 · The Case Files</h2>
+<div class="meter"><div class="mtext" id="mtext">0 of 8 case files cracked</div><div class="bar"><i id="mbar"></i></div></div>
+<div class="grp"><div class="gl">DEBATE 1 · CASE FILES 1–3</div><h2>Entering the Great War: Security, Money, or Duty?</h2></div>
+<div class="box dq"><div class="lab">The debate:</div><p style="margin:.3em 0"><b>Why did the United States enter the Great War in 1917: to protect its national security, to protect its economic interests, or to defend democracy and a moral cause?</b></p><ul><li><b>★ NATIONAL SECURITY</b>: Arthur Link and Ross Kennedy argued that German submarine warfare and the Zimmermann telegram threatened American security; critics point out that the British blockade also broke neutral rights.</li><li><b>◆ ECONOMIC SELF-INTEREST</b>: Charles Beard and Hartley Grattan argued that loans and trade ties to the Allies pushed the country into war.</li><li><b>● MORAL DUTY</b>: Ernest May argued that Wilson saw a duty to defend democracy, the idea behind “make the world safe for democracy.”</li></ul></div>
+<section class="case" id="case1" data-i="1"><div><span class="chip">1917</span><span class="cnum">Case file 1 of 8</span></div>
+<div class="who">Who: President Woodrow Wilson<br>From: War message to Congress, April 2, 1917</div>
+<p class="intro">The president asks Congress to declare war on Germany.</p>
+<blockquote>The present German submarine warfare against commerce is a warfare against mankind. It is a war against all nations.&nbsp;.&nbsp;.&nbsp;. The world must be made safe for democracy. Its peace must be planted upon the tested foundations of political liberty. We have no selfish ends to serve. We desire no conquest, no dominion. We seek no indemnities for ourselves, no material compensation for the sacrifices we shall freely make. We are but one of the champions of the rights of mankind.</blockquote>
+<div class="cite">Woodrow Wilson, “Address by the President of the United States,” April 2, 1917, <i>Congressional Record</i>, 65th Cong., 1st Sess., 1917, 55:102–104, text from Teaching American History, Ashbrook Center.</div>
+<div class="help"><b>Word help:</b> commerce = trade · dominion = rule over other lands · indemnities = payments to cover the costs of war · champions = defenders</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 1"><button type="button" class="st" data-v="N" aria-pressed="false">★ NATIONAL SECURITY<small>German attacks threatened the country</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ ECONOMIC SELF-INTEREST<small>loans and trade tied the country to the Allies</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● MORAL DUTY<small>defending democracy and the rights of mankind</small></button></div>
+<label for="ctx1">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx1" data-id="ctx1" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note1">Clue words</label>
+<textarea id="note1" data-id="note1" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case2" data-i="2"><div><span class="chip">1917</span><span class="cnum">Case file 2 of 8</span></div>
+<div class="who">Who: Senator Robert La Follette<br>From: Speech in the U.S. Senate against the war resolution, April 4, 1917</div>
+<p class="intro">A senator argues that neutrality was not kept fairly and that war is the result.</p>
+<blockquote>The failure to treat the belligerent nations of Europe alike, the failure to reject the unlawful “war zones” of both Germany and Great Britain is wholly accountable for our present dilemma. We should not seek to hide our blunder behind the smoke of battle to inflame the mind of our people by half truths into the frenzy of war in order that they may never appreciate the real cause of it until it is too late. I do not believe that our national honor is served by such a course. The right way is the honorable way.</blockquote>
+<div class="cite">Robert M. La Follette, speech in the Senate, April 4, 1917, <i>Congressional Record</i>–Senate, 224–225, text from History Matters (Hanover College copy).</div>
+<div class="help"><b>Word help:</b> belligerent = a nation at war · dilemma = a hard choice with no good answer · blunder = a bad mistake · frenzy = wild excitement</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 2"><button type="button" class="st" data-v="N" aria-pressed="false">★ NATIONAL SECURITY<small>German attacks threatened the country</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ ECONOMIC SELF-INTEREST<small>loans and trade tied the country to the Allies</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● MORAL DUTY<small>defending democracy and the rights of mankind</small></button></div>
+<label for="ctx2">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx2" data-id="ctx2" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note2">Clue words</label>
+<textarea id="note2" data-id="note2" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case3" data-i="3"><div><span class="chip">1917</span><span class="cnum">Case file 3 of 8</span></div>
+<div class="who">Who: Senator George Norris<br>From: Speech in the U.S. Senate against the war resolution, April 4, 1917</div>
+<p class="intro">A senator says that loans to the Allies have shaped public feeling for war.</p>
+<blockquote>We have loaned many hundreds of millions of dollars to the allies in this controversy. While such action was legal and countenanced by international law, there is no doubt in my mind but the enormous amount of money loaned to the allies in this country has been instrumental in bringing about a public sentiment in favor of our country taking a course that would make every bond worth a hundred cents on the dollar and making the payment of every debt certain and sure.</blockquote>
+<div class="cite">George W. Norris, speech in the Senate, April 4, 1917, <i>Congressional Record</i>, 65th Cong., 1st Sess., Vol. LV, pt. I, 212–213, text from the MIT 21H.102 course page.</div>
+<div class="help"><b>Word help:</b> countenanced = approved · instrumental = important in causing something · sentiment = public feeling · bond = a loan paper that promises repayment</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 3"><button type="button" class="st" data-v="N" aria-pressed="false">★ NATIONAL SECURITY<small>German attacks threatened the country</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ ECONOMIC SELF-INTEREST<small>loans and trade tied the country to the Allies</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● MORAL DUTY<small>defending democracy and the rights of mankind</small></button></div>
+<label for="ctx3">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx3" data-id="ctx3" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note3">Clue words</label>
+<textarea id="note3" data-id="note3" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<div class="grp"><div class="gl">DEBATE 2 · CASE FILES 4–8</div><h2>Assessing Warren G. Harding: Poor President or Underrated?</h2></div>
+<div class="box dq"><div class="lab">The debate:</div><p style="margin:.3em 0"><b>Was Warren G. Harding a poor president whose scandals and weak leadership failed the country, or an underrated president whose record deserves a second look?</b></p><ul><li><b>★ POOR PRESIDENT</b>: In 1948 Arthur Schlesinger Sr. ranked Harding near the bottom, and Eugene Trani and David Wilson called him a “poor president” who lacked vision and moral leadership.</li><li><b>◆ UNDERRATED</b>: Robert K. Murray (1969) and John Dean (2004) argued that Harding’s record, including his civil rights record, deserves more credit than his reputation gives it.</li><li><b>● BOTH / MIXED</b>: A source that fits both arguments: it shows real strengths and real failures at once.</li></ul></div>
+<section class="case" id="case4" data-i="4"><div><span class="chip">1921</span><span class="cnum">Case file 4 of 8</span></div>
+<div class="who">Who: President Warren G. Harding<br>From: Inaugural address, March 4, 1921</div>
+<p class="intro">The new president tells Americans what they should expect from their government.</p>
+<blockquote>Our most dangerous tendency is to expect too much of government, and at the same time do for it too little. We contemplate the immediate task of putting our public household in order.&nbsp;.&nbsp;.&nbsp;. We must face a condition of grim reality, charge off our losses and start afresh.&nbsp;.&nbsp;.&nbsp;. I would like government to do all it can to mitigate; then, in understanding, in mutuality of interest, in concern for the common good, our tasks will be solved. No altered system will work a miracle. Any wild experiment will only add to the confusion. Our best assurance lies in efficient administration of our proven system.</blockquote>
+<div class="cite">Warren G. Harding, Inaugural Address, March 4, 1921, National Archives; text from the Avalon Project, Yale Law School.</div>
+<div class="help"><b>Word help:</b> tendency = a habit or leaning · mitigate = make less severe · mutuality = shared, two-way · efficient = working well without waste</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 4"><button type="button" class="st" data-v="N" aria-pressed="false">★ POOR PRESIDENT<small>weak leadership and scandal define his record</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ UNDERRATED<small>his record deserves a second look</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows real strengths and real failures</small></button></div>
+<label for="ctx4">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx4" data-id="ctx4" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note4">Clue words</label>
+<textarea id="note4" data-id="note4" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case5" data-i="5"><div><span class="chip">1921</span><span class="cnum">Case file 5 of 8</span></div>
+<div class="who">Who: H. L. Mencken, Baltimore journalist<br>From: Newspaper column, “Gamalielese,” <i>The Evening Sun</i> (Baltimore), March 7, 1921</div>
+<p class="intro">A sharp-tongued critic reviews the new president’s inaugural speech.</p>
+<blockquote>[H]e writes the worst English I have ever encountered. It reminds me of a string of wet sponges; .&nbsp;.&nbsp;. it reminds me of stale bean soup, of college yells, of dogs barking idiotically through endless nights. It is so bad that a sort of grandeur creeps into it.&nbsp;.&nbsp;.&nbsp;. A tight fabric of ideas would weary and exasperate the audience; what it wants is a simple loud burble of words, a procession of phrases that roar, a series of whoops.</blockquote>
+<div class="cite">H. L. Mencken, “Gamalielese,” <i>The Evening Sun</i> (Baltimore), March 7, 1921, p. 10, as printed in the Norton exercise (Norton’s page is titled “On Balder and Dash”).</div>
+<div class="help"><b>Word help:</b> idiotically = in a silly way · grandeur = great impressiveness · exasperate = make very annoyed · burble = a bubbling, meaningless flow of sound</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 5"><button type="button" class="st" data-v="N" aria-pressed="false">★ POOR PRESIDENT<small>weak leadership and scandal define his record</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ UNDERRATED<small>his record deserves a second look</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows real strengths and real failures</small></button></div>
+<label for="ctx5">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx5" data-id="ctx5" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note5">Clue words</label>
+<textarea id="note5" data-id="note5" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case6" data-i="6"><div><span class="chip">1921</span><span class="cnum">Case file 6 of 8</span></div>
+<div class="who">Who: President Warren G. Harding<br>From: Speech, “The South and the Negro,” Birmingham, Alabama, October 26, 1921</div>
+<p class="intro">The president speaks about race in a Southern city.</p>
+<blockquote>Politically and economically there need be no occasion for great and permanent differentiation, for limitations of the individual’s opportunity, provided that on both sides there shall be recognition of the absolute divergence in things social and racial.&nbsp;.&nbsp;.&nbsp;. Men of both races may well stand uncompromisingly against every suggestion of social equality.&nbsp;.&nbsp;.&nbsp;. I would say let the black man vote when he is fit to vote: prohibit the white man voting when he is unfit to vote.&nbsp;.&nbsp;.&nbsp;. On the other hand I would insist upon equal educational opportunity for both.</blockquote>
+<div class="cite">Warren G. Harding, “The South and the Negro,” Birmingham, Alabama, October 26, 1921, as printed in <i>The New York Times</i>, October 27, 1921, pp. 1, 11, and in the Norton exercise. The words “black” and “Negro” are the source’s.</div>
+<div class="help"><b>Word help:</b> differentiation = making a difference between groups · divergence = being different or separate · uncompromisingly = refusing to give way · opportunity = a chance</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 6"><button type="button" class="st" data-v="N" aria-pressed="false">★ POOR PRESIDENT<small>weak leadership and scandal define his record</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ UNDERRATED<small>his record deserves a second look</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows real strengths and real failures</small></button></div>
+<label for="ctx6">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx6" data-id="ctx6" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note6">Clue words</label>
+<textarea id="note6" data-id="note6" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case7" data-i="7"><div><span class="chip">1928</span><span class="cnum">Case file 7 of 8</span></div>
+<div class="who">Who: Senator Gerald P. Nye of North Dakota<br>From: Report on the Teapot Dome investigation, <i>Congressional Record</i>, 1928</div>
+<p class="intro">A senator reports what the Senate found about the leasing of the Navy’s oil reserves.</p>
+<blockquote>The investigation thus far discloses that the leasing of the naval oil reserves constitutes criminal conspiracy against the rights, interests, and properties of the United States Government unparalleled in the history of this or any other civilized nation.&nbsp;.&nbsp;.&nbsp;. The leases involved in the case are estimated to have been worth not less than $500,000,000, and were consummated .&nbsp;.&nbsp;. “by conspiracy, corruption, and fraud.”</blockquote>
+<div class="cite">Gerald P. Nye, <i>Congressional Record</i>, 70th Cong., 1st Sess., 1928 (Washington: Government Printing Office), as printed in the Norton exercise.</div>
+<div class="help"><b>Word help:</b> disclose = reveal · conspiracy = a secret plan by several people to do wrong · unparalleled = never matched · consummated = completed · fraud = cheating</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 7"><button type="button" class="st" data-v="N" aria-pressed="false">★ POOR PRESIDENT<small>weak leadership and scandal define his record</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ UNDERRATED<small>his record deserves a second look</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows real strengths and real failures</small></button></div>
+<label for="ctx7">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx7" data-id="ctx7" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note7">Clue words</label>
+<textarea id="note7" data-id="note7" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case8" data-i="8"><div><span class="chip">1952</span><span class="cnum">Case file 8 of 8</span></div>
+<div class="who">Who: Herbert Hoover, former president and Harding’s Secretary of Commerce<br>From: Memoir, <i>The Memoirs of Herbert Hoover: The Cabinet and the Presidency, 1920–1933</i></div>
+<p class="intro">A member of Harding’s cabinet looks back on the man and his presidency.</p>
+<blockquote>President Harding died in August, 1923, after two and one-half years in office. He was a kind of dual personality.&nbsp;.&nbsp;.&nbsp;. He had real quality in geniality, in good will and in ability for pleasing address. He was not a man with either the experience or the intellectual quality that the position needed. But he was neither a “reactionary” nor a “radical.” .&nbsp;.&nbsp;. [A]ny objective weighing of Mr. Harding’s Presidential contribution in the balances of time must show that his playmates tipped the scales from his very considerable accomplishments in national progress toward national degeneration.</blockquote>
+<div class="cite">Herbert Hoover, <i>The Memoirs of Herbert Hoover: The Cabinet and the Presidency, 1920–1933</i> (New York: Macmillan, 1952), “Reorganizing the Department of Commerce,” as printed in the Norton exercise.</div>
+<div class="help"><b>Word help:</b> geniality = friendliness · reactionary = someone who wants to go back to older ways · degeneration = decline · objective = fair and without bias</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 8"><button type="button" class="st" data-v="N" aria-pressed="false">★ POOR PRESIDENT<small>weak leadership and scandal define his record</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ UNDERRATED<small>his record deserves a second look</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows real strengths and real failures</small></button></div>
+<label for="ctx8">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx8" data-id="ctx8" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note8">Clue words</label>
+<textarea id="note8" data-id="note8" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+
+<h2>Part 3 · Case Closed</h2>
+<div class="box cq"><div class="lab">Central Questions:</div><p style="margin:.3em 0"><b>Debate 1: Why did the United States enter the Great War in 1917: to protect its national security, to protect its economic interests, or to defend democracy and a moral cause?</b></p><p style="margin:.3em 0"><b>Debate 2: Was Warren G. Harding a poor president whose scandals and weak leadership failed the country, or an underrated president whose record deserves a second look?</b></p></div>
+<div class="box"><p><b>Your essay question:</b> Choose one debate above and answer its question. Take a position and defend it with the case files from that debate.</p>
+<label for="debate">Which debate will you write about?</label>
+<select id="debate" data-id="debate"><option value="">Choose a debate…</option><option value="1">Debate 1 · Entering the Great War: Security, Money, or Duty?</option><option value="2">Debate 2 · Assessing Warren G. Harding: Poor President or Underrated?</option></select>
+<p>Write about one page (about 250 to 350 words; at least 150 words to finish). Use this order:</p>
+<ol><li><b>Claim:</b> your answer to the question in one or two sentences.</li>
+<li><b>Evidence 1:</b> a quote from one case file, with what it shows and one context fact.</li>
+<li><b>Evidence 2:</b> a quote from a <i>different</i> case file, explained the same way.</li>
+<li><b>Counter-Argument:</b> name a case file (or a historian) someone on the other side would use, explain their point, then answer it.</li>
+<li><b>Conclusion:</b> what your answer shows about the historians’ debate you chose, and how the evidence helps decide it.</li></ol>
+<label for="essay">Your essay</label>
+<textarea id="essay" data-id="essay" rows="18" style="min-height:360px"></textarea>
+<div class="wc" id="wc">0 words</div>
+<div class="checks" style="margin-top:12px">
+<label><input type="checkbox" id="chk1" data-id="chk1"> My essay opens with a clear claim.</label>
+<label><input type="checkbox" id="chk2" data-id="chk2"> I used evidence from at least two different case files from the debate I chose.</label>
+<label><input type="checkbox" id="chk3" data-id="chk3"> I stated a Counter-Argument and answered it.</label>
+<label><input type="checkbox" id="chk4" data-id="chk4"> My conclusion explains what the evidence shows about the historians’ debate.</label>
+</div></div>
+<div class="btns">
+<button type="button" class="b" id="save">Save Progress</button>
+<button type="button" class="b alt" id="loadBtn">Load Progress</button>
+<input type="file" id="loadFile" accept=".json,application/json" hidden>
+<button type="button" class="b fin" id="finish" disabled>Finished — Download File to Submit</button>
+</div>
+<div id="status" role="status" aria-live="polite"></div>
+<div id="todo"></div>
+</main>
+<footer>UNIT 5 · MODERN AMERICA | HIST C1002 | DANIEL GARZA, M.A.</footer>
+<script>
+(function(){
+var PACKET="L13_Thinking_Like_a_Historian", STORE="c1002_l13_thinking_like_a_historian", COURSE="HIST C1002", NC=8, GROUPS=[[1, 2, 3], [4, 5, 6, 7, 8]], MULTI=true, RDG=["rdg1", "rdg2"];
+var $=function(id){return document.getElementById(id)};
+var sides={};
+function fields(){return Array.prototype.slice.call(document.querySelectorAll('[data-id]'))}
+function words(t){t=(t||'').trim();return t?t.split(/\s+/).length:0}
+function val(id){var e=$(id);return e?(e.value||'').trim():''}
+function cracked(i){return !!sides[i]&&val('note'+i)&&val('ctx'+i)}
+function missing(){
+  var m=[];
+  if(!val('first')||!val('last')||!val('period'))m.push('first name, last name, and period');
+  var r=[];RDG.forEach(function(id,k){if(!val(id))r.push(k+1)});
+  if(r.length)m.push('Background Reading check'+(RDG.length>1?(r.length>1?'s ':' ')+r.join(', '):''));
+  var c=[];for(var i=1;i<=NC;i++){if(!cracked(i))c.push(i)}
+  if(c.length)m.push('case file'+(c.length>1?'s ':' ')+c.join(', ')+' (stance, context, and clue words)');
+  if(MULTI&&!val('debate'))m.push('the debate you will write about');
+  if(words(val('essay'))<150)m.push('essay (at least 150 words)');
+  var k=[];for(var j=1;j<=4;j++){if(!$('chk'+j).checked)k.push(j)}
+  if(k.length)m.push('checklist box'+(k.length>1?'es ':' ')+k.join(', '));
+  return m;
+}
+function render(){
+  var n=0;
+  for(var i=1;i<=NC;i++){
+    var card=$('case'+i);var ok=cracked(i);if(ok)n++;
+    card.classList.toggle('done',!!sides[i]);card.classList.toggle('isS',sides[i]==='S');card.classList.toggle('isV',sides[i]==='V');
+    card.querySelectorAll('.st').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.v===sides[i]?'true':'false')});
+  }
+  $('mtext').textContent=n+' of '+NC+' case files cracked';$('mbar').style.width=(n*100/NC)+'%';
+  var w=words(val('essay'));$('wc').textContent=w+' word'+(w===1?'':'s')+(w<150?' (150 needed to finish)':'');
+  var m=missing();$('finish').disabled=m.length>0;
+  $('todo').textContent=m.length?('Still to do: '+m.join('; ')):'Everything is done. Click Finished to download your file.';
+}
+function tallyOf(list){var t={national:0,state:0,voice:0};list.forEach(function(i){if(sides[i]==='N')t.national++;if(sides[i]==='S')t.state++;if(sides[i]==='V')t.voice++});return t}
+function collect(done){
+  var a={},ch={};
+  fields().forEach(function(e){var id=e.dataset.id;if(e.type==='checkbox')ch[id]=e.checked;else if(['first','last','period'].indexOf(id)<0)a[id]=e.value});
+  var all=[];for(var i=1;i<=NC;i++)all.push(i);
+  var byDebate={};GROUPS.forEach(function(g,k){byDebate['debate'+(k+1)]=tallyOf(g)});
+  return {packet:PACKET,course:COURSE,version:1,saved:new Date().toISOString(),completed:!!done,
+    student:{first:val('first'),last:val('last'),period:val('period'),date:$('date').value||''},
+    sides:JSON.parse(JSON.stringify(sides)),answers:a,checks:ch,tally:tallyOf(all),tallyByDebate:byDebate};
+}
+function apply(d){
+  sides={};Object.keys(d.sides||{}).forEach(function(k){sides[k]=d.sides[k]});
+  var s=d.student||{};$('first').value=s.first||'';$('last').value=s.last||'';$('period').value=s.period||'';$('date').value=s.date||'';
+  var a=d.answers||{},ch=d.checks||{};
+  fields().forEach(function(e){var id=e.dataset.id;if(e.type==='checkbox')e.checked=!!ch[id];else if(id in a)e.value=a[id]});
+  render();
+}
+function persist(){try{localStorage.setItem(STORE,JSON.stringify(collect(false)))}catch(e){}}
+function fname(){return (val('last')+'_'+val('first')).normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^A-Za-z0-9_\-]+/g,'_')}
+function download(name,obj){
+  var blob=new Blob([JSON.stringify(obj,null,2)],{type:'application/json'});var u=URL.createObjectURL(blob);
+  var a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();
+  setTimeout(function(){URL.revokeObjectURL(u);a.remove()},1500);
+}
+function msg(t,cls){var s=$('status');s.textContent=t;s.className=cls||''}
+function needNames(){
+  var bad=false;['first','last','period'].forEach(function(id){var e=$(id);var b=!e.value.trim();e.classList.toggle('bad',b);if(b)bad=true});
+  return bad;
+}
+document.querySelectorAll('.case').forEach(function(card){
+  var i=card.dataset.i;
+  card.querySelectorAll('.st').forEach(function(b){b.addEventListener('click',function(){sides[i]=b.dataset.v;render();persist()})});
+});
+fields().forEach(function(e){e.addEventListener((e.type==='checkbox'||e.tagName==='SELECT')?'change':'input',function(){if(e.classList.contains('bad')&&e.value.trim())e.classList.remove('bad');render();persist()})});
+$('save').addEventListener('click',function(){
+  if(needNames()){msg('Type your first name, last name, and period before you save.','err');return}
+  var f=fname()+'-'+PACKET+'-PROGRESS.json';download(f,collect(false));
+  msg('Saved '+f+'. Keep that file. Use Load Progress later. Do not upload it to Canvas until you are finished.','ok');
+});
+$('loadBtn').addEventListener('click',function(){$('loadFile').value='';$('loadFile').click()});
+$('loadFile').addEventListener('change',function(){
+  var f=this.files&&this.files[0];if(!f)return;var r=new FileReader();
+  r.onload=function(){try{var d=JSON.parse(r.result);if(!d||d.packet!==PACKET)throw 0;apply(d);persist();msg('Progress loaded. Pick up where you left off.','ok')}
+    catch(e){msg('That file is not a saved file from this assignment. Choose the file that ends in -'+PACKET+'-PROGRESS.json.','err')}};
+  r.readAsText(f);
+});
+$('finish').addEventListener('click',function(){
+  if(missing().length){msg('Not finished yet. Read the line below to see what is missing.','err');render();return}
+  var d=new Date();$('date').value=(d.getMonth()+1)+'/'+d.getDate()+'/'+d.getFullYear();
+  var f=fname()+'-'+PACKET+'.json';download(f,collect(true));persist();
+  msg('Finished! Your file '+f+' downloaded. Upload that file to Canvas.','ok');
+});
+try{var raw=localStorage.getItem(STORE);if(raw){var d=JSON.parse(raw);if(d&&d.packet===PACKET)apply(d)}}catch(e){}
+render();
+})();
+</script></body></html>

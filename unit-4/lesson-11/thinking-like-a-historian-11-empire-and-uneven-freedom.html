@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Whose West? Why Empire? · Thinking Like a Historian 11</title><style>
+:root{--p:#5B3545;--bg:#EDF7F6;--a:#874F63;--g:#12615D;--hi:#80B9B4;--s:#12615D;--v:#2E6B3E;--t:#261720;--card:#fff;--line:#CDDCDA;--mut:#47303A}
+@media (prefers-color-scheme: dark){:root{--bg:#140E11;--card:#1F171B;--t:#EDF7F6;--line:#54444B;--mut:#C8BDC1}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--t);font:17px/1.6 Georgia,'Times New Roman',serif}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px 40px}
+.hero{background:#5B3545;color:#EDF7F6;padding:30px 16px 24px;border-bottom:6px solid #12615D}
+.hero .in{max-width:860px;margin:0 auto}
+.eyebrow{font:700 13px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.18em;color:#80B9B4}
+.hero h1{margin:.35em 0 .2em;font-size:clamp(28px,5vw,40px);line-height:1.15}
+.hero .sub{font-style:italic;color:#80B9B4}
+.flag{display:inline-block;margin-top:12px;background:#874F63;color:#fff;font:700 13px Arial,sans-serif;letter-spacing:.08em;padding:6px 10px;border-radius:4px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:18px 0}
+.cq{border-left:6px solid var(--a)}
+.lab{font:700 13px Arial,Helvetica,sans-serif;letter-spacing:.12em;color:var(--a);text-transform:uppercase}
+h2{font-size:24px;margin:28px 0 6px;color:var(--p)}
+@media (prefers-color-scheme: dark){h2{color:var(--hi)}.lab{color:var(--hi)}}
+h3{margin:.2em 0 .4em}
+.article p{margin:.7em 0}
+.article h3{font-size:21px}
+label{font:600 14px Arial,Helvetica,sans-serif;display:block;margin:12px 0 4px}
+input[type=text],textarea,select{width:100%;font:16px/1.5 Arial,Helvetica,sans-serif;padding:9px 10px;border:1.5px solid var(--line);border-radius:7px;background:#fffdf9;color:#222}
+textarea{min-height:80px;resize:vertical}
+.bad{border-color:#c0392b!important;background:#fdeceb!important}
+.names{display:grid;grid-template-columns:1fr 1fr 110px 150px;gap:10px}
+@media(max-width:620px){.names{grid-template-columns:1fr 1fr}}
+.meter{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line)}
+.bar{height:10px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--a);transition:width .3s}
+.mtext{font:600 14px Arial,sans-serif;margin-bottom:6px}
+.case{background:var(--card);border:1px solid var(--line);border-left:8px solid var(--line);border-radius:10px;padding:16px 18px;margin:22px 0}
+.case.done{border-left-color:var(--p)} .case.isS{border-left-color:var(--s)} .case.isV{border-left-color:var(--v)}
+.chip{display:inline-block;background:var(--p);color:#fff;font:700 13px Arial,sans-serif;padding:3px 10px;border-radius:20px;margin-right:8px}
+.cnum{font:700 13px Arial,sans-serif;letter-spacing:.1em;color:var(--mut);text-transform:uppercase}
+.who{font:600 15px Arial,sans-serif;margin:.6em 0 .2em}
+.intro{margin:.3em 0}
+blockquote{margin:12px 0;padding:12px 16px;background:#EDF7F6;color:#1C1017;border-left:5px solid var(--g);font-style:italic;border-radius:0 8px 8px 0}
+.cite{font:13px/1.45 Arial,sans-serif;color:var(--mut)}
+.help{font:14px/1.5 Arial,sans-serif;background:rgba(128,185,180,.25);padding:8px 10px;border-radius:6px;margin:8px 0}
+.ask{font:700 15px Arial,sans-serif;margin:14px 0 6px}
+.stances{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+@media(max-width:620px){.stances{grid-template-columns:1fr}}
+.st{font:700 15px Arial,sans-serif;padding:10px;border-radius:8px;border:2px solid var(--p);background:#fff;color:var(--p);cursor:pointer;text-align:left}
+.st small{display:block;font-weight:400;font-size:12.5px;color:#444;margin-top:3px}
+.st[data-v=S]{border-color:var(--s);color:var(--s)} .st[data-v=V]{border-color:var(--v);color:var(--v)}
+.st[aria-pressed=true]{background:var(--p);color:#fff} .st[data-v=S][aria-pressed=true]{background:var(--s)} .st[data-v=V][aria-pressed=true]{background:var(--v)}
+.st[aria-pressed=true] small{color:#fff}
+.how ol{margin:.4em 0;padding-left:1.3em}
+.checks label{font-weight:400;display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.checks input{flex:none;width:20px;height:20px;margin-top:2px}
+.wc{font:600 14px Arial,sans-serif;color:var(--mut);margin-top:4px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 8px}
+button.b{font:700 15px Arial,sans-serif;padding:12px 16px;border-radius:8px;border:0;cursor:pointer;background:var(--p);color:#fff}
+button.b.alt{background:#fff;color:var(--p);border:2px solid var(--p)}
+button.b.fin{background:var(--a)}
+button.b:disabled{background:#6f6f6f;color:#fff;cursor:not-allowed}
+#status{font:600 15px Arial,sans-serif;margin:8px 0} #status.err{color:#b03a2e} #status.ok{color:var(--v)}
+#todo{font:14px Arial,sans-serif;color:var(--mut)}
+.key{background:rgba(128,185,180,.3);border:1px solid var(--g);border-radius:8px;padding:10px 12px;margin-top:10px;font:15px/1.5 Arial,sans-serif}
+.badge{display:inline-block;font:700 13px Arial,sans-serif;color:#fff;padding:3px 9px;border-radius:5px;margin-right:6px}
+footer{margin-top:36px;padding:16px;background:#5B3545;color:#80B9B4;font:700 12.5px Arial,sans-serif;letter-spacing:.08em;text-align:center}
+
+.grp{margin:34px 0 4px;padding:12px 16px;background:var(--p);color:#fff;border-radius:10px}
+.grp .gl{font:700 12px Arial,sans-serif;letter-spacing:.14em;color:var(--hi)}
+.grp h2{color:#fff;margin:4px 0 0;font-size:21px}
+.dq ul{margin:.4em 0;padding-left:1.2em}
+.dq li{margin:.35em 0;font:15px/1.5 Arial,sans-serif}
+.rd h3{margin-top:0}
+.essaysamp p{margin:.7em 0}
+</style></head><body>
+<header class="hero"><div class="in">
+<div class="eyebrow">THINKING LIKE A HISTORIAN 11 · 1859–1917</div>
+<h1>Whose West? Why Empire?</h1>
+<div class="sub">Empire and Uneven Freedom at Home and Abroad · Thinking Like a Historian</div>
+</div></header>
+<main class="wrap">
+<div class="box cq"><div class="lab">Central Questions:</div><p style="margin:.4em 0;font-size:18px"><b>Debate 1:</b> Was the American West a land of free land and opportunity that shaped the American character, or a place of conquest, conflict, and many peoples whose stories the older myth left out?</p><p style="margin:.4em 0;font-size:18px"><b>Debate 2:</b> Why did the United States take and keep the Philippines after the Spanish-American War: to win markets and trade (economic motives), or to prove national manhood and spread American culture (cultural and gender motives)?</p><p style="margin:.3em 0">Your job: read the background, crack 8 case files (the documents historians use as evidence), then close the case with a one-page essay on ONE of the debates.</p></div>
+<div class="box how"><div class="lab">How to play</div><ol><li><b>Part 1:</b> Read the Background Readings and answer the one-sentence checks.</li><li><b>Part 2:</b> For each case file, read the excerpt, then tap which historian’s argument it helps most. The three buttons change with each debate, so read them. Each has a symbol (★, ◆, ●) as well as a label.</li><li>Type who made the source, when, and the key fact (use the Background Reading). Then copy the clue words that prove your choice and finish the sentence “This source helps…”.</li><li><b>Part 3:</b> Choose ONE debate from the menu, then Write your one-page essay and check the four boxes.</li><li>Use <b>Save Progress</b> any time. When everything is done, <b>Finished</b> turns on.</li></ol></div>
+<div class="box"><div class="names">
+<div><label for="first">First name</label><input type="text" id="first" data-id="first" autocomplete="given-name"></div>
+<div><label for="last">Last name</label><input type="text" id="last" data-id="last" autocomplete="family-name"></div>
+<div><label for="period">Period</label><input type="text" id="period" data-id="period"></div>
+<div><label for="date">Date</label><input type="text" id="date" readonly placeholder="fills in at Finished"></div>
+</div></div>
+<h2>Part 1 · Background Reading</h2>
+<div class="box rd"><div class="article"><div class="lab">Debate 1</div><h3>Settlers, Exodusters, and a Famous Essay</h3><p>After the Civil War, Americans moved west in huge numbers. Railroads carried settlers, miners, and ranchers across the plains, and the Homestead Act of 1862 offered 160 acres of public land to any family willing to farm it. But the land was not empty. Native nations had lived there for centuries, and the U.S. Army fought many wars to force them onto reservations. The Nez Perce, a people of the Pacific Northwest, were driven from their homeland in the 1870s. Their leader, Chief Joseph, surrendered in 1877 and traveled to Washington in 1879 to ask for justice. Miners rushed to the mountains in search of gold, and ranchers pushed cattle onto the plains, so the arrival of settlers often meant the loss of land for the people already there.</p><p>Other Americans went west to escape hardship. After Reconstruction ended in 1877, many Black families in the South faced violence, poverty, and little hope of owning land. In 1879 thousands of them left for Kansas. They were called Exodusters, after the biblical Exodus. Benjamin Singleton, an African American who had helped organize colonies of Black settlers, testified about the movement to a U.S. Senate committee in 1880.</p><p>Farm families who settled on western land soon found that success was hard. They paid for machinery, seed, and railroad shipping, borrowed money, and depended on crop prices that they could not control. In 1890 the Census Bureau reported that the frontier line, the edge of settlement, no longer existed. Three years later, at a meeting of historians in Chicago, the historian Frederick Jackson Turner argued that the frontier had made Americans who they were. His essay became one of the most famous in U.S. history. In 1905 a farm woman described her own days in a magazine article without giving her name. Women on farms worked in the house and in the fields, and most of what they earned went back into the farm.</p><p>Historians still argue about the West. Turner said that free land gave Americans freedom, equality, and a new democratic character. He believed that each time settlers met a new land, they dropped old European habits and became more independent and practical. He described the frontier as the meeting point between savagery and civilization. The New Western historians answered that this story left people out. Patricia Nelson Limerick (1987) described the West as a place where different peoples competed to control land, water, and resources, so that conquest was central to its story, Nell Irvin Painter (1980) told the story of the Exodusters, and Quintard Taylor (1998) described a region shaped by peoples of many backgrounds. As you read, ask whether each source fits Turner’s frontier, the New Western story, or parts of both.</p></div>
+<label for="rdg1">In one sentence, name one group of people who went west or lived there and one reason they did.</label>
+<textarea id="rdg1" data-id="rdg1" rows="2"></textarea></div>
+<div class="box rd"><div class="article"><div class="lab">Debate 2</div><h3>A Prize in the Pacific</h3><p>In 1898 the United States went to war with Spain, mainly over Cuba. The war lasted only a few months, but its results lasted much longer. A U.S. fleet destroyed the Spanish fleet at Manila Bay in the Philippines, and in the Treaty of Paris that year the United States bought the islands from Spain. McKinley’s negotiators decided to keep the entire island group, and the Senate narrowly approved the treaty in early 1899. Many Filipinos, who had been fighting Spain for their own independence, did not accept a new ruler. In 1899 fighting broke out between U.S. troops and Filipino forces, and the war dragged on for years.</p><p>Americans argued fiercely about what to do. Business leaders hoped the islands would be a gateway to Asia, especially to the huge market of China, after the depression of the 1890s had made them hunt for new buyers for American goods. Others spoke of duty. They said that Americans must uplift and guide peoples they considered less advanced, a belief mixed with the racial ideas of the time. Supporters also warned that if the United States left, a rival such as Germany or Japan might take the islands. Critics of annexation answered that a republic should not rule other people without their consent.</p><p>The case files come from the leaders in that debate. President William McKinley explained his decision in a message to Congress in December 1899. In January and March 1900, Senators Albert Beveridge and Henry Cabot Lodge made speeches in the Senate about keeping the islands. In 1901 Theodore Roosevelt, who had fought in Cuba in 1898 and was then vice president, spoke to a crowd at the Minnesota State Fair about the nation’s “duties.” Each man had a different job and a different audience, so notice who is speaking and why as well as what is said.</p><p>Historians disagree about the motives behind these words. Nell Irvin Painter (1989) stressed economic motives, arguing that the pull of overseas markets and business interests helped drive the decision. Kristin L. Hoganson (1998) stressed cultural and gender motives, arguing that political leaders used ideas about manhood to make the case for empire and to show that the nation was strong. Both historians agree that the leaders spoke in confident language, but they disagree about which motive mattered more. As you read, ask whether a speaker is talking mostly about money, about manhood and duty, or about both.</p></div>
+<label for="rdg2">In one sentence, explain why some Americans wanted the Philippines.</label>
+<textarea id="rdg2" data-id="rdg2" rows="2"></textarea></div>
+
+<h2>Part 2 · The Case Files</h2>
+<div class="meter"><div class="mtext" id="mtext">0 of 8 case files cracked</div><div class="bar"><i id="mbar"></i></div></div>
+<div class="grp"><div class="gl">DEBATE 1 · CASE FILES 1–4</div><h2>The West: Myth or Reality?</h2></div>
+<div class="box dq"><div class="lab">The debate:</div><p style="margin:.3em 0"><b>Was the American West a land of free land and opportunity that shaped the American character, or a place of conquest, conflict, and many peoples whose stories the older myth left out?</b></p><ul><li><b>★ TURNER’S FRONTIER</b>: Frederick Jackson Turner argued in 1893 that the frontier and its free land shaped American democracy and the American character.</li><li><b>◆ NEW WESTERN HISTORY</b>: Patricia Nelson Limerick (1987), Nell Irvin Painter (1980), and Quintard Taylor (1998) argued that the West was a place of conquest, conflict, and meetings among many peoples, whose stories Turner left out.</li><li><b>● BOTH / MIXED</b>: A source whose evidence fits parts of both arguments: it shows people seeking land and opportunity and also meeting hardship or exclusion.</li></ul></div>
+<section class="case" id="case1" data-i="1"><div><span class="chip">1879</span><span class="cnum">Case file 1 of 8</span></div>
+<div class="who">Who: Chief Joseph, leader of the Nez Perce<br>From: Article, “An Indian’s Views of Indian Affairs”</div>
+<p class="intro">A Native leader tells American readers what happened to his people when white settlers came.</p>
+<blockquote>White men had found gold in the mountains around the land of winding water. They stole a great many horses from us, and we could not get them back because we were Indians. The white men told lies for each other. They drove off a great many of our cattle.&nbsp;.&nbsp;.&nbsp;. We had no friend who would plead our cause before the law councils.&nbsp;.&nbsp;.&nbsp;. If we ever owned the land we own it still, for we never sold it.&nbsp;.&nbsp;.&nbsp;. I know that my race must change. We can not hold our own with the white men as we are. We only ask an even chance to live as other men live.</blockquote>
+<div class="cite">Chief Joseph, “An Indian’s Views of Indian Affairs,” <i>North American Review</i> 128, no. 269 (April 1879), Internet Archive scan. The Norton exercise prints a later version credited to Fee (1936) whose wording differs; the 1879 magazine text is used here.</div>
+<div class="help"><b>Word help:</b> plead our cause = argue our case · law councils = courts and lawmakers · race = people</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 1"><button type="button" class="st" data-v="N" aria-pressed="false">★ TURNER’S FRONTIER<small>free land and opportunity made Americans</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ NEW WESTERN HISTORY<small>conquest, conflict, and many peoples</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>opportunity for some, hardship for others</small></button></div>
+<label for="ctx1">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx1" data-id="ctx1" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note1">Clue words</label>
+<textarea id="note1" data-id="note1" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case2" data-i="2"><div><span class="chip">1880</span><span class="cnum">Case file 2 of 8</span></div>
+<div class="who">Who: Benjamin Singleton, an African American who organized colonies for Black families moving to Kansas<br>From: Testimony before a U.S. Senate committee, April 17, 1880</div>
+<p class="intro">A Black organizer tells senators why families left the South for Kansas.</p>
+<blockquote>Well, my people, for the want of land—we needed land for our children—and their disadvantages—that caused my heart to grieve and sorrow; pity for my race, sir, that was coming down, instead of going up—that caused me to go to work for them.&nbsp;.&nbsp;.&nbsp;. I formed a colony there .&nbsp;.&nbsp;.&nbsp;. They didn’t go under no relief assistance; they went on their own resources; and when they went in there first the country was not overrun with them; you see they could get good wages .&nbsp;.&nbsp;.&nbsp;.</blockquote>
+<div class="cite">Benjamin Singleton, testimony of April 17, 1880, U.S. Senate, <i>Report and Testimony of the Select Committee of the United States Senate to Investigate the Causes of the Removal of the Negroes from the Southern States to the Northern States</i>, part 3 (Washington: Government Printing Office, 1880), 379–80, Internet Archive. The Norton exercise adds the word “for” in one phrase; this page does not use that phrase.</div>
+<div class="help"><b>Word help:</b> want of land = lack of land · colony = a settlement of people who move together · relief assistance = charity or government aid · resources = money and supplies</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 2"><button type="button" class="st" data-v="N" aria-pressed="false">★ TURNER’S FRONTIER<small>free land and opportunity made Americans</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ NEW WESTERN HISTORY<small>conquest, conflict, and many peoples</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>opportunity for some, hardship for others</small></button></div>
+<label for="ctx2">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx2" data-id="ctx2" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note2">Clue words</label>
+<textarea id="note2" data-id="note2" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case3" data-i="3"><div><span class="chip">1893</span><span class="cnum">Case file 3 of 8</span></div>
+<div class="who">Who: Frederick Jackson Turner, historian<br>From: Address, “The Significance of the Frontier in American History”</div>
+<p class="intro">A historian explains how he thinks the frontier made Americans.</p>
+<blockquote>In this advance, the frontier is the outer edge of the wave—the meeting point between savagery and civilization.&nbsp;.&nbsp;.&nbsp;. The most significant thing about the American frontier is, that it lies at the hither edge of free land.&nbsp;.&nbsp;.&nbsp;. In short, at the frontier the environment is at first too strong for the man. He must accept the conditions which it furnishes, or perish .&nbsp;.&nbsp;.&nbsp;. Little by little he transforms the wilderness, but the outcome is not the old Europe .&nbsp;.&nbsp;.&nbsp;. The fact is, that here is a new product that is American.</blockquote>
+<div class="cite">Frederick Jackson Turner, “The Significance of the Frontier in American History” (address of 1893), in <i>The Frontier in American History</i> (New York: Henry Holt, 1920), Internet Archive copy.</div>
+<div class="help"><b>Word help:</b> savagery = a harsh, outdated word Turner used for Native American ways of life · civilization = settled society with cities and governments · hither = nearer · wilderness = land not yet settled by Americans · perish = die</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 3"><button type="button" class="st" data-v="N" aria-pressed="false">★ TURNER’S FRONTIER<small>free land and opportunity made Americans</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ NEW WESTERN HISTORY<small>conquest, conflict, and many peoples</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>opportunity for some, hardship for others</small></button></div>
+<label for="ctx3">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx3" data-id="ctx3" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note3">Clue words</label>
+<textarea id="note3" data-id="note3" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case4" data-i="4"><div><span class="chip">1905</span><span class="cnum">Case file 4 of 8</span></div>
+<div class="who">Who: An anonymous farmer’s wife who signed her article “One Farmer’s Wife”<br>From: Magazine article, “One Farmer’s Wife”</div>
+<p class="intro">A farm woman describes one ordinary spring day and what she wishes she could do.</p>
+<blockquote>Any bright morning in the latter part of May I am out of bed at four o’clock .&nbsp;.&nbsp;.&nbsp;. By this time it is 8 o’clock p.m.; my husband has come home, and we are eating supper .&nbsp;.&nbsp;.&nbsp;. All the time that I have been going about this work I have been thinking of things I have read .&nbsp;.&nbsp;. and of other things which I have a desire to read, but cannot hope to while the present condition exists.&nbsp;.&nbsp;.&nbsp;. But money is king .&nbsp;.&nbsp;.&nbsp;.</blockquote>
+<div class="cite">“One Farmer’s Wife,” <i>The Independent</i> 58 (February 9, 1905): 294–98, Internet Archive scan. The Norton exercise heads it “The Life of an Illinois Farmer’s Wife” and words one sentence differently; the original is used here.</div>
+<div class="help"><b>Word help:</b> latter part = later part · literary bent = a natural talent for writing · money is king = money rules everything</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 4"><button type="button" class="st" data-v="N" aria-pressed="false">★ TURNER’S FRONTIER<small>free land and opportunity made Americans</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ NEW WESTERN HISTORY<small>conquest, conflict, and many peoples</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>opportunity for some, hardship for others</small></button></div>
+<label for="ctx4">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx4" data-id="ctx4" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note4">Clue words</label>
+<textarea id="note4" data-id="note4" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<div class="grp"><div class="gl">DEBATE 2 · CASE FILES 5–8</div><h2>Why Annex the Philippines?</h2></div>
+<div class="box dq"><div class="lab">The debate:</div><p style="margin:.3em 0"><b>Why did the United States take and keep the Philippines after the Spanish-American War: to win markets and trade (economic motives), or to prove national manhood and spread American culture (cultural and gender motives)?</b></p><ul><li><b>★ ECONOMIC MOTIVES</b>: Nell Irvin Painter argued in “The White Man’s Burden” (1989) that the search for overseas markets and the interests of business drove the decision.</li><li><b>◆ CULTURE AND MANHOOD</b>: Kristin L. Hoganson argued in “The National Manhood Metaphor” (1998) that ideas about manhood, duty, and racial superiority pushed leaders to prove the nation’s strength abroad.</li><li><b>● BOTH / MIXED</b>: A source whose evidence fits both arguments at once: it talks about markets and about duty or manliness.</li></ul></div>
+<section class="case" id="case5" data-i="5"><div><span class="chip">1899</span><span class="cnum">Case file 5 of 8</span></div>
+<div class="who">Who: William McKinley, President of the United States<br>From: Third Annual Message to Congress, December 5, 1899</div>
+<p class="intro">The president says what would happen if the United States gave up the Philippine Islands, and what Americans will do there.</p>
+<blockquote>If we desert them we leave them at once to anarchy and finally to barbarism. We fling them, a golden apple of discord, among the rival powers, no one of which could permit another to seize them unquestioned.&nbsp;.&nbsp;.&nbsp;. We shall continue, as we have begun, to open the schools and the churches, to set the courts in operation, to foster industry and trade and agriculture, and in every way in our power to make these people whom Providence has brought within our jurisdiction feel that it is their liberty and not our power, their welfare and not our gain, we are seeking to enhance.</blockquote>
+<div class="cite">William McKinley, Third Annual Message to Congress, December 5, 1899, The Miller Center, University of Virginia. The Norton exercise credits <i>Foreign Relations of the United States, 1899</i>.</div>
+<div class="help"><b>Word help:</b> title = legal right · equity = fairness · anarchy = lawlessness · barbarism = a biased word for a lack of civilization · golden apple of discord = a prize that causes quarrels · Providence = God’s plan · jurisdiction = authority · enhance = increase</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 5"><button type="button" class="st" data-v="N" aria-pressed="false">★ ECONOMIC MOTIVES<small>markets, trade, and profit</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ CULTURE AND MANHOOD<small>duty, racial ideas, and national manhood</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>money and culture worked together</small></button></div>
+<label for="ctx5">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx5" data-id="ctx5" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note5">Clue words</label>
+<textarea id="note5" data-id="note5" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case6" data-i="6"><div><span class="chip">1900</span><span class="cnum">Case file 6 of 8</span></div>
+<div class="who">Who: Albert J. Beveridge, U.S. Senator from Indiana<br>From: Senate speech, “Our Philippine Policy,” January 9, 1900</div>
+<p class="intro">A senator says whether the Filipino people should govern themselves.</p>
+<blockquote>But, Senators, it would be better to abandon the Philippines, and count our blood and treasure already spent a profitable loss, than to apply any academic arrangement of self-government to these children. They are not yet capable of self-government. How could they be? They are not a self-governing race; they are Orientals, Malays, instructed by Spaniards in the latter’s worst estate.&nbsp;.&nbsp;.&nbsp;. Self-government is no cheap boon, to be bestowed on the merely audacious. It is the degree which crowns the graduate of liberty, not the reward of liberty’s infant class, which has not yet mastered the alphabet of freedom.</blockquote>
+<div class="cite">Albert J. Beveridge, “Our Philippine Policy,” U.S. Senate, January 9, 1900, in <i>The Meaning of the Times and Other Speeches</i> (Indianapolis: Bobbs-Merrill, 1908). The Norton exercise adds a bracketed “[the Filipino people]” that is not in the original.</div>
+<div class="help"><b>Word help:</b> academic = based on theory only · Orientals, Malays = outdated and biased labels for Asian peoples · instructed = taught · estate = condition · boon = gift · audacious = bold and daring</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 6"><button type="button" class="st" data-v="N" aria-pressed="false">★ ECONOMIC MOTIVES<small>markets, trade, and profit</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ CULTURE AND MANHOOD<small>duty, racial ideas, and national manhood</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>money and culture worked together</small></button></div>
+<label for="ctx6">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx6" data-id="ctx6" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note6">Clue words</label>
+<textarea id="note6" data-id="note6" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case7" data-i="7"><div><span class="chip">1900</span><span class="cnum">Case file 7 of 8</span></div>
+<div class="who">Who: Henry Cabot Lodge, U.S. Senator from Massachusetts<br>From: Senate speech, “The Retention of the Philippine Islands,” March 7, 1900</div>
+<p class="intro">A senator lists what the United States would gain from keeping the islands.</p>
+<blockquote>A much more important point is to be found in the markets which they furnish.&nbsp;.&nbsp;.&nbsp;. There can be no doubt that the islands in our peaceful possession would take from us a very large proportion of their imports.&nbsp;.&nbsp;.&nbsp;. With the development of the islands and the increase of commerce and of business activity the consumption of foreign imports would rapidly advance, and of this increase we should reap the chief benefit.&nbsp;.&nbsp;.&nbsp;. Manila, with its magnificent bay, is the prize and the pearl of the East.&nbsp;.&nbsp;.&nbsp;. it will keep open to us the markets of China .&nbsp;.&nbsp;.&nbsp;.</blockquote>
+<div class="cite">Henry Cabot Lodge, “The Retention of the Philippine Islands,” U.S. Senate, March 7, 1900 (Washington: Government Printing Office, 1900). The original reads “can not” in some places; the Norton exercise prints “Orient!” where the original has “Orient.”</div>
+<div class="help"><b>Word help:</b> furnish = supply · imports = goods brought in from other countries · reap = gather as a harvest · magnificent = grand and beautiful</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 7"><button type="button" class="st" data-v="N" aria-pressed="false">★ ECONOMIC MOTIVES<small>markets, trade, and profit</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ CULTURE AND MANHOOD<small>duty, racial ideas, and national manhood</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>money and culture worked together</small></button></div>
+<label for="ctx7">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx7" data-id="ctx7" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note7">Clue words</label>
+<textarea id="note7" data-id="note7" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case8" data-i="8"><div><span class="chip">1901</span><span class="cnum">Case file 8 of 8</span></div>
+<div class="who">Who: Theodore Roosevelt, Vice President of the United States<br>From: Speech, “National Duties,” Minnesota State Fair, September 2, 1901</div>
+<p class="intro">A war hero turned vice president tells a fair crowd what Americans owe the Philippines.</p>
+<blockquote>Let me insist again .&nbsp;.&nbsp;. upon the fact that our duty is twofold, and that we must raise others while we are benefiting ourselves.&nbsp;.&nbsp;.&nbsp;. Every encouragement should be given to their commercial development, to the introduction of American industries and products; not merely because this will be a good thing for our people, but infinitely more because it will be of incalculable benefit to the people in the Philippines. We shall make mistakes; and if we let these mistakes frighten us from our work we shall show ourselves weaklings.&nbsp;.&nbsp;.&nbsp;. We gird up our loins .&nbsp;.&nbsp;. to play our part manfully in winning the ultimate triumph .&nbsp;.&nbsp;.&nbsp;.</blockquote>
+<div class="cite">Theodore Roosevelt, “National Duties,” address at the Minnesota State Fair, September 2, 1901, in <i>The Strenuous Life</i> (New York: Century, 1902).</div>
+<div class="help"><b>Word help:</b> misconstruction = a wrong reading · twofold = in two parts · incalculable = too large to count · weaklings = weak people · gird up our loins = get ready for hard work · ultimate = final</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 8"><button type="button" class="st" data-v="N" aria-pressed="false">★ ECONOMIC MOTIVES<small>markets, trade, and profit</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ CULTURE AND MANHOOD<small>duty, racial ideas, and national manhood</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>money and culture worked together</small></button></div>
+<label for="ctx8">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx8" data-id="ctx8" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note8">Clue words</label>
+<textarea id="note8" data-id="note8" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+
+<h2>Part 3 · Case Closed</h2>
+<div class="box cq"><div class="lab">Central Questions:</div><p style="margin:.3em 0"><b>Debate 1: Was the American West a land of free land and opportunity that shaped the American character, or a place of conquest, conflict, and many peoples whose stories the older myth left out?</b></p><p style="margin:.3em 0"><b>Debate 2: Why did the United States take and keep the Philippines after the Spanish-American War: to win markets and trade (economic motives), or to prove national manhood and spread American culture (cultural and gender motives)?</b></p></div>
+<div class="box"><p><b>Your essay question:</b> Choose one debate above and answer its question. Take a position and defend it with the case files from that debate.</p>
+<label for="debate">Which debate will you write about?</label>
+<select id="debate" data-id="debate"><option value="">Choose a debate…</option><option value="1">Debate 1 · The West: Myth or Reality?</option><option value="2">Debate 2 · Why Annex the Philippines?</option></select>
+<p>Write about one page (about 250 to 350 words; at least 150 words to finish). Use this order:</p>
+<ol><li><b>Claim:</b> your answer to the question in one or two sentences.</li>
+<li><b>Evidence 1:</b> a quote from one case file, with what it shows and one context fact.</li>
+<li><b>Evidence 2:</b> a quote from a <i>different</i> case file, explained the same way.</li>
+<li><b>Counter-Argument:</b> name a case file (or a historian) someone on the other side would use, explain their point, then answer it.</li>
+<li><b>Conclusion:</b> what your answer shows about the historians’ debate you chose, and how the evidence helps decide it.</li></ol>
+<label for="essay">Your essay</label>
+<textarea id="essay" data-id="essay" rows="18" style="min-height:360px"></textarea>
+<div class="wc" id="wc">0 words</div>
+<div class="checks" style="margin-top:12px">
+<label><input type="checkbox" id="chk1" data-id="chk1"> My essay opens with a clear claim.</label>
+<label><input type="checkbox" id="chk2" data-id="chk2"> I used evidence from at least two different case files from your chosen debate.</label>
+<label><input type="checkbox" id="chk3" data-id="chk3"> I stated a Counter-Argument and answered it.</label>
+<label><input type="checkbox" id="chk4" data-id="chk4"> My conclusion explains what the evidence shows about the historians’ debate.</label>
+</div></div>
+<div class="btns">
+<button type="button" class="b" id="save">Save Progress</button>
+<button type="button" class="b alt" id="loadBtn">Load Progress</button>
+<input type="file" id="loadFile" accept=".json,application/json" hidden>
+<button type="button" class="b fin" id="finish" disabled>Finished — Download File to Submit</button>
+</div>
+<div id="status" role="status" aria-live="polite"></div>
+<div id="todo"></div>
+</main>
+<footer>UNIT 4 · GROWING PAINS | HIST C1002 | DANIEL GARZA, M.A.</footer>
+<script>
+(function(){
+var PACKET="L11_Thinking_Like_a_Historian", STORE="c1002_l11_thinking_like_a_historian", COURSE="HIST C1002", NC=8, GROUPS=[[1, 2, 3, 4], [5, 6, 7, 8]], MULTI=true, RDG=["rdg1", "rdg2"];
+var $=function(id){return document.getElementById(id)};
+var sides={};
+function fields(){return Array.prototype.slice.call(document.querySelectorAll('[data-id]'))}
+function words(t){t=(t||'').trim();return t?t.split(/\s+/).length:0}
+function val(id){var e=$(id);return e?(e.value||'').trim():''}
+function cracked(i){return !!sides[i]&&val('note'+i)&&val('ctx'+i)}
+function missing(){
+  var m=[];
+  if(!val('first')||!val('last')||!val('period'))m.push('first name, last name, and period');
+  var r=[];RDG.forEach(function(id,k){if(!val(id))r.push(k+1)});
+  if(r.length)m.push('Background Reading check'+(RDG.length>1?(r.length>1?'s ':' ')+r.join(', '):''));
+  var c=[];for(var i=1;i<=NC;i++){if(!cracked(i))c.push(i)}
+  if(c.length)m.push('case file'+(c.length>1?'s ':' ')+c.join(', ')+' (stance, context, and clue words)');
+  if(MULTI&&!val('debate'))m.push('the debate you will write about');
+  if(words(val('essay'))<150)m.push('essay (at least 150 words)');
+  var k=[];for(var j=1;j<=4;j++){if(!$('chk'+j).checked)k.push(j)}
+  if(k.length)m.push('checklist box'+(k.length>1?'es ':' ')+k.join(', '));
+  return m;
+}
+function render(){
+  var n=0;
+  for(var i=1;i<=NC;i++){
+    var card=$('case'+i);var ok=cracked(i);if(ok)n++;
+    card.classList.toggle('done',!!sides[i]);card.classList.toggle('isS',sides[i]==='S');card.classList.toggle('isV',sides[i]==='V');
+    card.querySelectorAll('.st').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.v===sides[i]?'true':'false')});
+  }
+  $('mtext').textContent=n+' of '+NC+' case files cracked';$('mbar').style.width=(n*100/NC)+'%';
+  var w=words(val('essay'));$('wc').textContent=w+' word'+(w===1?'':'s')+(w<150?' (150 needed to finish)':'');
+  var m=missing();$('finish').disabled=m.length>0;
+  $('todo').textContent=m.length?('Still to do: '+m.join('; ')):'Everything is done. Click Finished to download your file.';
+}
+function tallyOf(list){var t={national:0,state:0,voice:0};list.forEach(function(i){if(sides[i]==='N')t.national++;if(sides[i]==='S')t.state++;if(sides[i]==='V')t.voice++});return t}
+function collect(done){
+  var a={},ch={};
+  fields().forEach(function(e){var id=e.dataset.id;if(e.type==='checkbox')ch[id]=e.checked;else if(['first','last','period'].indexOf(id)<0)a[id]=e.value});
+  var all=[];for(var i=1;i<=NC;i++)all.push(i);
+  var byDebate={};GROUPS.forEach(function(g,k){byDebate['debate'+(k+1)]=tallyOf(g)});
+  return {packet:PACKET,course:COURSE,version:1,saved:new Date().toISOString(),completed:!!done,
+    student:{first:val('first'),last:val('last'),period:val('period'),date:$('date').value||''},
+    sides:JSON.parse(JSON.stringify(sides)),answers:a,checks:ch,tally:tallyOf(all),tallyByDebate:byDebate};
+}
+function apply(d){
+  sides={};Object.keys(d.sides||{}).forEach(function(k){sides[k]=d.sides[k]});
+  var s=d.student||{};$('first').value=s.first||'';$('last').value=s.last||'';$('period').value=s.period||'';$('date').value=s.date||'';
+  var a=d.answers||{},ch=d.checks||{};
+  fields().forEach(function(e){var id=e.dataset.id;if(e.type==='checkbox')e.checked=!!ch[id];else if(id in a)e.value=a[id]});
+  render();
+}
+function persist(){try{localStorage.setItem(STORE,JSON.stringify(collect(false)))}catch(e){}}
+function fname(){return (val('last')+'_'+val('first')).normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^A-Za-z0-9_\-]+/g,'_')}
+function download(name,obj){
+  var blob=new Blob([JSON.stringify(obj,null,2)],{type:'application/json'});var u=URL.createObjectURL(blob);
+  var a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();
+  setTimeout(function(){URL.revokeObjectURL(u);a.remove()},1500);
+}
+function msg(t,cls){var s=$('status');s.textContent=t;s.className=cls||''}
+function needNames(){
+  var bad=false;['first','last','period'].forEach(function(id){var e=$(id);var b=!e.value.trim();e.classList.toggle('bad',b);if(b)bad=true});
+  return bad;
+}
+document.querySelectorAll('.case').forEach(function(card){
+  var i=card.dataset.i;
+  card.querySelectorAll('.st').forEach(function(b){b.addEventListener('click',function(){sides[i]=b.dataset.v;render();persist()})});
+});
+fields().forEach(function(e){e.addEventListener((e.type==='checkbox'||e.tagName==='SELECT')?'change':'input',function(){if(e.classList.contains('bad')&&e.value.trim())e.classList.remove('bad');render();persist()})});
+$('save').addEventListener('click',function(){
+  if(needNames()){msg('Type your first name, last name, and period before you save.','err');return}
+  var f=fname()+'-'+PACKET+'-PROGRESS.json';download(f,collect(false));
+  msg('Saved '+f+'. Keep that file. Use Load Progress later. Do not upload it to Canvas until you are finished.','ok');
+});
+$('loadBtn').addEventListener('click',function(){$('loadFile').value='';$('loadFile').click()});
+$('loadFile').addEventListener('change',function(){
+  var f=this.files&&this.files[0];if(!f)return;var r=new FileReader();
+  r.onload=function(){try{var d=JSON.parse(r.result);if(!d||d.packet!==PACKET)throw 0;apply(d);persist();msg('Progress loaded. Pick up where you left off.','ok')}
+    catch(e){msg('That file is not a saved file from this assignment. Choose the file that ends in -'+PACKET+'-PROGRESS.json.','err')}};
+  r.readAsText(f);
+});
+$('finish').addEventListener('click',function(){
+  if(missing().length){msg('Not finished yet. Read the line below to see what is missing.','err');render();return}
+  var d=new Date();$('date').value=(d.getMonth()+1)+'/'+d.getDate()+'/'+d.getFullYear();
+  var f=fname()+'-'+PACKET+'.json';download(f,collect(true));persist();
+  msg('Finished! Your file '+f+' downloaded. Upload that file to Canvas.','ok');
+});
+try{var raw=localStorage.getItem(STORE);if(raw){var d=JSON.parse(raw);if(d&&d.packet===PACKET)apply(d)}}catch(e){}
+render();
+})();
+</script></body></html>

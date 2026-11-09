@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Revolution or Continuation? · Thinking Like a Historian 14</title><style>
+:root{--p:#2F3E5C;--bg:#F3F0EA;--a:#4F6785;--g:#B85C38;--hi:#E5A786;--s:#AA5434;--v:#2E6B3E;--t:#121823;--card:#fff;--line:#D8D7D6;--mut:#616469}
+@media (prefers-color-scheme: dark){:root{--bg:#0D111A;--card:#151C29;--t:#F3F0EA;--line:#485570;--mut:#B8BBBF}.lab{color:var(--hi)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--t);font:17px/1.6 Georgia,'Times New Roman',serif}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px 40px}
+.hero{background:#2F3E5C;color:#F3F0EA;padding:30px 16px 24px;border-bottom:6px solid #B85C38}
+.hero .in{max-width:860px;margin:0 auto}
+.eyebrow{font:700 13px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.18em;color:#E5A786}
+.hero h1{margin:.35em 0 .2em;font-size:clamp(28px,5vw,40px);line-height:1.15}
+.hero .sub{font-style:italic;color:#E5A786}
+.flag{display:inline-block;margin-top:12px;background:#4F6785;color:#fff;font:700 13px Arial,sans-serif;letter-spacing:.08em;padding:6px 10px;border-radius:4px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:18px 0}
+.cq{border-left:6px solid var(--a)}
+.lab{font:700 13px Arial,Helvetica,sans-serif;letter-spacing:.12em;color:var(--a);text-transform:uppercase}
+h2{font-size:24px;margin:28px 0 6px;color:var(--p)}
+@media (prefers-color-scheme: dark){h2{color:var(--hi)}.lab{color:var(--hi)}.help{color:var(--t)}}
+h3{margin:.2em 0 .4em}
+.article p{margin:.7em 0}
+.article h3{font-size:21px}
+label{font:600 14px Arial,Helvetica,sans-serif;display:block;margin:12px 0 4px}
+input[type=text],textarea,select{width:100%;font:16px/1.5 Arial,Helvetica,sans-serif;padding:9px 10px;border:1.5px solid var(--line);border-radius:7px;background:#fffdf9;color:#222}
+textarea{min-height:80px;resize:vertical}
+.bad{border-color:#B03A2E!important;background:#fdeceb!important}
+.names{display:grid;grid-template-columns:1fr 1fr 110px 150px;gap:10px}
+@media(max-width:620px){.names{grid-template-columns:1fr 1fr}}
+.meter{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line)}
+.bar{height:10px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--a);transition:width .3s}
+.mtext{font:600 14px Arial,sans-serif;margin-bottom:6px}
+.case{background:var(--card);border:1px solid var(--line);border-left:8px solid var(--line);border-radius:10px;padding:16px 18px;margin:22px 0}
+.case.done{border-left-color:var(--p)} .case.isS{border-left-color:var(--s)} .case.isV{border-left-color:var(--v)}
+.chip{display:inline-block;background:var(--p);color:#fff;font:700 13px Arial,sans-serif;padding:3px 10px;border-radius:20px;margin-right:8px}
+.cnum{font:700 13px Arial,sans-serif;letter-spacing:.1em;color:var(--mut);text-transform:uppercase}
+.who{font:600 15px Arial,sans-serif;margin:.6em 0 .2em}
+.intro{margin:.3em 0}
+blockquote{margin:12px 0;padding:12px 16px;background:#F3F0EA;color:#121823;border-left:5px solid var(--g);font-style:italic;border-radius:0 8px 8px 0}
+.cite{font:13px/1.45 Arial,sans-serif;color:var(--mut)}
+.help{font:14px/1.5 Arial,sans-serif;color:var(--t);background:rgba(229,167,134,.25);padding:8px 10px;border-radius:6px;margin:8px 0}
+.ask{font:700 15px Arial,sans-serif;margin:14px 0 6px}
+.stances{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+@media(max-width:620px){.stances{grid-template-columns:1fr}}
+.st{font:700 15px Arial,sans-serif;padding:10px;border-radius:8px;border:2px solid var(--p);background:#fff;color:var(--p);cursor:pointer;text-align:left}
+.st small{display:block;font-weight:400;font-size:12.5px;color:#444;margin-top:3px}
+.st[data-v=S]{border-color:var(--s);color:var(--s)} .st[data-v=V]{border-color:var(--v);color:var(--v)}
+.st[aria-pressed=true]{background:var(--p);color:#fff} .st[data-v=S][aria-pressed=true]{background:var(--s)} .st[data-v=V][aria-pressed=true]{background:var(--v)}
+.st[aria-pressed=true] small{color:#fff}
+.how ol{margin:.4em 0;padding-left:1.3em}
+.checks label{font-weight:400;display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.checks input{flex:none;width:20px;height:20px;margin-top:2px}
+.wc{font:600 14px Arial,sans-serif;color:var(--mut);margin-top:4px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 8px}
+button.b{font:700 15px Arial,sans-serif;padding:12px 16px;border-radius:8px;border:0;cursor:pointer;background:var(--p);color:#fff}
+button.b.alt{background:#fff;color:var(--p);border:2px solid var(--p)}
+button.b.fin{background:var(--a)}
+button.b:disabled{background:#6f6f6f;color:#fff;cursor:not-allowed}
+#status{font:600 15px Arial,sans-serif;margin:8px 0} #status.err{color:#b03a2e} #status.ok{color:var(--v)}
+#todo{font:14px Arial,sans-serif;color:var(--mut)}
+.key{color:#121823;background:rgba(229,167,134,.3);border:1px solid var(--g);border-radius:8px;padding:10px 12px;margin-top:10px;font:15px/1.5 Arial,sans-serif}
+.badge{display:inline-block;font:700 13px Arial,sans-serif;color:#fff;padding:3px 9px;border-radius:5px;margin-right:6px}
+footer{margin-top:36px;padding:16px;background:#2F3E5C;color:#E5A786;font:700 12.5px Arial,sans-serif;letter-spacing:.08em;text-align:center}
+
+.grp{margin:34px 0 4px;padding:12px 16px;background:var(--p);color:#fff;border-radius:10px}
+.grp .gl{font:700 12px Arial,sans-serif;letter-spacing:.14em;color:var(--hi)}
+.grp h2{color:#fff;margin:4px 0 0;font-size:21px}
+.dq ul{margin:.4em 0;padding-left:1.2em}
+.dq li{margin:.35em 0;font:15px/1.5 Arial,sans-serif}
+.rd h3{margin-top:0}
+.essaysamp p{margin:.7em 0}
+</style></head><body>
+<header class="hero"><div class="in">
+<div class="eyebrow">THINKING LIKE A HISTORIAN 14 · 1929–1937</div>
+<h1>Revolution or Continuation?</h1>
+<div class="sub">The Great Depression and the New Deal State · Thinking Like a Historian</div>
+</div></header>
+<main class="wrap">
+<div class="box cq"><div class="lab">Central Question:</div><p style="margin:.3em 0;font-size:19px"><b>Was the New Deal a “halfway revolution” that changed the role of government but left many Americans behind, or a continuation of earlier reform that kept the existing order in place?</b></p><p style="margin:.3em 0">Your job: read the background, crack 3 case files (the documents historians use as evidence), then close the case with a one-page essay.</p></div>
+<div class="box how"><div class="lab">How to play</div><ol><li><b>Part 1:</b> Read the Background Reading and answer the one-sentence check.</li><li><b>Part 2:</b> For each case file, read the excerpt, then tap which historian’s argument it helps most. The three buttons change with each debate, so read them. Each has a symbol (★, ◆, ●) as well as a label.</li><li>Type who made the source, when, and the key fact (use the Background Reading). Then copy the clue words that prove your choice and finish the sentence “This source helps…”.</li><li><b>Part 3:</b> Answer the central question. Write your one-page essay and check the four boxes.</li><li>Use <b>Save Progress</b> any time. When everything is done, <b>Finished</b> turns on.</li></ol></div>
+<div class="box"><div class="names">
+<div><label for="first">First name</label><input type="text" id="first" data-id="first" autocomplete="given-name"></div>
+<div><label for="last">Last name</label><input type="text" id="last" data-id="last" autocomplete="family-name"></div>
+<div><label for="period">Period</label><input type="text" id="period" data-id="period"></div>
+<div><label for="date">Date</label><input type="text" id="date" readonly placeholder="fills in at Finished"></div>
+</div></div>
+<h2>Part 1 · Background Reading</h2>
+<div class="box rd"><div class="article"><h3>Action, Experiment, and the Limits of Relief</h3><p>When the stock market crashed in October 1929, few people guessed that the country was heading into its worst economic crisis. Over the next three years banks failed, businesses closed, and farm prices collapsed. By 1933 roughly one worker in four had no job, and families who had never asked for help stood in line for bread. President Herbert Hoover believed that private charity and local relief should carry most of the burden, and many Americans felt abandoned. In 1932 they elected Franklin D. Roosevelt, who promised “a new deal for the American people.”</p><p>Roosevelt acted at once. In his first hundred days Congress passed laws to reopen the banks, to put young men to work on public lands in the Civilian Conservation Corps, to pay farmers to grow less, to build dams and power plants in the Tennessee Valley, and to set up codes of fair competition for industry. The government now regulated banking, helped fund relief, and took a much larger part in the economy. In 1935 came a second wave: the Social Security Act created old-age pensions and unemployment insurance, the Wagner Act protected the right of workers to join unions, and the Works Progress Administration paid millions of people to build roads, schools, and parks. Not everyone cheered. Business leaders warned that Roosevelt was going too far. Others thought he was not going far enough, among them Senator Huey Long of Louisiana, who called for a plan to “share our wealth” by limiting great fortunes. Roosevelt was reelected in a landslide in 1936, but unemployment stayed high, and some of the new programs, such as Social Security, left out farm and household workers, jobs that many Black Americans held, while Southern Democrats in Congress held great power.</p><p>Historians have argued for decades about how much the New Deal really changed. Henry Steele Commager and Arthur Schlesinger Jr. belonged to what is called the progressive school. They saw Roosevelt as heir to earlier reformers who used government to curb big business, and they argued that the New Deal kept the American system while adjusting it. Richard Hofstadter, writing in the 1950s, agreed that it was a break with the past but described it as timid and practical, a set of experiments rather than a plan. William Leuchtenburg, writing in 1963, insisted that it was a “radically new departure,” because the federal government took on lasting responsibility for the economic security of its citizens. Even so, he called it a “halfway revolution,” since it did not remake the economy and left African Americans and others outside many of its protections. More recent social historians, who study workers, farmers, women, and Black Americans, tend to find a mixed bag of real help and real limits.</p><p>Three voices will test these views. In 1934 Roosevelt explained his program to the nation in one of his radio “fireside chats.” In January 1935 Huey Long attacked the president in the Senate. In 1940 Roy Wilkins, a Black leader and editor of the NAACP magazine <i>The Crisis</i>, weighed Roosevelt’s record on race. Ask of each source: whose argument does this evidence help most?</p></div>
+<label for="rdg">In one sentence, explain what Social Security and the Wagner Act did, and name one group that was left out of the New Deal’s protections.</label>
+<textarea id="rdg" data-id="rdg" rows="2"></textarea></div>
+
+<h2>Part 2 · The Case Files</h2>
+<div class="meter"><div class="mtext" id="mtext">0 of 3 case files cracked</div><div class="bar"><i id="mbar"></i></div></div>
+<div class="grp"><div class="gl">DEBATE 1 · CASE FILES 1–3</div><h2>The New Deal: Continuation or Halfway Revolution?</h2></div>
+<div class="box dq"><div class="lab">The debate:</div><p style="margin:.3em 0"><b>Was the New Deal a “halfway revolution” that changed the role of government but left many Americans behind, or a continuation of earlier reform that kept the existing order in place?</b></p><ul><li><b>★ CONTINUATION</b>: Henry Steele Commager and Arthur Schlesinger Jr., of the “progressive school,” argued that the New Deal modified rather than replaced the existing order and carried earlier reform forward.</li><li><b>◆ HALFWAY REVOLUTION</b>: William Leuchtenburg called the New Deal a “radically new departure” for government, yet a “halfway revolution” that left many, especially African Americans, behind.</li><li><b>● BOTH / MIXED</b>: A source that fits both arguments. Richard Hofstadter saw a real departure that was also timid and pragmatic, and recent social historians find a mixed bag of real help and real limits.</li></ul></div>
+<section class="case" id="case1" data-i="1"><div><span class="chip">1934</span><span class="cnum">Case file 1 of 3</span></div>
+<div class="who">Who: President Franklin D. Roosevelt<br>From: Radio address, a “fireside chat,” September 30, 1934</div>
+<p class="intro">The president explains to listeners why his program does not break with American tradition.</p>
+<blockquote>To those who say that our expenditures for Public Works and other means for recovery are a waste that we cannot afford, I answer that no country, however rich, can afford the waste of its human resources. Demoralization caused by vast unemployment is our greatest extravagance.&nbsp;.&nbsp;.&nbsp;. The course we have followed fits the American practice of Government - a practice of taking action step by step, of regulating only to meet concrete needs - a practice of courageous recognition of change.</blockquote>
+<div class="cite">Franklin D. Roosevelt, fireside chat of September 30, 1934, Social Security Administration, History Pages (ssa.gov/history/fdrstmts.html). The spaced hyphens are in the source.</div>
+<div class="help"><b>Word help:</b> expenditures = money spent · Public Works = government building projects such as roads and dams · demoralization = loss of hope and spirit · extravagance = wasteful spending · concrete = real and specific</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 1"><button type="button" class="st" data-v="N" aria-pressed="false">★ CONTINUATION<small>modified the old order and built on earlier reform</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ HALFWAY REVOLUTION<small>a radical new role for government, but it stopped short</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows real change and real limits together</small></button></div>
+<label for="ctx1">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx1" data-id="ctx1" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note1">Clue words</label>
+<textarea id="note1" data-id="note1" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case2" data-i="2"><div><span class="chip">1935</span><span class="cnum">Case file 2 of 3</span></div>
+<div class="who">Who: Senator Huey Long of Louisiana<br>From: Speech in the U.S. Senate, “Share Our Wealth,” January 14, 1935</div>
+<p class="intro">A senator who once backed the president says the New Deal leaves the problem of wealth untouched.</p>
+<blockquote>One million more unemployed; 5 million more families on the dole, and another 5 million trying to get there; the fortunes of the rich becoming bigger and the fortunes of the average and little men getting less and less; the money in the banks nearly all owned by a mere handful of people, and the President of the United States quoted as saying: “Don't touch the rich!” .&nbsp;.&nbsp;. So therefore I call upon the men and women of America to immediately join in our work and movement to share our wealth.</blockquote>
+<div class="cite">Huey P. Long, speech in the U.S. Senate, January 14, 1935, Social Security Administration, History Pages (ssa.gov/history/longsen.html).</div>
+<div class="help"><b>Word help:</b> dole = money paid by the government to people who have no work · fortunes = great amounts of wealth · a mere handful = only a very few</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 2"><button type="button" class="st" data-v="N" aria-pressed="false">★ CONTINUATION<small>modified the old order and built on earlier reform</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ HALFWAY REVOLUTION<small>a radical new role for government, but it stopped short</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows real change and real limits together</small></button></div>
+<label for="ctx2">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx2" data-id="ctx2" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note2">Clue words</label>
+<textarea id="note2" data-id="note2" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case3" data-i="3"><div><span class="chip">1940</span><span class="cnum">Case file 3 of 3</span></div>
+<div class="who">Who: Roy Wilkins, NAACP leader and editor of The Crisis<br>From: Magazine article, “The Roosevelt Record,” <i>The Crisis</i>, November 1940</div>
+<p class="intro">A Black editor looks back on what Roosevelt’s program did and did not do for Black Americans.</p>
+<blockquote>On the subject of the Negro, the Roosevelt record is spotty, as might be expected in an administration where so much power is in the hands of the southern wing of the Democratic Party. And yet Mr. Roosevelt, hobbled as he has been by the Dixie die-hards, has managed to include Negro citizens in practically every phase of the administration program.&nbsp;.&nbsp;.&nbsp;. For the first time in their lives, government has taken on meaning and substance for the Negro masses.</blockquote>
+<div class="cite">Roy Wilkins, “The Roosevelt Record,” <i>The Crisis</i>, November 1940, p. 343, as printed in the Norton exercise. The word “Negro” is the source’s term for Black Americans in 1940.</div>
+<div class="help"><b>Word help:</b> spotty = uneven, good in some places and bad in others · hobbled = held back · die-hards = people who will not change their minds · Negro = the term used in 1940 for Black Americans; it is outdated today</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 3"><button type="button" class="st" data-v="N" aria-pressed="false">★ CONTINUATION<small>modified the old order and built on earlier reform</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ HALFWAY REVOLUTION<small>a radical new role for government, but it stopped short</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows real change and real limits together</small></button></div>
+<label for="ctx3">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx3" data-id="ctx3" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note3">Clue words</label>
+<textarea id="note3" data-id="note3" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+
+<h2>Part 3 · Case Closed</h2>
+<div class="box cq"><div class="lab">Central Question:</div><p style="margin:.3em 0"><b>Was the New Deal a “halfway revolution” that changed the role of government but left many Americans behind, or a continuation of earlier reform that kept the existing order in place?</b></p></div>
+<div class="box"><p><b>Your essay question:</b> Was the New Deal a “halfway revolution” that changed the role of government but left many Americans behind, or a continuation of earlier reform that kept the existing order in place? Take a position and defend it with the case files.</p>
+<p>Write about one page (about 250 to 350 words; at least 150 words to finish). Use this order:</p>
+<ol><li><b>Claim:</b> your answer to the question in one or two sentences.</li>
+<li><b>Evidence 1:</b> a quote from one case file, with what it shows and one context fact.</li>
+<li><b>Evidence 2:</b> a quote from a <i>different</i> case file, explained the same way.</li>
+<li><b>Counter-Argument:</b> name a case file (or a historian) someone on the other side would use, explain their point, then answer it.</li>
+<li><b>Conclusion:</b> what your answer shows about what kind of change the New Deal really was.</li></ol>
+<label for="essay">Your essay</label>
+<textarea id="essay" data-id="essay" rows="18" style="min-height:360px"></textarea>
+<div class="wc" id="wc">0 words</div>
+<div class="checks" style="margin-top:12px">
+<label><input type="checkbox" id="chk1" data-id="chk1"> My essay opens with a clear claim.</label>
+<label><input type="checkbox" id="chk2" data-id="chk2"> I used evidence from at least two different case files.</label>
+<label><input type="checkbox" id="chk3" data-id="chk3"> I stated a Counter-Argument and answered it.</label>
+<label><input type="checkbox" id="chk4" data-id="chk4"> My conclusion explains what the evidence shows about what kind of change the New Deal really was.</label>
+</div></div>
+<div class="btns">
+<button type="button" class="b" id="save">Save Progress</button>
+<button type="button" class="b alt" id="loadBtn">Load Progress</button>
+<input type="file" id="loadFile" accept=".json,application/json" hidden>
+<button type="button" class="b fin" id="finish" disabled>Finished — Download File to Submit</button>
+</div>
+<div id="status" role="status" aria-live="polite"></div>
+<div id="todo"></div>
+</main>
+<footer>UNIT 5 · MODERN AMERICA | HIST C1002 | DANIEL GARZA, M.A.</footer>
+<script>
+(function(){
+var PACKET="L14_Thinking_Like_a_Historian", STORE="c1002_l14_thinking_like_a_historian", COURSE="HIST C1002", NC=3, GROUPS=[[1, 2, 3]], MULTI=false, RDG=["rdg"];
+var $=function(id){return document.getElementById(id)};
+var sides={};
+function fields(){return Array.prototype.slice.call(document.querySelectorAll('[data-id]'))}
+function words(t){t=(t||'').trim();return t?t.split(/\s+/).length:0}
+function val(id){var e=$(id);return e?(e.value||'').trim():''}
+function cracked(i){return !!sides[i]&&val('note'+i)&&val('ctx'+i)}
+function missing(){
+  var m=[];
+  if(!val('first')||!val('last')||!val('period'))m.push('first name, last name, and period');
+  var r=[];RDG.forEach(function(id,k){if(!val(id))r.push(k+1)});
+  if(r.length)m.push('Background Reading check'+(RDG.length>1?(r.length>1?'s ':' ')+r.join(', '):''));
+  var c=[];for(var i=1;i<=NC;i++){if(!cracked(i))c.push(i)}
+  if(c.length)m.push('case file'+(c.length>1?'s ':' ')+c.join(', ')+' (stance, context, and clue words)');
+  if(MULTI&&!val('debate'))m.push('the debate you will write about');
+  if(words(val('essay'))<150)m.push('essay (at least 150 words)');
+  var k=[];for(var j=1;j<=4;j++){if(!$('chk'+j).checked)k.push(j)}
+  if(k.length)m.push('checklist box'+(k.length>1?'es ':' ')+k.join(', '));
+  return m;
+}
+function render(){
+  var n=0;
+  for(var i=1;i<=NC;i++){
+    var card=$('case'+i);var ok=cracked(i);if(ok)n++;
+    card.classList.toggle('done',!!sides[i]);card.classList.toggle('isS',sides[i]==='S');card.classList.toggle('isV',sides[i]==='V');
+    card.querySelectorAll('.st').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.v===sides[i]?'true':'false')});
+  }
+  $('mtext').textContent=n+' of '+NC+' case files cracked';$('mbar').style.width=(n*100/NC)+'%';
+  var w=words(val('essay'));$('wc').textContent=w+' word'+(w===1?'':'s')+(w<150?' (150 needed to finish)':'');
+  var m=missing();$('finish').disabled=m.length>0;
+  $('todo').textContent=m.length?('Still to do: '+m.join('; ')):'Everything is done. Click Finished to download your file.';
+}
+function tallyOf(list){var t={national:0,state:0,voice:0};list.forEach(function(i){if(sides[i]==='N')t.national++;if(sides[i]==='S')t.state++;if(sides[i]==='V')t.voice++});return t}
+function collect(done){
+  var a={},ch={};
+  fields().forEach(function(e){var id=e.dataset.id;if(e.type==='checkbox')ch[id]=e.checked;else if(['first','last','period'].indexOf(id)<0)a[id]=e.value});
+  var all=[];for(var i=1;i<=NC;i++)all.push(i);
+  var byDebate={};GROUPS.forEach(function(g,k){byDebate['debate'+(k+1)]=tallyOf(g)});
+  return {packet:PACKET,course:COURSE,version:1,saved:new Date().toISOString(),completed:!!done,
+    student:{first:val('first'),last:val('last'),period:val('period'),date:$('date').value||''},
+    sides:JSON.parse(JSON.stringify(sides)),answers:a,checks:ch,tally:tallyOf(all),tallyByDebate:byDebate};
+}
+function apply(d){
+  sides={};Object.keys(d.sides||{}).forEach(function(k){sides[k]=d.sides[k]});
+  var s=d.student||{};$('first').value=s.first||'';$('last').value=s.last||'';$('period').value=s.period||'';$('date').value=s.date||'';
+  var a=d.answers||{},ch=d.checks||{};
+  fields().forEach(function(e){var id=e.dataset.id;if(e.type==='checkbox')e.checked=!!ch[id];else if(id in a)e.value=a[id]});
+  render();
+}
+function persist(){try{localStorage.setItem(STORE,JSON.stringify(collect(false)))}catch(e){}}
+function fname(){return (val('last')+'_'+val('first')).normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^A-Za-z0-9_\-]+/g,'_')}
+function download(name,obj){
+  var blob=new Blob([JSON.stringify(obj,null,2)],{type:'application/json'});var u=URL.createObjectURL(blob);
+  var a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();
+  setTimeout(function(){URL.revokeObjectURL(u);a.remove()},1500);
+}
+function msg(t,cls){var s=$('status');s.textContent=t;s.className=cls||''}
+function needNames(){
+  var bad=false;['first','last','period'].forEach(function(id){var e=$(id);var b=!e.value.trim();e.classList.toggle('bad',b);if(b)bad=true});
+  return bad;
+}
+document.querySelectorAll('.case').forEach(function(card){
+  var i=card.dataset.i;
+  card.querySelectorAll('.st').forEach(function(b){b.addEventListener('click',function(){sides[i]=b.dataset.v;render();persist()})});
+});
+fields().forEach(function(e){e.addEventListener((e.type==='checkbox'||e.tagName==='SELECT')?'change':'input',function(){if(e.classList.contains('bad')&&e.value.trim())e.classList.remove('bad');render();persist()})});
+$('save').addEventListener('click',function(){
+  if(needNames()){msg('Type your first name, last name, and period before you save.','err');return}
+  var f=fname()+'-'+PACKET+'-PROGRESS.json';download(f,collect(false));
+  msg('Saved '+f+'. Keep that file. Use Load Progress later. Do not upload it to Canvas until you are finished.','ok');
+});
+$('loadBtn').addEventListener('click',function(){$('loadFile').value='';$('loadFile').click()});
+$('loadFile').addEventListener('change',function(){
+  var f=this.files&&this.files[0];if(!f)return;var r=new FileReader();
+  r.onload=function(){try{var d=JSON.parse(r.result);if(!d||d.packet!==PACKET)throw 0;apply(d);persist();msg('Progress loaded. Pick up where you left off.','ok')}
+    catch(e){msg('That file is not a saved file from this assignment. Choose the file that ends in -'+PACKET+'-PROGRESS.json.','err')}};
+  r.readAsText(f);
+});
+$('finish').addEventListener('click',function(){
+  if(missing().length){msg('Not finished yet. Read the line below to see what is missing.','err');render();return}
+  var d=new Date();$('date').value=(d.getMonth()+1)+'/'+d.getDate()+'/'+d.getFullYear();
+  var f=fname()+'-'+PACKET+'.json';download(f,collect(true));persist();
+  msg('Finished! Your file '+f+' downloaded. Upload that file to Canvas.','ok');
+});
+try{var raw=localStorage.getItem(STORE);if(raw){var d=JSON.parse(raw);if(d&&d.packet===PACKET)apply(d)}}catch(e){}
+render();
+})();
+</script></body></html>

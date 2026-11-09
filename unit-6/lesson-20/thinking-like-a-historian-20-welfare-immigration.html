@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Who Gets Help? Who Belongs? · Thinking Like a Historian 20</title><style>
+
+
+:root{--p:#5A2833;--bg:#F6F0EA;--a:#8A3F4C;--g:#3D647A;--hi:#9FC0CE;--s:#3D647A;--v:#2E6B3E;--t:#281217;--card:#fff;--line:#E4D9D5;--mut:#482029}
+@media (prefers-color-scheme: dark){:root{--bg:#241014;--card:#36181F;--t:#F6F0EA;--line:#944254;--mut:#B8B4B0;--hi:#404D52}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--t);font:17px/1.6 Georgia,'Times New Roman',serif}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px 40px}
+.hero{background:#5A2833;color:#F6F0EA;padding:30px 16px 24px;border-bottom:6px solid #3D647A}
+.hero .in{max-width:860px;margin:0 auto}
+.eyebrow{font:700 13px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.18em;color:#9FC0CE}
+.hero h1{margin:.35em 0 .2em;font-size:clamp(28px,5vw,40px);line-height:1.15}
+.hero .sub{font-style:italic;color:#9FC0CE}
+.flag{display:inline-block;margin-top:12px;background:#8A3F4C;color:#fff;font:700 13px Arial,sans-serif;letter-spacing:.08em;padding:6px 10px;border-radius:4px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:18px 0}
+.cq{border-left:6px solid var(--a)}
+.lab{font:700 13px Arial,Helvetica,sans-serif;letter-spacing:.12em;color:var(--a);text-transform:uppercase}
+h2{font-size:24px;margin:28px 0 6px;color:var(--p)}
+@media (prefers-color-scheme: dark){h2,.lab{color:#9FC0CE}}
+h3{margin:.2em 0 .4em}
+.article p{margin:.7em 0}
+.article h3{font-size:21px}
+label{font:600 14px Arial,Helvetica,sans-serif;display:block;margin:12px 0 4px}
+input[type=text],textarea,select{width:100%;font:16px/1.5 Arial,Helvetica,sans-serif;padding:9px 10px;border:1.5px solid var(--line);border-radius:7px;background:#fffdf9;color:#222}
+textarea{min-height:80px;resize:vertical}
+.bad{border-color:#c0392b!important;background:#fdeceb!important}
+.names{display:grid;grid-template-columns:1fr 1fr 110px 150px;gap:10px}
+@media(max-width:620px){.names{grid-template-columns:1fr 1fr}}
+.meter{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line)}
+.bar{height:10px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--a);transition:width .3s}
+.mtext{font:600 14px Arial,sans-serif;margin-bottom:6px}
+.case{background:var(--card);border:1px solid var(--line);border-left:8px solid var(--line);border-radius:10px;padding:16px 18px;margin:22px 0}
+.case.done{border-left-color:var(--p)} .case.isS{border-left-color:var(--s)} .case.isV{border-left-color:var(--v)}
+.chip{display:inline-block;background:var(--p);color:#fff;font:700 13px Arial,sans-serif;padding:3px 10px;border-radius:20px;margin-right:8px}
+.cnum{font:700 13px Arial,sans-serif;letter-spacing:.1em;color:var(--mut);text-transform:uppercase}
+.who{font:600 15px Arial,sans-serif;margin:.6em 0 .2em}
+.intro{margin:.3em 0}
+blockquote{margin:12px 0;padding:12px 16px;background:#F6F0EA;color:#281217;border-left:5px solid var(--g);font-style:italic;border-radius:0 8px 8px 0}
+.cite{font:13px/1.45 Arial,sans-serif;color:var(--mut)}
+.help{font:14px/1.5 Arial,sans-serif;background:rgba(159,192,206,.25);padding:8px 10px;border-radius:6px;margin:8px 0}
+.ask{font:700 15px Arial,sans-serif;margin:14px 0 6px}
+.stances{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+@media(max-width:620px){.stances{grid-template-columns:1fr}}
+.st{font:700 15px Arial,sans-serif;padding:10px;border-radius:8px;border:2px solid var(--p);background:#fff;color:var(--p);cursor:pointer;text-align:left}
+.st small{display:block;font-weight:400;font-size:12.5px;color:#444;margin-top:3px}
+.st[data-v=S]{border-color:var(--s);color:var(--s)} .st[data-v=V]{border-color:var(--v);color:var(--v)}
+.st[aria-pressed=true]{background:var(--p);color:#fff} .st[data-v=S][aria-pressed=true]{background:var(--s)} .st[data-v=V][aria-pressed=true]{background:var(--v)}
+.st[aria-pressed=true] small{color:#fff}
+.how ol{margin:.4em 0;padding-left:1.3em}
+.checks label{font-weight:400;display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.checks input{width:20px;height:20px;margin-top:2px}
+.wc{font:600 14px Arial,sans-serif;color:var(--mut);margin-top:4px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 8px}
+button.b{font:700 15px Arial,sans-serif;padding:12px 16px;border-radius:8px;border:0;cursor:pointer;background:var(--p);color:#fff}
+button.b.alt{background:#fff;color:var(--p);border:2px solid var(--p)}
+button.b.fin{background:var(--a)}
+button.b:disabled{background:#6b6b6b;color:#ffffff;cursor:not-allowed}
+#status{font:600 15px Arial,sans-serif;margin:8px 0} #status.err{color:#b03a2e} #status.ok{color:var(--v)}
+#todo{font:14px Arial,sans-serif;color:var(--mut)}
+.key{background:rgba(159,192,206,.3);border:1px solid var(--g);border-radius:8px;padding:10px 12px;margin-top:10px;font:15px/1.5 Arial,sans-serif}
+.badge{display:inline-block;font:700 13px Arial,sans-serif;color:#fff;padding:3px 9px;border-radius:5px;margin-right:6px}
+footer{margin-top:36px;padding:16px;background:#5A2833;color:#9FC0CE;font:700 12.5px Arial,sans-serif;letter-spacing:.08em;text-align:center}
+
+.grp{margin:34px 0 4px;padding:12px 16px;background:var(--p);color:#fff;border-radius:10px}
+.grp .gl{font:700 12px Arial,sans-serif;letter-spacing:.14em;color:var(--hi)}
+.grp h2{color:#fff;margin:4px 0 0;font-size:21px}
+.dq ul{margin:.4em 0;padding-left:1.2em}
+.dq li{margin:.35em 0;font:15px/1.5 Arial,sans-serif}
+.rd h3{margin-top:0}
+.essaysamp p{margin:.7em 0}
+</style></head><body>
+<header class="hero"><div class="in">
+<div class="eyebrow">THINKING LIKE A HISTORIAN 20 · 1971–2024</div>
+<h1>Who Gets Help? Who Belongs?</h1>
+<div class="sub">Conservatism and Globalization in Contemporary America · Welfare Reform and Contemporary Immigration · Crack the Case</div>
+</div></header>
+<main class="wrap">
+<div class="box cq"><div class="lab">Central Questions:</div><p style="margin:.4em 0;font-size:18px"><b>Debate 1:</b> Did the 1996 welfare reform move poor families from dependence toward independence, or did it abandon them?</p><p style="margin:.4em 0;font-size:18px"><b>Debate 2:</b> Is today’s immigration, especially from Latin America, a new challenge to assimilation, or does it repeat an old pattern of alarm about newcomers that later proved unjustified?</p><p style="margin:.3em 0">Your job: read the background, crack 8 case files (the documents historians use as evidence), then close the case with a one-page essay on ONE of the debates.</p></div>
+<div class="box how"><div class="lab">How to play</div><ol><li><b>Part 1:</b> Read the Background Readings and answer the one-sentence checks.</li><li><b>Part 2:</b> For each case file, read the excerpt, then tap which historian’s argument it helps most. The three buttons change with each debate, so read them. Each has a symbol (★, ◆, ●) as well as a label.</li><li>Type who made the source, when, and the key fact (use the Background Reading). Then copy the clue words that prove your choice and finish the sentence “This source helps…”.</li><li><b>Part 3:</b> Choose ONE debate from the menu, then write your one-page essay and check the four boxes.</li><li>Use <b>Save Progress</b> any time. When everything is done, <b>Finished</b> turns on.</li></ol></div>
+<div class="box"><div class="names">
+<div><label for="first">First name</label><input type="text" id="first" data-id="first" autocomplete="given-name"></div>
+<div><label for="last">Last name</label><input type="text" id="last" data-id="last" autocomplete="family-name"></div>
+<div><label for="period">Period</label><input type="text" id="period" data-id="period"></div>
+<div><label for="date">Date</label><input type="text" id="date" readonly placeholder="fills in at Finished"></div>
+</div></div>
+<h2>Part 1 · Background Reading</h2>
+<div class="box rd"><div class="article"><div class="lab">Debate 1</div><h3>Welfare, Work, and the 1996 Reform</h3><p>Since the New Deal, a program called Aid to Families with Dependent Children (AFDC), created by the Social Security Act of 1935, gave cash to poor families, most of them headed by single mothers. By the 1980s and 1990s critics said that it discouraged work and marriage and trapped families in dependence. Defenders answered that the benefits were small and that jobs, child care, and health insurance were out of reach for many parents. Bill Clinton, a Democrat, promised in his 1992 campaign to “end welfare as we know it.” After Republicans won control of Congress in 1994, the argument grew sharper, and Clinton vetoed two Republican welfare bills before signing a third in 1996.</p><p>On January 24, 1995, Clinton described his approach in the State of the Union address. In August 1996 he signed the Personal Responsibility and Work Opportunity Reconciliation Act. The law ended AFDC and replaced it with block grants to the states, called Temporary Assistance for Needy Families (TANF), which gives each state a fixed sum of money and wide freedom to design its own program, set a five-year lifetime limit on most federal benefits, and required many recipients to work. The law applied mainly to poor families with children, and states could spend the money on child care and job training as well as cash. Before the final vote, on July 31, 1996, Representative John Lewis of Georgia, a Democrat and a leader of the civil rights movement, urged the House to reject the bill. Peter Edelman, a Clinton administration official who resigned in protest, wrote in The Atlantic in March 1997 that the law ignored the real situations of poor families. Ron Haskins, a researcher at the Brookings Institution who had helped write the law as a congressional staff member, later defended it in his book Work Over Welfare.</p><p>Both sides use the results as evidence. Welfare rolls fell sharply in the late 1990s, and more single mothers went to work, helped by a strong economy. Supporters see proof that the law moved families from welfare toward work and independence. Critics point to parents who found only low-wage jobs or none at all, to the loss of health coverage and the cost of child care, and to families who would have no safety net when the economy turned down. The question for this debate is whether the reform helped poor families move toward independence or abandoned them. As you read each source, ask which argument it helps most, and remember that some sources help both.</p></div>
+<label for="rdg1">In one sentence, name one change the 1996 welfare law made and one reason critics objected to it.</label>
+<textarea id="rdg1" data-id="rdg1" rows="2"></textarea></div>
+<div class="box rd"><div class="article"><div class="lab">Debate 2</div><h3>Newcomers and the Idea of Assimilation</h3><p>Americans have argued about immigration since colonial times. In the 1750s Benjamin Franklin worried that German settlers in Pennsylvania would keep their own language and customs. Chinese workers came to California for the Gold Rush and then to build railroads, and in 1878 the California Senate sent a memorial to Congress about the Chinese; in 1882 Congress passed the Chinese Exclusion Act. In the 1880s and 1890s immigration from southern and eastern Europe grew, and in 1891 Henry Cabot Lodge, a Republican congressman from Massachusetts, argued in a national magazine that the country should restrict it. Each time, the questions were similar: would the newcomers learn English, accept American institutions, and become loyal citizens, or would they remain apart?</p><p>Behind these arguments was an idea called assimilation, the process by which newcomers take on the language, habits, and loyalties of the society around them. Many Americans pictured the nation as a “melting pot” in which different groups blended together. In 1963 two sociologists, Nathan Glazer and Daniel Patrick Moynihan, published Beyond the Melting Pot, a study of the Jewish, Italian, Irish, Puerto Rican, and Black communities of New York City. They argued that the groups there had not simply melted away. They had changed, but they remained identifiable.</p><p>In 1965 Congress ended the old quotas that favored northern Europe, and since then most immigrants have come from Latin America and Asia, so the question has returned. People measure assimilation in different ways, such as learning English, schooling, income, and intermarriage, and which measure a writer chooses can shape the answer. Jason Richwine, a former senior policy analyst at the Heritage Foundation, wrote in the National Review in 2009 that Hispanic assimilation is different from that of earlier European groups. Leo Chavez, a professor of anthropology at the University of California, Irvine, argued in his 2008 book The Latino Threat that commentators who call Latino immigrants a danger to the nation repeat a pattern of alarm directed at earlier groups, such as Germans, Chinese, and southern and eastern Europeans, which later proved unjustified. These two writers are not case files. They are positions in a modern debate. Writers today can use history in different ways: one may stress how the present differs from the past, and another how it repeats it. The case files below are older voices that you can test against them. Ask which argument each source helps most, and remember that some sources help both.</p></div>
+<label for="rdg2">In one sentence, explain what historians mean by assimilation and name one group that older writers worried about.</label>
+<textarea id="rdg2" data-id="rdg2" rows="2"></textarea></div>
+<h2>Part 2 · The Case Files</h2>
+<div class="meter"><div class="mtext" id="mtext">0 of 8 case files cracked</div><div class="bar"><i id="mbar"></i></div></div>
+<div class="grp"><div class="gl">DEBATE 1 · CASE FILES 1–4</div><h2>Welfare Reform: Independence or Abandonment?</h2></div>
+<div class="box dq"><div class="lab">The debate:</div><p style="margin:.3em 0"><b>Did the 1996 welfare reform move poor families from dependence toward independence, or did it abandon them?</b></p><ul><li><b>★ PATH TO INDEPENDENCE</b>: President Bill Clinton and supporters of reform argue that work requirements and time limits lift people from dependence to independence.</li><li><b>◆ ABANDONMENT</b>: Representative John Lewis and other critics argue that ending the national guarantee abandons poor families, especially children.</li><li><b>● BOTH / MIXED</b>: A source whose evidence fits parts of both arguments (mixed), or does not fit either one cleanly.</li></ul></div>
+<section class="case" id="case1" data-i="1"><div><span class="chip">1995</span><span class="cnum">Case file 1 of 8</span></div>
+<div class="who">Who: President Bill Clinton<br>From: State of the Union address, January 24, 1995</div>
+<p class="intro">A president lays out what he wants welfare to be.</p>
+<blockquote>We have to make welfare what it was meant to be, a second chance, not a way of life. We have to help those on welfare move to work as quickly as possible, to provide child care and teach them skills, if that's what they need, for up to 2 years. And after that, there ought to be a simple, hard rule: Anyone who can work must go to work.&nbsp;.&nbsp;.&nbsp;. But our goal must be to liberate people and lift them up from dependence to independence, from welfare to work, from mere childbearing to responsible parenting. Our goal should not be to punish them because they happen to be poor.</blockquote>
+<div class="cite">William J. Clinton, “Address Before a Joint Session of the Congress on the State of the Union,” January 24, 1995, <i>Public Papers of the Presidents of the United States: William J. Clinton, 1995</i>, vol. 1, via govinfo.gov.</div>
+<div class="help"><b>Word help:</b> dependence = relying on others for support · liberate = set free · childbearing = having children · punish = cause suffering as a penalty</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 1"><button type="button" class="st" data-v="N" aria-pressed="false">★ PATH TO INDEPENDENCE<small>reform moves families from welfare to work</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ ABANDONMENT<small>reform leaves poor families without help</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows both views, or does not fit either one</small></button></div>
+<label for="ctx1">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx1" data-id="ctx1" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note1">Clue words</label>
+<textarea id="note1" data-id="note1" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case2" data-i="2"><div><span class="chip">1996</span><span class="cnum">Case file 2 of 8</span></div>
+<div class="who">Who: Representative John Lewis, Democrat from Georgia and a civil rights leader<br>From: Remarks in the U.S. House of Representatives, July 31, 1996</div>
+<p class="intro">A congressman urges his colleagues to vote against the welfare bill.</p>
+<blockquote>Mr. Speaker, the bill we are considering today is a bad bill. I will vote against it and I urge all people of conscience to vote against it. It is a bad bill because it penalizes children for the actions of their parents. This bill, Mr. Speaker, will put 1 million more children into poverty.&nbsp;.&nbsp;.&nbsp;. This bill gives up—it throws in the towel. We cannot run away from our challenges—our responsibilities—and leave them to the States. That is not the character of a great nation.</blockquote>
+<div class="cite">Rep. John Lewis, remarks in the House of Representatives, July 31, 1996, <i>Congressional Record</i>, 104th Cong., 2nd sess., H9413, text checked against the Congressional Record on govinfo.gov.</div>
+<div class="help"><b>Word help:</b> penalizes = punishes · conscience = a sense of right and wrong · throws in the towel = gives up · the States = the state governments</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 2"><button type="button" class="st" data-v="N" aria-pressed="false">★ PATH TO INDEPENDENCE<small>reform moves families from welfare to work</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ ABANDONMENT<small>reform leaves poor families without help</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows both views, or does not fit either one</small></button></div>
+<label for="ctx2">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx2" data-id="ctx2" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note2">Clue words</label>
+<textarea id="note2" data-id="note2" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case3" data-i="3"><div><span class="chip">1997</span><span class="cnum">Case file 3 of 8</span></div>
+<div class="who">Who: Peter Edelman, former Clinton administration official<br>From: Magazine article, <i>The Atlantic</i>, March 1997</div>
+<p class="intro">An official who quit over the law explains why he thinks it will not work for many families.</p>
+<blockquote>The bill closes its eyes to all the facts and complexities of the real world and essentially says to recipients, Find a job. That has a nice bumper-sticker ring to it. But as a one-size-fits-all recipe it is totally unrealistic.&nbsp;.&nbsp;.&nbsp;. For some people, staying on welfare was dictated by economics, because it involved a choice between the “poor support” of welfare &nbsp;.&nbsp;.&nbsp;. and the even worse situation of a low-wage job, with its take-home pay reduced by the out-of-pocket costs of commuting and day care, and the potentially incalculable effects of losing health coverage.</blockquote>
+<div class="cite">Peter Edelman, “The Worst Thing Bill Clinton Has Done,” <i>The Atlantic Monthly</i>, March 1997, as printed in the Norton exercise.</div>
+<div class="help"><b>Word help:</b> recipients = people who receive aid · one-size-fits-all = the same rule for everyone · take-home pay = pay after costs and taxes · incalculable = too great to measure</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 3"><button type="button" class="st" data-v="N" aria-pressed="false">★ PATH TO INDEPENDENCE<small>reform moves families from welfare to work</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ ABANDONMENT<small>reform leaves poor families without help</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows both views, or does not fit either one</small></button></div>
+<label for="ctx3">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx3" data-id="ctx3" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note3">Clue words</label>
+<textarea id="note3" data-id="note3" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case4" data-i="4"><div><span class="chip">2007</span><span class="cnum">Case file 4 of 8</span></div>
+<div class="who">Who: Ron Haskins, researcher at the Brookings Institution and former congressional staff member<br>From: <i>Work Over Welfare: The Inside Story of the 1996 Welfare Reform Law</i> (2007)</div>
+<p class="intro">A writer who helped create the law looks at what happened to poverty afterward.</p>
+<blockquote>Perhaps the most frequent charge, based on a reputable study by the Urban Institute, was that welfare reform would throw a million children into poverty.&nbsp;.&nbsp;.&nbsp;. As we have seen, poverty not only did not increase but actually declined every year between 1994 and 2000, with black child poverty reaching its lowest level ever. Although poverty increased after 2000, it remained well below its 1994 level.</blockquote>
+<div class="cite">Ron Haskins, <i>Work Over Welfare: The Inside Story of the 1996 Welfare Reform Law</i> (Washington, DC: Brookings Institution Press, 2007), as printed in the Norton exercise.</div>
+<div class="help"><b>Word help:</b> reputable = respected · charge = accusation · Urban Institute = a research group that studies social policy · declined = went down</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 4"><button type="button" class="st" data-v="N" aria-pressed="false">★ PATH TO INDEPENDENCE<small>reform moves families from welfare to work</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ ABANDONMENT<small>reform leaves poor families without help</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows both views, or does not fit either one</small></button></div>
+<label for="ctx4">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx4" data-id="ctx4" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note4">Clue words</label>
+<textarea id="note4" data-id="note4" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<div class="grp"><div class="gl">DEBATE 2 · CASE FILES 5–8</div><h2>Immigration: New Challenge or Old Pattern?</h2></div>
+<div class="box dq"><div class="lab">The debate:</div><p style="margin:.3em 0"><b>Is today’s immigration, especially from Latin America, a new challenge to assimilation, or does it repeat an old pattern of alarm about newcomers that later proved unjustified?</b></p><ul><li><b>★ NEW CHALLENGE</b>: Jason Richwine, a former senior policy analyst at the Heritage Foundation, argues that Hispanic assimilation today is different from that of earlier European groups.</li><li><b>◆ OLD PATTERN</b>: Leo Chavez, a professor of anthropology at the University of California, Irvine, argues that the “Latino Threat” story repeats alarms raised against earlier groups, such as Germans, Chinese, and southern and eastern Europeans.</li><li><b>● BOTH / MIXED</b>: A source whose evidence fits parts of both arguments (mixed), or does not fit either one cleanly.</li></ul></div>
+<section class="case" id="case5" data-i="5"><div><span class="chip">1755</span><span class="cnum">Case file 5 of 8</span></div>
+<div class="who">Who: Benjamin Franklin, a Pennsylvania printer and writer<br>From: “Observations Concerning the Increase of Mankind” (written 1751, published 1755)</div>
+<p class="intro">A leading colonist worries about German settlers in Pennsylvania.</p>
+<blockquote>[W]hy should the Palatine Boors [Germans] be suffered to swarm into our Settlements, and by herding together establish their Language and Manners to the Exclusion of ours? Why should Pennsylvania, founded by the English, become a Colony of Aliens, who will shortly be so numerous as to Germanize us instead of our Anglifying them, and will never adopt our Language or Customs, any more than they can acquire our Complexion.</blockquote>
+<div class="cite">Benjamin Franklin, “Observations Concerning the Increase of Mankind, Peopling of Countries, &amp;c.” (written 1751; first published 1755), Founders Online, National Archives. Capitalization and punctuation follow Founders Online; the bracketed “[W]” and “[Germans]” are added here (the “[Germans]” gloss follows the Norton exercise).</div>
+<div class="help"><b>Word help:</b> Palatine Boors = an insulting term for German farmers from the Palatinate region · suffered = allowed · Anglifying = making English · Complexion = skin color</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 5"><button type="button" class="st" data-v="N" aria-pressed="false">★ NEW CHALLENGE<small>today’s newcomers assimilate differently</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ OLD PATTERN<small>alarm about newcomers is not new</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows both views, or does not fit either one</small></button></div>
+<label for="ctx5">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx5" data-id="ctx5" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note5">Clue words</label>
+<textarea id="note5" data-id="note5" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case6" data-i="6"><div><span class="chip">1878</span><span class="cnum">Case file 6 of 8</span></div>
+<div class="who">Who: The California State Senate<br>From: Memorial to Congress on Chinese immigration, 1878</div>
+<p class="intro">A state legislature tells the nation what it thinks of a group of immigrants.</p>
+<blockquote>The State of California has a population variously estimated at from seven hundred thousand to eight hundred thousand, of which one hundred and twenty-five thousand are Chinese.&nbsp;.&nbsp;.&nbsp;. Above and beyond these considerations, however, we believe, and the researches of those who have most attentively studied the Chinese character confirm us in the consideration, that the Chinese are incapable of adaptation to our institutions.&nbsp;.&nbsp;.&nbsp;. This alien mass, constantly increasing by immigration, is injected into a republic of freemen, eating of its substance, expelling free white labor, and contributing nothing to the support of the government.</blockquote>
+<div class="cite">Memorial of the California State Senate on Chinese immigration, 1878, pp. 60, 62–64, via the Internet Archive.</div>
+<div class="help"><b>Word help:</b> population = number of people · incapable = unable · adaptation = changing to fit · alien = foreign · republic of freemen = a nation of free citizens</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 6"><button type="button" class="st" data-v="N" aria-pressed="false">★ NEW CHALLENGE<small>today’s newcomers assimilate differently</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ OLD PATTERN<small>alarm about newcomers is not new</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows both views, or does not fit either one</small></button></div>
+<label for="ctx6">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx6" data-id="ctx6" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note6">Clue words</label>
+<textarea id="note6" data-id="note6" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case7" data-i="7"><div><span class="chip">1891</span><span class="cnum">Case file 7 of 8</span></div>
+<div class="who">Who: Henry Cabot Lodge, Republican congressman from Massachusetts<br>From: “The Restriction of Immigration,” <i>North American Review</i>, January 1891</div>
+<p class="intro">A politician argues in a national magazine that immigration is changing.</p>
+<blockquote>In the last ten years, however, as appears from the figures just given, new and wholly different elements have been introduced into our immigration, and—what is more important still—the rate of immigration of these new elements has risen with much greater rapidity than that of those which previously had furnished the bulk of the population of the country.&nbsp;.&nbsp;.&nbsp;. Thus it is proved, first, that immigration to this country is increasing, and, second, that it is making its greatest relative increase from races most alien to the body of the American people and from the lowest and most illiterate classes among those races.</blockquote>
+<div class="cite">Henry Cabot Lodge, “The Restriction of Immigration,” <i>North American Review</i> 152, no. 410 (January 1891): 28, 30, 32–33, via the Internet Archive.</div>
+<div class="help"><b>Word help:</b> elements = parts · rapidity = speed · bulk = main part · alien = foreign, strange · illiterate = unable to read</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 7"><button type="button" class="st" data-v="N" aria-pressed="false">★ NEW CHALLENGE<small>today’s newcomers assimilate differently</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ OLD PATTERN<small>alarm about newcomers is not new</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows both views, or does not fit either one</small></button></div>
+<label for="ctx7">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx7" data-id="ctx7" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note7">Clue words</label>
+<textarea id="note7" data-id="note7" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<section class="case" id="case8" data-i="8"><div><span class="chip">1963</span><span class="cnum">Case file 8 of 8</span></div>
+<div class="who">Who: Nathan Glazer and Daniel Patrick Moynihan, sociologists<br>From: <i>Beyond the Melting Pot</i> (1963)</div>
+<p class="intro">Two sociologists write about what happened to immigrant groups in New York City.</p>
+<blockquote>But as the groups were transformed by influences in American society, stripped of their original attributes, they were recreated as something new, but still as identifiable groups.&nbsp;.&nbsp;.&nbsp;. Time alone does not dissolve the groups if they are not close to the Anglo-Saxon center. Color marks off a group, regardless of time; and perhaps most significantly, the “majority” group, to which assimilation should occur, has taken on the color of an ethnic group, too. To what does one assimilate in modern America?</blockquote>
+<div class="cite">Nathan Glazer and Daniel Patrick Moynihan, <i>Beyond the Melting Pot</i> (Cambridge, MA: MIT Press, 1963), 12–14, 20 (page numbers as given in the Norton credit); text checked against the Internet Archive copy of the 1963 edition.</div>
+<div class="help"><b>Word help:</b> transformed = changed · attributes = traits · identifiable = recognizable · assimilation = taking on the habits of the larger society · Anglo-Saxon = English-descended</div>
+<div class="ask">Which historian’s argument does this source help most?</div>
+<div class="stances" role="group" aria-label="Stance for case file 8"><button type="button" class="st" data-v="N" aria-pressed="false">★ NEW CHALLENGE<small>today’s newcomers assimilate differently</small></button><button type="button" class="st" data-v="S" aria-pressed="false">◆ OLD PATTERN<small>alarm about newcomers is not new</small></button><button type="button" class="st" data-v="V" aria-pressed="false">● BOTH / MIXED<small>shows both views, or does not fit either one</small></button></div>
+<label for="ctx8">Context: who made this, when, and what key fact explains it? Use the Background Reading.</label>
+<textarea id="ctx8" data-id="ctx8" rows="2" placeholder="Who · when · one key fact from the Background Reading"></textarea>
+<label for="note8">Clue words</label>
+<textarea id="note8" data-id="note8" rows="2" placeholder="“clue words” — This source helps… because…"></textarea>
+</section>
+<h2>Part 3 · Case Closed</h2>
+<div class="box cq"><div class="lab">Central Questions:</div><p style="margin:.3em 0"><b>Debate 1: Did the 1996 welfare reform move poor families from dependence toward independence, or did it abandon them?</b></p><p style="margin:.3em 0"><b>Debate 2: Is today’s immigration, especially from Latin America, a new challenge to assimilation, or does it repeat an old pattern of alarm about newcomers that later proved unjustified?</b></p></div>
+<div class="box"><p><b>Your essay question:</b> Choose one debate above and answer its question. Take a position and defend it with the case files from that debate.</p>
+<label for="debate">Which debate will you write about?</label>
+<select id="debate" data-id="debate"><option value="">Choose a debate…</option><option value="1">Debate 1 · Welfare Reform: Independence or Abandonment?</option><option value="2">Debate 2 · Immigration: New Challenge or Old Pattern?</option></select>
+<p>Write about one page (about 250 to 350 words; at least 150 words to finish). Use this order:</p>
+<ol><li><b>Claim:</b> your answer to the question in one or two sentences.</li>
+<li><b>Evidence 1:</b> a quote from one case file, with what it shows and one context fact.</li>
+<li><b>Evidence 2:</b> a quote from a <i>different</i> case file, explained the same way.</li>
+<li><b>Counter-Argument:</b> name a case file (or a historian) someone on the other side would use, explain their point, then answer it.</li>
+<li><b>Conclusion:</b> what your answer shows about the historians’ debate you chose, and how the evidence helps decide it.</li></ol>
+<label for="essay">Your essay</label>
+<textarea id="essay" data-id="essay" rows="18" style="min-height:360px"></textarea>
+<div class="wc" id="wc">0 words</div>
+<div class="checks" style="margin-top:12px">
+<label><input type="checkbox" id="chk1" data-id="chk1"> My essay opens with a clear claim.</label>
+<label><input type="checkbox" id="chk2" data-id="chk2"> I used evidence from at least two different case files from your chosen debate.</label>
+<label><input type="checkbox" id="chk3" data-id="chk3"> I stated a Counter-Argument and answered it.</label>
+<label><input type="checkbox" id="chk4" data-id="chk4"> My conclusion explains what the evidence shows about the historians’ debate.</label>
+</div></div>
+<div class="btns">
+<button type="button" class="b" id="save">Save Progress</button>
+<button type="button" class="b alt" id="loadBtn">Load Progress</button>
+<input type="file" id="loadFile" accept=".json,application/json" hidden>
+<button type="button" class="b fin" id="finish" disabled>Finished — Download File to Submit</button>
+</div>
+<div id="status" role="status" aria-live="polite"></div>
+<div id="todo"></div>
+</main>
+<footer>UNIT 6 · THE AMERICAN AGE | HIST C1002 | DANIEL GARZA, M.A.</footer>
+<script>
+(function(){
+var PACKET="L20_Thinking_Like_a_Historian", STORE="c1002_l20_thinking_like_a_historian", COURSE="HIST C1002", NC=8, GROUPS=[[1,2,3,4],[5,6,7,8]], MULTI=true, RDG=["rdg1", "rdg2"];
+var $=function(id){return document.getElementById(id)};
+var sides={};
+function fields(){return Array.prototype.slice.call(document.querySelectorAll('[data-id]'))}
+function words(t){t=(t||'').trim();return t?t.split(/\s+/).length:0}
+function val(id){var e=$(id);return e?(e.value||'').trim():''}
+function cracked(i){return !!sides[i]&&val('note'+i)&&val('ctx'+i)}
+function missing(){
+  var m=[];
+  if(!val('first')||!val('last')||!val('period'))m.push('first name, last name, and period');
+  var r=[];RDG.forEach(function(id,k){if(!val(id))r.push(k+1)});
+  if(r.length)m.push('Background Reading check'+(RDG.length>1?(r.length>1?'s ':' ')+r.join(', '):''));
+  var c=[];for(var i=1;i<=NC;i++){if(!cracked(i))c.push(i)}
+  if(c.length)m.push('case file'+(c.length>1?'s ':' ')+c.join(', ')+' (stance, context, and clue words)');
+  if(MULTI&&!val('debate'))m.push('the debate you will write about');
+  if(words(val('essay'))<150)m.push('essay (at least 150 words)');
+  var k=[];for(var j=1;j<=4;j++){if(!$('chk'+j).checked)k.push(j)}
+  if(k.length)m.push('checklist box'+(k.length>1?'es ':' ')+k.join(', '));
+  return m;
+}
+function render(){
+  var n=0;
+  for(var i=1;i<=NC;i++){
+    var card=$('case'+i);var ok=cracked(i);if(ok)n++;
+    card.classList.toggle('done',!!sides[i]);card.classList.toggle('isS',sides[i]==='S');card.classList.toggle('isV',sides[i]==='V');
+    card.querySelectorAll('.st').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.v===sides[i]?'true':'false')});
+  }
+  $('mtext').textContent=n+' of '+NC+' case files cracked';$('mbar').style.width=(n*100/NC)+'%';
+  var w=words(val('essay'));$('wc').textContent=w+' word'+(w===1?'':'s')+(w<150?' (150 needed to finish)':'');
+  var m=missing();$('finish').disabled=m.length>0;
+  $('todo').textContent=m.length?('Still to do: '+m.join('; ')):'Everything is done. Click Finished to download your file.';
+}
+function tallyOf(list){var t={national:0,state:0,voice:0};list.forEach(function(i){if(sides[i]==='N')t.national++;if(sides[i]==='S')t.state++;if(sides[i]==='V')t.voice++});return t}
+function collect(done){
+  var a={},ch={};
+  fields().forEach(function(e){var id=e.dataset.id;if(e.type==='checkbox')ch[id]=e.checked;else if(['first','last','period'].indexOf(id)<0)a[id]=e.value});
+  var all=[];for(var i=1;i<=NC;i++)all.push(i);
+  var byDebate={};GROUPS.forEach(function(g,k){byDebate['debate'+(k+1)]=tallyOf(g)});
+  return {packet:PACKET,course:COURSE,version:1,saved:new Date().toISOString(),completed:!!done,
+    student:{first:val('first'),last:val('last'),period:val('period'),date:$('date').value||''},
+    sides:JSON.parse(JSON.stringify(sides)),answers:a,checks:ch,tally:tallyOf(all),tallyByDebate:byDebate};
+}
+function apply(d){
+  sides={};Object.keys(d.sides||{}).forEach(function(k){sides[k]=d.sides[k]});
+  var s=d.student||{};$('first').value=s.first||'';$('last').value=s.last||'';$('period').value=s.period||'';$('date').value=s.date||'';
+  var a=d.answers||{},ch=d.checks||{};
+  fields().forEach(function(e){var id=e.dataset.id;if(e.type==='checkbox')e.checked=!!ch[id];else if(id in a)e.value=a[id]});
+  render();
+}
+function persist(){try{localStorage.setItem(STORE,JSON.stringify(collect(false)))}catch(e){}}
+function fname(){return (val('last')+'_'+val('first')).normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^A-Za-z0-9_\-]+/g,'_')}
+function download(name,obj){
+  var blob=new Blob([JSON.stringify(obj,null,2)],{type:'application/json'});var u=URL.createObjectURL(blob);
+  var a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();
+  setTimeout(function(){URL.revokeObjectURL(u);a.remove()},1500);
+}
+function msg(t,cls){var s=$('status');s.textContent=t;s.className=cls||''}
+function needNames(){
+  var bad=false;['first','last','period'].forEach(function(id){var e=$(id);var b=!e.value.trim();e.classList.toggle('bad',b);if(b)bad=true});
+  return bad;
+}
+document.querySelectorAll('.case').forEach(function(card){
+  var i=card.dataset.i;
+  card.querySelectorAll('.st').forEach(function(b){b.addEventListener('click',function(){sides[i]=b.dataset.v;render();persist()})});
+});
+fields().forEach(function(e){e.addEventListener((e.type==='checkbox'||e.tagName==='SELECT')?'change':'input',function(){if(e.classList.contains('bad')&&e.value.trim())e.classList.remove('bad');render();persist()})});
+$('save').addEventListener('click',function(){
+  if(needNames()){msg('Type your first name, last name, and period before you save.','err');return}
+  var f=fname()+'-'+PACKET+'-PROGRESS.json';download(f,collect(false));
+  msg('Saved '+f+'. Keep that file. Use Load Progress later. Do not upload it to Canvas until you are finished.','ok');
+});
+$('loadBtn').addEventListener('click',function(){$('loadFile').value='';$('loadFile').click()});
+$('loadFile').addEventListener('change',function(){
+  var f=this.files&&this.files[0];if(!f)return;var r=new FileReader();
+  r.onload=function(){try{var d=JSON.parse(r.result);if(!d||d.packet!==PACKET)throw 0;apply(d);persist();msg('Progress loaded. Pick up where you left off.','ok')}
+    catch(e){msg('That file is not a saved file from this assignment. Choose the file that ends in -'+PACKET+'-PROGRESS.json.','err')}};
+  r.readAsText(f);
+});
+$('finish').addEventListener('click',function(){
+  if(missing().length){msg('Not finished yet. Read the line below to see what is missing.','err');render();return}
+  var d=new Date();$('date').value=(d.getMonth()+1)+'/'+d.getDate()+'/'+d.getFullYear();
+  var f=fname()+'-'+PACKET+'.json';download(f,collect(true));persist();
+  msg('Finished! Your file '+f+' downloaded. Upload that file to Canvas.','ok');
+});
+try{var raw=localStorage.getItem(STORE);if(raw){var d=JSON.parse(raw);if(d&&d.packet===PACKET)apply(d)}}catch(e){}
+render();
+})();
+</script></body></html>
